@@ -1495,7 +1495,7 @@ textarea,
   .field.is-invalid {
     color: #fbe3e4;
     border-color: #fbe3e4;
-    background-color: white;
+    background-color: #fff;
     outline-color: #fbe3e4; }
   input[type="text"].success, input[type="text"].is-valid,
   input[type="password"].success,
@@ -1532,7 +1532,7 @@ textarea,
   .field.is-valid {
     color: #e6efc2;
     border-color: #e6efc2;
-    background-color: white;
+    background-color: #fff;
     outline-color: #e6efc2; }
   input[type="text"][disabled], input[type="text"].is-disabled,
   input[type="password"][disabled],
