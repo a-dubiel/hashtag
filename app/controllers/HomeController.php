@@ -15,4 +15,9 @@ class HomeController extends BaseController {
 		$this->layout->content = View::make('front.home', $data);
 	}
 
+	public function showQuery($query)
+	{
+		return 'chuj';
+	}
+
 }

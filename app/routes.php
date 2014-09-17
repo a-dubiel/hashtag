@@ -12,3 +12,11 @@
 */
 
 Route::get('/', array('uses' =>'HomeController@showHome')); 
+
+Route::get('{query}/szukaj', array('uses' =>'HomeController@showQuery') ); 
+
+Route::post('/szukaj', function() {
+	$query = Input::get('query');
+
+	return Redirect::to($query.'/szukaj');
+}); 
