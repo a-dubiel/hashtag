@@ -1,0 +1,105 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Form Styles
+
+******************************************************************/
+
+/*********************
+INPUTS
+*********************/
+
+// setting up defaults
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+textarea,
+.field {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 12px;
+  margin-bottom: 14px;
+  font-size: 1em;
+  color: $text-color;
+  border-radius: 3px;
+  vertical-align: middle;
+  box-shadow: none;
+  border: 0;
+  width: 100%;
+  max-width: 400px;
+  font-family: $sans-serif;
+  background-color: $gray;
+  @include transition(background-color 0.24s ease-in-out);
+
+  // a focused input (or hovered on)
+  &:focus,
+  &:active {
+    background-color: lighten($gray, 4%);
+  } // end hover or focus
+
+  // error notification
+  &.error,
+  &.is-invalid {
+    color: $alert-red;
+    border-color: $alert-red;
+    background-color: $white;
+    outline-color: $alert-red;
+  } // end invalid input
+
+  // success notification
+  &.success,
+  &.is-valid {
+    color: $alert-green;
+    border-color: $alert-green;
+    background-color: $white;
+    outline-color: $alert-green;
+  } // end valid input
+
+  // a disabled input
+  &[disabled],
+  &.is-disabled {
+    cursor: not-allowed;
+    border-color: $disabled-gray;
+    opacity: 0.6;
+
+    &:focus,
+    &:active {
+      background-color: $alert-blue;
+    } // end disabled focus
+
+  } // end disabled input
+
+} // end input defaults
+
+// spacing out the password (thx @murtaugh)
+input[type="password"] {
+  letter-spacing: 0.3em;
+}
+
+// textareas
+textarea {
+  max-width: 100%;
+  min-height: 120px;
+  line-height: 1.5em;
+}
+
+// selects
+select {
+  -webkit-appearance: none; /* 1 */
+}
+
+

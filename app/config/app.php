@@ -52,7 +52,7 @@ return array(
 	|
 	*/
 
-	'locale' => 'en',
+	'locale' => 'pl',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return array(
 	|
 	*/
 
-	'fallback_locale' => 'en',
+	'fallback_locale' => 'pl',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => 'E45cmfiTP1YYO72eQPnedBbtlim626a9',
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -121,6 +121,10 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+		// 
+		'Cartalyst\Sentry\SentryServiceProvider',
+		'Artdarek\OAuth\OAuthServiceProvider',
+		'Roumen\Asset\AssetServiceProvider',
 
 	),
 
@@ -188,6 +192,12 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
+
+		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+		'OAuth' => 'Artdarek\OAuth\Facade\OAuth',
+		'Asset' => 'Roumen\Asset\Asset',
+
+
 
 	),
 

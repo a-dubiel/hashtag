@@ -1,0 +1,76 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+
+******************************************************************/
+
+
+/*********************
+GENERAL STYLES
+*********************/
+
+
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+
+.offcanvas-wrap.active {
+  left: 0;
+}
+
+
+
+/*********************
+HEADER STYLES
+*********************/
+
+
+/*********************
+NAVIGATION STYLES
+*********************/
+
+a.nav-main-link {
+   display: none;
+}
+
+.js .nav-main {
+  max-width: none;
+  position: static;
+  width: auto;
+}
+
+.nav-main {
+  ul {
+    margin: 0;
+    border: 0;
+  }
+  
+  li {
+    display: inline-block;
+    
+    a {
+
+    }
+  }
+
+}
+  
+
+
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+
+
+
+/*********************
+FOOTER STYLES
+*********************/
+
+
+
