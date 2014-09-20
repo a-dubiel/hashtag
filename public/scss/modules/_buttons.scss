@@ -5,3 +5,45 @@ Author:
 Stylesheet: Button Styles
 
 ******************************************************************/
+
+
+.btn-default {
+	display:inline-block;
+	text-transform:uppercase;
+	@include border-radius(3px);
+	font-weight:700;
+	@include font-size(12px);
+	text-decoration:none;
+	padding:2px 7px 0px;
+	@include transition(all 0.3s ease-in-out);
+}
+
+.btn-text {
+	padding:0;
+}
+
+.btn-green {
+	background-color: $brand;
+	color: $white;
+
+	&:hover {
+		background-color: darken($brand, 5%);
+	}
+}
+
+.btn-link-secondary {
+	color: $gray;
+
+	&:hover {
+		text-decoration:underline;
+	}
+}
+
+.btn-link-primary {
+	color: $brand;
+	
+	&:hover {
+		text-decoration:underline;
+	}
+
+}

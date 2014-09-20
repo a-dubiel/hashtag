@@ -1,9 +1,10 @@
 <?php
 
-class SearchController extends \BaseController {
+class InstagrampostsController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
+	 * GET /instagramposts
 	 *
 	 * @return Response
 	 */
@@ -12,9 +13,9 @@ class SearchController extends \BaseController {
 		//
 	}
 
-
 	/**
 	 * Show the form for creating a new resource.
+	 * GET /instagramposts/create
 	 *
 	 * @return Response
 	 */
@@ -23,9 +24,9 @@ class SearchController extends \BaseController {
 		//
 	}
 
-
 	/**
 	 * Store a newly created resource in storage.
+	 * POST /instagramposts
 	 *
 	 * @return Response
 	 */
@@ -34,9 +35,9 @@ class SearchController extends \BaseController {
 		//
 	}
 
-
 	/**
 	 * Display the specified resource.
+	 * GET /instagramposts/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -46,9 +47,9 @@ class SearchController extends \BaseController {
 		//
 	}
 
-
 	/**
 	 * Show the form for editing the specified resource.
+	 * GET /instagramposts/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -58,9 +59,9 @@ class SearchController extends \BaseController {
 		//
 	}
 
-
 	/**
 	 * Update the specified resource in storage.
+	 * PUT /instagramposts/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -70,9 +71,9 @@ class SearchController extends \BaseController {
 		//
 	}
 
-
 	/**
 	 * Remove the specified resource from storage.
+	 * DELETE /instagramposts/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -81,6 +82,5 @@ class SearchController extends \BaseController {
 	{
 		//
 	}
-
 
 }

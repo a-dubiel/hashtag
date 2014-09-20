@@ -12,10 +12,10 @@ GENERAL STYLES
 
 body {
 	font-family: $sans-serif;
-	font-size: 100%;
+	@include font-size(14px);
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $gray;
+	background-color: $background-main;
   	-webkit-font-smoothing: antialiased;
 }
 
@@ -43,11 +43,11 @@ LINK STYLES
 *********************/
 
 a, a:visited {
-	color: $link-color;
+
 
 	/* on hover */
 	&:hover, &:focus {
-		color: $link-hover;
+	
 	}
 
 	/* on click */
@@ -105,10 +105,51 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 
+.board-top {
+	height:75px;
+	width:100%;
+	@include transparent($white, 0.9);
+	position:fixed;
+	left:0;
+	top:0;
+	z-index:999;
+}
+
+.board-logo {
+	display:block;
+	width:127px;
+	height:25px;
+	background: url('../images/logo.png');
+	text-indent:-9999px;
+	margin-top:25px;
+	float:left;
+}
+
+.board-top-search {
+	width:150px;
+	float:left;
+	margin-top:22px;
+	margin-left:25px;
+
+	.input-default {
+		width:150px;
+	}
+
+	input[type="submit"] {
+		display:none;
+	}
+}
 
 /*********************
 NAVIGATION STYLES
 *********************/
+
+.nav-user {
+	margin-top:12px;
+	li {
+		display:inline;
+	}
+}
 
 
 a.nav-main-link {
@@ -146,6 +187,138 @@ a.nav-main-link {
 POSTS & CONTENT STYLES
 *********************/
 
+.page-board {
+	padding-top:80px;
+}
+
+.content-board {
+	h1 {
+		font-weight:700;
+		color: $gray;
+		@include font-size(50px);
+		line-height:70px;
+		margin:0;
+	}
+}
+
+.board-info {
+	background:$white;
+	@include border-radius(3px);
+	padding:10px;
+	margin-bottom:20px;
+
+	.board-description {
+		p {
+			margin:0 0 -5px 0;
+			padding:0;
+			color: $gray;
+		}
+	}
+}
+
+.filters {
+	li {
+		display:inline;
+	}
+
+	margin:5px 0 0 0;
+	padding:0;
+}
+
+.filter {
+	display:inline-block;
+	height:30px;
+	width:30px;
+	@include border-radius(3px);
+	text-align:center;
+	line-height:30px;
+	@include font-size(18px);
+}
+
+.filter-facebook {
+	background-color: $facebook;
+	color: $white;
+}
+
+.filter-instagram {
+	background-color: $instagram;
+	color: $white;
+}
+
+.filter-twitter {
+	background-color: $twitter;
+	color: $white;
+}
+
+.filter-google {
+	background-color: $google;
+	color: $white;
+}
+
+.filter-vine {
+	background-color: $vine;
+	color: $white;
+}
+
+.post {
+	width:270px;
+	@include border-radius(3px);
+	background: $white;
+	padding:10px;
+	float:left;
+	margin-bottom:20px;
+}
+
+#posts {
+	margin: 0 auto;
+}
+
+.user-info {
+	margin-bottom:10px;
+	width:220px;
+
+	abbr[title] {
+		border:none;
+	}
+
+	img {
+		float:left;
+		margin-right:10px;
+		width:35px;
+		height:35px;
+	}
+
+	a {
+		color: $brand;
+		font-weight:700;
+		text-decoration: none;
+	}
+
+	p {
+		margin:-5px 0 0 0;
+		padding:0;
+		@include font-size(10px);
+		color: $gray;
+	}
+}
+
+.post-img {
+	img {
+		max-width:100%;
+	}
+}
+
+.hashtag {
+	font-weight:700;
+	color: $brand;
+	text-decoration: none;
+}
+
+.post-description {
+	p {
+		margin:5px 0 0 0;
+	}
+}
 
 /******************************************************************
 PAGE NAVI STYLES

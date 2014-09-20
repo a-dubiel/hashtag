@@ -6,11 +6,15 @@ class HomeController extends BaseController {
 	
 	public function __construct() {
 		parent::__construct();
+
+
 	}
 	
 
 	public function showHome()
 	{
+		
+
 		$data['data'] = array();
 		$this->layout->content = View::make('front.home', $data);
 	}

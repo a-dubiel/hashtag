@@ -8,7 +8,11 @@
 		"laravel/framework": "4.2.*",
 		"cartalyst/sentry": "2.1.*",
 		"artdarek/oauth-4-laravel": "dev-master",
-		"roumen/asset": "dev-master"
+		"roumen/asset": "dev-master",
+		"webpatser/laravel-sanitize": "dev-master",
+		"way/generators": "2.*",
+		"php-instagram-api/php-instagram-api": "dev-master",
+        "elevencodes/instagram-laravel": "2.0.*@dev"
 	},
 	"autoload": {
 		"classmap": [

@@ -8,9 +8,17 @@ Stylesheet: Mixins Stylesheet
 
 @mixin transition($transition...) {
   // defining prefixes so we can use them in mixins below
-  $prefixes:      ("-webkit-", "" );
+  $prefixes:      ("-webkit-", "" ,"-moz-", "-o-" );
   @each $prefix in $prefixes {
     #{$prefix}transition: $transition;
+  }
+}
+
+@mixin transform($transition...) {
+  // defining prefixes so we can use them in mixins below
+  $prefixes:      ("-webkit-", "" ,"-moz-", "-o-" );
+  @each $prefix in $prefixes {
+    #{$prefix}transform: $transition;
   }
 }
 
@@ -30,4 +38,50 @@ Stylesheet: Mixins Stylesheet
 	box-sizing:         $type;
 }
 
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius:    $radius;
+	-ms-border-radius:     $radius;
+	border-radius:         $radius;
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $inset: '') {
+  @if  ($inset != "") {
+    -webkit-box-shadow: $inset $x $y $blur $color;
+    -moz-box-shadow:    $inset $x $y $blur $color;
+    box-shadow:         $inset $x $y $blur $color;
+    }
+  @else {
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow:    $x $y $blur $color;
+    box-shadow:         $x $y $blur $color;
+    }
+}
+
+@mixin opacity($opacity: 0.5) {
+  filter:         alpha(opacity=($opacity * 100));
+  -ms-filter:     "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($opacity * 100) + ")";
+  -moz-opacity:   $opacity;
+  -khtml-opacity: $opacity;
+  opacity:        $opacity;
+  }
+
+ @mixin transparent($color, $alpha) {
+  $rgba: rgba($color, $alpha);
+  $ie-hex-str: ie-hex-str($rgba);
+  background-color: transparent;
+  background-color: $rgba;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+  zoom: 1;
+}
 

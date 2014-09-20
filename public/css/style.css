@@ -1382,6 +1382,42 @@ Author:
 Stylesheet: Button Styles
 
 ******************************************************************/
+.btn-default {
+  display: inline-block;
+  text-transform: uppercase;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 12px;
+  font-size: 0.75rem;
+  text-decoration: none;
+  padding: 2px 7px 0px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out; }
+
+.btn-text {
+  padding: 0; }
+
+.btn-green {
+  background-color: #42a80b;
+  color: #fff; }
+  .btn-green:hover {
+    background-color: #399009; }
+
+.btn-link-secondary {
+  color: #666; }
+  .btn-link-secondary:hover {
+    text-decoration: underline; }
+
+.btn-link-primary {
+  color: #42a80b; }
+  .btn-link-primary:hover {
+    text-decoration: underline; }
+
 /******************************************************************
 Site Name:
 Author:
@@ -1410,22 +1446,14 @@ select,
 textarea,
 .field {
   display: block;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 12px;
-  margin-bottom: 14px;
-  font-size: 1em;
-  color: #5c6b80;
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #333;
   border-radius: 3px;
   vertical-align: middle;
   box-shadow: none;
   border: 0;
-  width: 100%;
-  max-width: 400px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #eaedf2;
-  -webkit-transition: background-color 0.24s ease-in-out;
-  transition: background-color 0.24s ease-in-out; }
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   input[type="text"]:focus, input[type="text"]:active,
   input[type="password"]:focus,
   input[type="password"]:active,
@@ -1459,7 +1487,7 @@ textarea,
   textarea:active,
   .field:focus,
   .field:active {
-    background-color: #f7f8fa; }
+    outline: 0; }
   input[type="text"].error, input[type="text"].is-invalid,
   input[type="password"].error,
   input[type="password"].is-invalid,
@@ -1649,6 +1677,36 @@ select {
   -webkit-appearance: none;
   /* 1 */ }
 
+.input-default {
+  background-color: #f6f6f6;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px; }
+
+.input-prepend {
+  height: 30px;
+  width: 200px; }
+  .input-prepend .input-icon {
+    -webkit-border-radius: 3px 0px 0px 3px;
+    -moz-border-radius: 3px 0px 0px 3px;
+    -ms-border-radius: 3px 0px 0px 3px;
+    border-radius: 3px 0px 0px 3px;
+    background-color: #f6f6f6;
+    height: 30px;
+    width: 30px;
+    float: left;
+    text-align: center;
+    line-height: 30px;
+    color: #d4d4d4; }
+  .input-prepend .input-with-icon input {
+    -webkit-border-radius: 0px 3px 3px 0px;
+    -moz-border-radius: 0px 3px 3px 0px;
+    -ms-border-radius: 0px 3px 3px 0px;
+    border-radius: 0px 3px 3px 0px;
+    width: 170px;
+    float: left;
+    padding-left: 0; }
+
 /******************************************************************
 Site Name:
 Author:
@@ -1660,11 +1718,12 @@ Stylesheet: Base Mobile Stylesheet
 GENERAL STYLES
 *********************/
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 100%;
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.5;
-  color: #5c6b80;
-  background-color: #eaedf2;
+  color: #333;
+  background-color: #f6f6f6;
   -webkit-font-smoothing: antialiased; }
 
 /*********************
@@ -1684,12 +1743,9 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #f01d4f;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
-  a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #d10e3c; }
   a:link, a:visited:link {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
 
@@ -1727,9 +1783,45 @@ h5, .h5 {
 /*********************
 HEADER STYLES
 *********************/
+.board-top {
+  height: 75px;
+  width: 100%;
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.9);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6FFFFFF,endColorstr=#E6FFFFFF);
+  zoom: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999; }
+
+.board-logo {
+  display: block;
+  width: 127px;
+  height: 25px;
+  background: url("../images/logo.png");
+  text-indent: -9999px;
+  margin-top: 25px;
+  float: left; }
+
+.board-top-search {
+  width: 150px;
+  float: left;
+  margin-top: 22px;
+  margin-left: 25px; }
+  .board-top-search .input-default {
+    width: 150px; }
+  .board-top-search input[type="submit"] {
+    display: none; }
+
 /*********************
 NAVIGATION STYLES
 *********************/
+.nav-user {
+  margin-top: 12px; }
+  .nav-user li {
+    display: inline; }
+
 a.nav-main-link {
   float: left;
   display: block; }
@@ -1754,6 +1846,115 @@ a.nav-main-link {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+.page-board {
+  padding-top: 80px; }
+
+.content-board h1 {
+  font-weight: 700;
+  color: #666;
+  font-size: 50px;
+  font-size: 3.125rem;
+  line-height: 70px;
+  margin: 0; }
+
+.board-info {
+  background: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 20px; }
+  .board-info .board-description p {
+    margin: 0 0 -5px 0;
+    padding: 0;
+    color: #666; }
+
+.filters {
+  margin: 5px 0 0 0;
+  padding: 0; }
+  .filters li {
+    display: inline; }
+
+.filter {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 18px;
+  font-size: 1.125rem; }
+
+.filter-facebook {
+  background-color: #3b5998;
+  color: #fff; }
+
+.filter-instagram {
+  background-color: #3f729b;
+  color: #fff; }
+
+.filter-twitter {
+  background-color: #55acee;
+  color: #fff; }
+
+.filter-google {
+  background-color: #dd4b39;
+  color: #fff; }
+
+.filter-vine {
+  background-color: #00b488;
+  color: #fff; }
+
+.post {
+  width: 270px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  background: #fff;
+  padding: 10px;
+  float: left;
+  margin-bottom: 20px; }
+
+#posts {
+  margin: 0 auto; }
+
+.user-info {
+  margin-bottom: 10px;
+  width: 220px; }
+  .user-info abbr[title] {
+    border: none; }
+  .user-info img {
+    float: left;
+    margin-right: 10px;
+    width: 35px;
+    height: 35px; }
+  .user-info a {
+    color: #42a80b;
+    font-weight: 700;
+    text-decoration: none; }
+  .user-info p {
+    margin: -5px 0 0 0;
+    padding: 0;
+    font-size: 10px;
+    font-size: 0.625rem;
+    color: #666; }
+
+.post-img img {
+  max-width: 100%; }
+
+.hashtag {
+  font-weight: 700;
+  color: #42a80b;
+  text-decoration: none; }
+
+.post-description p {
+  margin: 5px 0 0 0; }
+
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
@@ -1854,7 +2055,10 @@ FOOTER STYLES
   
   Stylesheet: Retina Screens & Devices Stylesheet
   
-  ******************************************************************/ }
+  ******************************************************************/
+  .board-logo {
+    background: url("../images/logo@2x.png");
+    background-size: 127px 25px; } }
 @media print {
   /******************************************************************
   Site Name:

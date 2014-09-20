@@ -39,7 +39,7 @@ return array(
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone' => 'CET',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -125,6 +125,8 @@ return array(
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Artdarek\OAuth\OAuthServiceProvider',
 		'Roumen\Asset\AssetServiceProvider',
+		'Way\Generators\GeneratorsServiceProvider',
+	
 
 	),
 
@@ -196,6 +198,8 @@ return array(
 		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'OAuth' => 'Artdarek\OAuth\Facade\OAuth',
 		'Asset' => 'Roumen\Asset\Asset',
+		'Sanitize' => 'Webpatser\Sanitize\Sanitize',
+		
 
 
 
