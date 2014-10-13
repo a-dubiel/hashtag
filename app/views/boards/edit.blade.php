@@ -1,1 +1,0 @@
-/Users/andrzej/Documents/Projects/hashtag/hashtag/app/views/boards/edit.blade.php

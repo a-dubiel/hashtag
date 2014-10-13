@@ -6,13 +6,19 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"cartalyst/sentry": "2.1.*",
 		"artdarek/oauth-4-laravel": "dev-master",
 		"roumen/asset": "dev-master",
 		"webpatser/laravel-sanitize": "dev-master",
 		"way/generators": "2.*",
-		"php-instagram-api/php-instagram-api": "dev-master",
-        "elevencodes/instagram-laravel": "2.0.*@dev"
+        "thujohn/twitter": "dev-master",
+		"guzzlehttp/guzzle": "~4",
+		"boparaiamrit/facebook": "dev-master",
+		"mmanos/laravel-social": "dev-master",
+		"codesleeve/laravel-stapler": "1.0.*",
+		"cviebrock/image-validator": "1.0.*",
+		"barryvdh/laravel-dompdf": "0.4.*"
+
+       
 	},
 	"autoload": {
 		"classmap": [
@@ -22,7 +28,10 @@
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"
-		]
+		],
+		"psr-0": {
+            "Paylane": "app/lib"
+        }
 	},
 	"scripts": {
 		"post-install-cmd": [

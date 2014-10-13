@@ -23,11 +23,17 @@ Stylesheet: Main Stylesheet
 // import mixins
 @import "partials/mixins";
 
+// popup
+@import "partials/popup_main";
+
 // the grid
 @import "partials/grid";
 
 // alert boxes
 @import "modules/alerts";
+
+// tables
+@import "modules/tables";
 
 // buttons
 @import "modules/buttons";

@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
+	'from' => array('address' => 'czesc@hasztag.info', 'name' => 'hasztag.info'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => null,
+	'username' => 'postmaster@sandbox2eb6e591bb2648f0af4fb0513329d8d5.mailgun.org',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => null,
+	'password' => '4ca195bf9d1dd279ff211b5cb5f9b2fd',
 
 	/*
 	|--------------------------------------------------------------------------

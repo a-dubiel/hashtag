@@ -12,6 +12,15 @@ return array(
 	| as the size rules. Feel free to tweak each of these messages here.
 	|
 	*/
+	'image_size'           => 'Ten plik musi mieć :width szerokości i :height wysokości.',
+	'between'              => 'pomiędzy :size1 i :size2 pikseli',
+	'lessthan'             => 'mniej niż :size pikseli',
+	'lessthanorequal'      => 'mniej albo tyle samo co :size pikseli',
+	'greaterthan'          => 'więcej niż :size pikseli',
+	'greaterthanorequal'   => 'więcej albo tyle samo co :size pikseli',
+	'equal'                => ':size pikseli',
+	'anysize'              => 'any size',
+	'image_aspect'         => 'The :attribute aspect ratio must be :aspect.',
 
 	"accepted"             => "The :attribute must be accepted.",
 	"active_url"           => "The :attribute is not a valid URL.",

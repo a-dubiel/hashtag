@@ -8,138 +8,74 @@ class BoardsController extends \BaseController {
 		parent::__construct();
 	}
 
-	/**
-	 * Get instagram posts
-	 *
-	 * @return Response
-	 */
-	public function showPublicBoard($query)
+	public function showBoard($query, $id = NULL)
 	{	
 		Asset::add('//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js', 'footer');	
 		Asset::add('//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.min.js', 'footer');
-		Asset::add('//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js', 'footer');
+		Asset::add('/js/libs/jquery.dropdown.js', 'footer');
 	
-		Asset::add('/js/posts.js', 'footer');
+		//Asset::add('/js/posts.js', 'footer');
+		Asset::add('/js/posts-new.js', 'footer');
 		//check if board exists
-		$board = DB::table('boards')->where('hashtag', '=',$query)->where('is_public', '=', 1)->first();
 
-	
-		
-		
-		if(!$board) {
-			// the board does not exists, create a public one with default settings
-			$newBoard = new Board;
-			$newBoard->hashtag = $query;
-			$newBoard->has_facebook = 1;
-			$newBoard->refresh = 60;
-			$newBoard->posts_per_page = 20;
-			$newBoard->has_twitter = 1;
-			$newBoard->has_instagram = 1;
-			$newBoard->has_google = 1;
-			$newBoard->has_flickr = 1;
-			$newBoard->has_vine = 1;
-			$newBoard->is_public = 1;
-			$newBoard->is_active = 1;
-			$newBoard->save();
+		if(isset($id)) {
+			$board = Board::find($id);
 
-			$board = Board::find($newBoard->id);
+			if(!is_null($board)) {
+				if(($board->hashtag != $query) || ($board->config()->first()->user_id == 0) ) {
+					App::abort(404);
+				}
+			}
+			else {
+				App::abort(404);
+			}
 		}
-		
+		else {		
+			$board = Board::where('hashtag', '=', $query)->whereHas('config', function($q)
+			{
+			    $q->where('user_id', '=', 0 );
 
-		$data['board'] = $board;
-		$data['title'] = $this->layout->title = $board->hashtag;
-		$data['bodyClass'] = $this->layout->bodyClass = $board->hashtag;
-		$this->layout->content = View::make('boards.index', $data);
-	}
-	/**
-	 * Get instagram posts
-	 *
-	 * @return Response
-	 */
-	public function getInstagramPosts()
-	{
-		
-	}
+			})->first();
 
-	/**
-	 * Display a listing of the resource.
-	 * GET /boards
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
+			if(is_null($board)) {
+				$board = Board::create(array('hashtag' => $query ));
+				$config = BoardConfig::create(array('board_id' => $board->id ));
+			}
+		}
 
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /boards/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /boards
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+		if($board->config()->first()->is_active == 1) {
+			if(!is_null($board->cover_file_name)) {
+				$data['layout'] = $this->layout->cover = 'with-cover';
+			}
+			else {
+				$data['layout'] = $this->layout->cover = 'no-cover';
+			}
 
-	/**
-	 * Display the specified resource.
-	 * GET /boards/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
+			if(Auth::check()) {
+				$user = Auth::user();
+				$data['username'] = preg_replace('/@.*?$/', '', $user->email);
+				$data['userBoards'] = Board::byUserId($user)->orderBy('created_at', 'asc')->get();
+				$data['user'] = $user;
 
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /boards/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
+				if($user->id == $board->config()->first()->user_id) {
+					$userOwned = true;
+				}
 
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /boards/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /boards/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
+				if(!is_null($user->provider()->first()) && ($user->provider()->first()->provider == 'facebook')) {
+					$data['avatar'] = '<img src="http://graph.facebook.com/'.$user->provider()->first()->provider_id.'/picture?type=small" alt="avatar" />';
+				}
+			}
+					
+			$data['board'] = $board;
+			$data['boardData'] = $this->layout->boardData = $board;
+			$data['title'] = $this->layout->title = $board->hashtag;
+			$data['bodyClass'] = $this->layout->bodyClass = $board->hashtag . (isset($userOwned) ? ' user-owned' : '');
+			$this->layout->content = View::make('boards.index', $data);
+		}
+		else {
+			App::abort(404);
+		}
 	}
 
 }

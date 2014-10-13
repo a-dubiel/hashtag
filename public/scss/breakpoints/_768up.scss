@@ -22,6 +22,213 @@ LAYOUT & GRID STYLES
   left: 0;
 }
 
+.board-top {
+  height:75px;
+  width:100%;
+  @include transparent($white, 0.9);
+  position:fixed;
+  left:0;
+  top:0;
+  z-index:999;
+}
+
+.logo-main {
+  margin-top:25px;
+  float:left;
+}
+
+.board-top-search {
+  width:150px;
+  float:left;
+  margin-top:22px;
+  margin-left:25px;
+
+  .input-default {
+    width:150px;
+  }
+
+  input[type="submit"] {
+    display:none;
+  }
+}
+
+.page-board,
+.page-with-padding {
+  padding-top:90px;
+}
+
+  .board-avatar {
+    float:left;
+    width:120px;
+    height:120px;
+    margin: 0 10px 0px 10px;
+
+    img {
+      border:5px solid $white;
+      @include border-radius(3px);
+      width:120px;
+      height:120px;
+    }
+  }
+
+.page-board-with-cover {
+
+  .content-board {
+    position:relative;
+    top:-100px;
+    margin-bottom:-100px;
+    h1 {
+      text-align: left;
+      @include font-size(50px);
+      line-height:70px;
+      margin-bottom:0px;
+    }
+  }
+
+  .board-cover {
+    height:250px;
+    &:before {
+      height:250px;
+      background: rgba(255,255,255,0);
+      background: rgba(255,255,255,0);
+      background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(246,246,246,0.26) 32%, rgba(0,0,0,0.81) 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(32%, rgba(246,246,246,0.26)), color-stop(100%, rgba(0,0,0,0.81)));
+      background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(246,246,246,0.26) 32%, rgba(0,0,0,0.81) 100%);
+      background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(246,246,246,0.26) 32%, rgba(0,0,0,0.81) 100%);
+      background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(246,246,246,0.26) 32%, rgba(0,0,0,0.81) 100%);
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(246,246,246,0.26) 32%, rgba(0,0,0,0.81) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 );
+    }
+  } 
+
+}
+
+.content-board {
+  h1 {
+    text-align: left;
+    @include font-size(50px);
+    line-height:70px;
+  }
+}
+
+.filters {
+  margin:5px 0 0 0;
+}
+
+.check-new,
+.span-live {
+  width:auto;
+  margin:0 20px 20px 0
+}
+
+.filters-container {
+  height:30px;
+  margin:0;
+  float:right;
+}
+
+.page-board-no-cover {
+  .board-links {
+    position:relative;
+    float:right;
+
+    li a {
+      color: $gray;
+    }
+
+  }
+}
+
+.board-links {
+  right:15px;
+  top: 20px;
+  position:absolute;
+
+  li {
+    display:inline;
+    margin-right:10px;
+
+    &:last-child {
+      margin-right:0;
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+      @include transition(0.3s all ease-in-out);
+
+      .fa {
+        margin-right:2px;
+        position:relative;
+        bottom:-1px;
+      }
+
+      .fa-google-plus {
+        bottom:-3px;
+      }
+
+      &:hover {
+        color: darken($white, 50%);
+      }
+
+    }
+  }
+}
+
+
+.nav-account {
+  float:left;
+  width:30%;
+
+  a {
+    text-align: left;
+    padding-left:10px;
+    @include border-radius(3px 0px 0px 3px);
+  }
+}
+
+.account-content {
+  width:70%;
+  float:left;
+}
+
+.account-user-module {
+  width:50%;
+  padding-right:20px;
+}
+
+.board-settings-wrapper {
+  width:100%;
+}
+
+.payment-popup {
+  
+}
+
+.alert-ssl {
+  @include border-radius(3px);
+    p {
+      margin:0 0 0 40px;
+      color: darken($alert-green,50%);
+      text-align:left;
+    }
+
+    .ssl-icon {
+        float:left;
+        width:40px;
+        height:50px;
+        text-align:left;  
+        @include font-size(32px);
+        line-height:50px
+    }
+
+    margin-bottom:10px;
+    margin-top:10px;
+}
+
+
+
+
 
 
 /*********************
@@ -32,6 +239,17 @@ HEADER STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
+
+.nav-user {
+  position:relative;
+  top:auto;
+  right:auto;
+  float:right;
+  margin-top:25px;
+  li {
+    display:inline;
+  }
+}
 
 a.nav-main-link {
    display: none;
@@ -71,6 +289,40 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
+
+.logo-footer {
+  margin:7px 0 0 0;
+  float:left;
+}
+
+.footer-nav {
+  float:left;
+  margin-left: 50px;
+  
+  ul {
+    margin-top:5px;
+    margin-bottom:0;
+  }
+  
+  li {
+    width:auto;
+    margin-right:20px;
+
+    a:hover {
+      @include transition(color 0.3s ease-in-out);
+      color:darken($footer-link,25%);
+    }
+  }
+}
+
+.footer-social {
+  float:right;
+
+  a:hover {
+      @include transition(color 0.3s ease-in-out);
+      color:darken($footer-link,25%);
+  }
+}
 
 
 

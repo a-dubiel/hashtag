@@ -1,0 +1,1 @@
+<p>To jest faktura kurwa dla {{ $user->email }}</p>

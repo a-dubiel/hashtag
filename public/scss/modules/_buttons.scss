@@ -14,8 +14,35 @@ Stylesheet: Button Styles
 	font-weight:700;
 	@include font-size(12px);
 	text-decoration:none;
-	padding:2px 7px 0px;
+	padding:2px 7px 2px;
 	@include transition(all 0.3s ease-in-out);
+
+}
+
+.btn-submit {
+	border:0;
+	-webkit-appearance: none;
+	font-weight:400;
+	letter-spacing:0.03em;
+
+	.btn-sm {
+		
+	}
+}
+
+
+
+.btn-block {
+	width:100%;
+	text-align:center;
+}
+
+.btn-lg {
+	padding: 10px;
+}
+
+.btn-sm {
+	padding:3px 5px 1px 5px;
 }
 
 .btn-text {
@@ -31,12 +58,17 @@ Stylesheet: Button Styles
 	}
 }
 
-.btn-link-secondary {
-	color: $gray;
+.btn-blue {
+	background-color: $pro;
+	color: $white;
 
 	&:hover {
-		text-decoration:underline;
+		background-color: darken($pro, 5%);
 	}
+}
+
+.btn-link-secondary {
+	color: $gray;
 }
 
 .btn-link-primary {
@@ -45,5 +77,97 @@ Stylesheet: Button Styles
 	&:hover {
 		text-decoration:underline;
 	}
+}
 
+.btn-gray-inverted {
+	color: $gray;
+	border: 1px solid $gray;
+	background: none;
+
+	&:hover {
+		background: $gray;
+		color: $white;
+	}
+}
+
+.btn-red-inverted {
+	color: $red;
+	border: 1px solid $red;
+	background: none;
+
+	&:hover {
+		background: $red;
+		color: $white;
+	}
+}
+
+.btn-green-inverted {
+	color: $brand;
+	border: 1px solid $brand;
+	background: none;
+
+	&:hover {
+		background: $brand;
+		color: $white;
+	}
+}
+
+.btn-facebook {
+	background: $facebook;
+
+	&:hover {
+		background: darken($facebook, 5%);
+	}
+}
+
+.btn-twitter {
+	background: $twitter;
+}
+
+.btn-instagram {
+	background: $instagram;
+}
+
+
+.btn-sm-link {
+	color: $gray;
+	text-align:center;
+	padding:10px 0 0;
+	display:inline-block;
+	width:100%;
+	text-decoration:none;
+	@include font-size(14px);
+}
+
+.fa-pulse {
+  -moz-animation: pulse 2s infinite linear;
+  -o-animation: pulse 2s infinite linear;
+  -webkit-animation: pulse 2s infinite linear;
+  animation: pulse 2s infinite linear;
+}
+
+@-webkit-keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-ms-keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }

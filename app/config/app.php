@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return array(
 	|
 	*/
 
-	'fallback_locale' => 'pl',
+	'fallback_locale' => 'en',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -122,10 +122,18 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		// 
-		'Cartalyst\Sentry\SentryServiceProvider',
 		'Artdarek\OAuth\OAuthServiceProvider',
 		'Roumen\Asset\AssetServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
+		'Thujohn\Twitter\TwitterServiceProvider',
+	    'Boparaiamrit\Facebook\FacebookServiceProvider',
+	    'Mmanos\Social\SocialServiceProvider',
+	    'Codesleeve\LaravelStapler\LaravelStaplerServiceProvider',
+	    'Cviebrock\ImageValidator\ImageValidatorServiceProvider',
+	    'Barryvdh\DomPDF\ServiceProvider',
+
+	    
+
 	
 
 	),
@@ -199,6 +207,11 @@ return array(
 		'OAuth' => 'Artdarek\OAuth\Facade\OAuth',
 		'Asset' => 'Roumen\Asset\Asset',
 		'Sanitize' => 'Webpatser\Sanitize\Sanitize',
+		'Twitter' => 'Thujohn\Twitter\TwitterFacade',
+		'Facebook' => 'Boparaiamrit\Facebook\FacebookFacade',
+		'Carbon' => 'Carbon\Carbon',
+		'Social' => 'Mmanos\Social\Facades\Social',
+		'PDF' => 'Barryvdh\DomPDF\Facade',
 		
 
 

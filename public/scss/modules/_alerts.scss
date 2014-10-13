@@ -11,31 +11,54 @@ Stylesheet: Alert Styles
 
 // alerts and notices
 %alert {
-  margin: 10px;
   padding: 5px 18px;
-  border: 1px solid;
+  @include border-radius(3px);
+}
+
+.alert-top {
+  %alert {
+    padding: 5px 18px;
+    @include border-radius(0px 0px 3px 3px);
+  }
 }
 
 .alert-help {
   @extend %alert;
   border-color: darken($alert-yellow, 5%);
   background: $alert-yellow;
+
+  .fa {
+    color: darken($alert-yellow, 50%);
+  }
 }
 
 .alert-info {
   @extend %alert;
   border-color: darken($alert-blue, 5%);
   background: $alert-blue;
+
+  .fa {
+    color: darken($alert-blue, 50%);
+  }
 }
 
 .alert-error {
   @extend %alert;
   border-color: darken($alert-red, 5%);
   background: $alert-red;
+  color: darken($alert-red, 50%);
+  .fa, a {
+    color: darken($alert-red, 50%);
+    text-decoration: none;
+  }
 }
 
 .alert-success {
   @extend %alert;
   border-color: darken($alert-green, 5%);
   background: $alert-green;
+  color: darken($alert-green, 50%);
+    .fa {
+    color: darken($alert-green, 50%);
+  }
 }

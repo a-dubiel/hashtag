@@ -6,8 +6,13 @@ Stylesheet: Retina Screens & Devices Stylesheet
 
 ******************************************************************/
 
-.board-logo {
-	background: url('../images/logo@2x.png');
-	background-size: 127px 25px;
+.logo-main {
+	background-image: url('../images/logo@2x.png');
+	background-size: 125px 25px;
+}
+
+.logo-footer {
+	background-image: url('../images/logo-footer@2x.png');
+	background-size: 125px 25px;
 }
 

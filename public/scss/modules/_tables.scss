@@ -1,0 +1,139 @@
+$breakpoint-alpha: 768px; // adjust to your needs
+
+.table-pricing {
+  margin: 0;
+  min-width: 100%; // adjust to your needs
+
+
+  tr  {
+    border-bottom:1px solid $background-main;
+  }
+
+  tr:hover {
+    background: $background-main;
+  }
+
+  .prices {
+    @include font-size(18px);
+  }
+  
+  
+  
+  td {
+    
+    &:first-child {
+      
+    }
+    &:last-child {
+      padding-bottom: .5em;
+    }
+
+    
+  }
+  
+  th, td {
+
+
+
+      text-align: center;
+
+    @media (min-width: $breakpoint-alpha) {
+      display: table-cell;
+      padding: .25em .5em;
+      
+      &:first-child {
+        padding-left: 0;
+      }
+      
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+  }
+  
+  
+}
+
+
+
+
+
+.rwd-table {
+  margin: 0;
+  min-width: 100%; // adjust to your needs
+
+  .heading {
+    border-bottom:1px solid $background-main;
+  }
+  
+  
+  th {
+    display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!   
+  }
+  
+  td {
+    display: block; 
+    
+    &:first-child {
+      
+    }
+    &:last-child {
+      padding-bottom: .5em;
+    }
+
+    &:before {
+      content: attr(data-th)": "; // who knew you could do this? The internet, that's who.
+      font-weight: bold;
+
+      // optional stuff to make it look nicer
+      width: 8.5em; // magic number :( adjust according to your own content
+      display: inline-block;
+      // end options
+      
+      @media (min-width: $breakpoint-alpha) {
+        display: none;
+      }
+    }
+  }
+  
+  th, td {
+    text-align: left;
+    
+    @media (min-width: $breakpoint-alpha) {
+      display: table-cell;
+      padding: .25em .5em;
+      
+      &:first-child {
+        padding-left: 0;
+      }
+      
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+  }
+  
+  
+}
+
+
+// presentational styling
+
+.rwd-table {
+  overflow: hidden;
+  tr {
+
+  }
+  th, td {
+    margin: 0;
+    @media (min-width: $breakpoint-alpha) { 
+      padding-bottom: 10px; 
+    }
+  }
+  th, td:before {
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+}

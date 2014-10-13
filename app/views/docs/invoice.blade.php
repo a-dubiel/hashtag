@@ -1,0 +1,1 @@
+<p>To jest rachunek kurwa dla {{ $user->email }}</p>

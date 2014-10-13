@@ -72,16 +72,13 @@ textarea,
     &:focus,
     &:active {
       background-color: $alert-blue;
-    } // end disabled focus
+    } // end disabled focus``
 
   } // end disabled input
 
 } // end input defaults
 
-// spacing out the password (thx @murtaugh)
-input[type="password"] {
-  letter-spacing: 0.3em;
-}
+
 
 // textareas
 textarea {
@@ -95,17 +92,68 @@ select {
   -webkit-appearance: none; /* 1 */
 }
 
+
+
 .input-default {
   background-color:$background-main;
   height:30px;
   line-height: 30px;
   padding-left:10px;
+
+  &.input-number {
+    width:50px;
+  }
+
+  &.input-blank {
+    background: $white;
+    border:1px solid $background-main;
+  }
+
+  &.input-inline {
+    display:inline;
+  }
+
+  &.input-block {
+    width:100%;
+  }
+
+  &.has-error {
+    border: 1px solid $red;
+  }
+
+  &.input-small {
+    width:40px;
+  }
+}
+
+.textarea-default {
+  background-color:$background-main;
+  max-width:300px;
+  width:100%;
+  resize: none;
+  padding:5px;
+
+  min-height:80px;
+  display:block;
+
 }
 
 .input-prepend {
 
   height:30px;
   width:200px;
+
+  &.with-url {
+    width:auto;
+    .input-with-icon {
+      input {
+        @include border-radius(0px 3px 3px 0px);
+        width:25%;
+        float:left;
+        padding-left:0;
+      }
+    }
+  }
 
   .input-icon {
     @include border-radius(3px 0px 0px 3px);
@@ -116,6 +164,13 @@ select {
     text-align: center;
     line-height: 30px;
     color: $light-gray;
+
+    &.input-url {
+      width:auto;
+      padding-left: 10px;
+      padding-right:2px;
+      color: $light-gray;
+    }
   }
 
   .input-with-icon {
@@ -127,7 +182,34 @@ select {
     }
   }
 
-
 }
+  .form-auth {
+    margin:10px 0 10px;
+    .input-default {
+      width:100%;
+      margin-bottom:10px;
+
+      &.input-small {
+        width:50px;
+        float:left;
+        margin-right:10px;
+      }
+     }
+
+  }
+
+  .form-inline {
+    display:inline;
+    margin-right:20px;
+  }
+
+  .form-note {
+    color: $gray;
+    @include font-size(12px);
+
+    a {
+      color: $brand;
+    }
+  }
 
 

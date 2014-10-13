@@ -36,3 +36,28 @@ p {
           font-feature-settings: "liga", "dlig";
 }
 
+hr {
+  height: 0;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border:none;
+  border-top: 1px solid $background-main;
+  margin:20px 0;
+}
+
+.red {
+  color: $red;
+}
+
+.green {
+  color: $green;
+}
+
+.bold {
+  font-weight:700;
+}
+
+.blue {
+  color: $pro;
+}
