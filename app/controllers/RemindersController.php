@@ -42,7 +42,7 @@ class RemindersController extends BaseController {
 		}
 		else {
 	
-			switch ($response = Password::remind(Input::only('email')))
+			switch ($response = Password::remind(Input::only('email'), function($message){  $message->subject('[hasztag.info] Restuj hasło'); } ))
 			{
 				case Password::INVALID_USER:
 					return Redirect::back()->with('alert', array('type' => 'error', 'content' => 'Błąd! E-mail nie został wysłany.'));

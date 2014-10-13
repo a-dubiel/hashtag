@@ -43,7 +43,7 @@
 					    <input type="email" name="email" class="input-default" placeholder="E-mail">
 					    <input type="password" name="password"  class="input-default" placeholder="Nowe hasło">
 					    <input type="password" name="password_confirmation"  class="input-default" placeholder="Powtórz nowe hasło">
-					    <input type="submit" value="Reset Password" class="btn-default btn-green btn-block btn-lg btn-submit">
+					    <input type="submit" value="Resetuj hasło" class="btn-default btn-green btn-block btn-lg btn-submit">
 					</form>
 				</div>
 		

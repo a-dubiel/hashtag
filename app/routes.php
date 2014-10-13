@@ -11,15 +11,6 @@
 |
 */
 
-Route::get('/pdf', function()
-{
-    $html = '<html><body>'
-            . '<p>Put your html here, or generate it with your favourite '
-            . 'templating system.</p>'
-            . '</body></html>';
-    return PDF::load($html, 'A4', 'portrait')->show();
-});
-
 //sitewide
 Route::get('/', array('uses' =>'HomeController@showHome')); 
 Route::get('/informacje', array('uses' =>'HomeController@showAboutUs')); 
@@ -29,7 +20,6 @@ Route::get('/oferta', array('uses' =>'HomeController@showPricing'));
 
 // auth
 Route::get('/pro/payment/update', array('before' => 'auth', 'uses' =>'UserController@postPaymentUpdateCard')); 
-Route::get('/check', array('before' => 'auth', 'uses' =>'AjaxController@checkPayments')); 
 Route::post('/pro/subscription/delete', array('before' => 'auth', 'uses' =>'UserController@postSubscriptionDelete')); 
 Route::post('/pro/subscription/downgrade', array('before' => 'auth', 'uses' =>'UserController@postSubscriptionDowngrade')); 
 Route::get('/konto/pro/subskrypcja/rezygnuj', array('before' => 'auth', 'uses' =>'UserController@showSubscriptionDelete')); 

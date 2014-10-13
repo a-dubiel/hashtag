@@ -864,7 +864,7 @@ class UserController extends \BaseController {
 	public function updateEmail() {
 		
 		$rules = array(						
-			'email' => 'required|email', 
+			'email' => 'required|email|unique:users,email', 
 		);
 
 		$validator = Validator::make(Input::all(), $rules);

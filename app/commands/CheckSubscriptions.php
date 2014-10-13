@@ -138,8 +138,6 @@ class CheckSubscriptions extends Command {
 
 		});
 
-
-
 		$this->info('Done');
 	}
 

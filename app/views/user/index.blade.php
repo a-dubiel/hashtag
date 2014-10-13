@@ -41,7 +41,7 @@
 		@if(!is_null($user->subscription()->first()) && $user->subscription()->first()->is_active == 0)
 
 		   <div class="alert alert-error add-bottom">
-				<p>Twoja Subskrypcja jest nieaktywna. Mieliśmy problem z obciążeniem Twojej karty. Skontaktuj się ze swoim bankiem albo sprawdź swoje fundusze na karcie. Spróbujemy obciążyć Twoją kartę ponownie jutro. Do tego czasu wszystkie Twoje tablice pozostaną nieaktywne. Jeżeli chcesz zmienić kartę lub ustawienia płatności przejdź do ustawień subskrypcji.</a>.</p>
+				<p>Twoja Subskrypcja jest nieaktywna. Mieliśmy problem z obciążeniem Twojej karty. Skontaktuj się ze swoim bankiem albo sprawdź swoje fundusze na karcie. Spróbujemy obciążyć Twoją kartę ponownie jutro. Do tego czasu wszystkie Twoje tablice pozostaną nieaktywne. Jeżeli chcesz zmienić kartę lub ustawienia płatności przejdź do ustawień subskrypcji.</p>
 		   </div>
 		@endif
 		<div class="account-user-module">

@@ -113,7 +113,7 @@ Event::listen('invoice.email', function($userId, $subscriptionId, $paymentId, $f
 					
 	Mail::later(5, 'emails.invoice', $data , function($message) use ($savepath, $email)
 	{
-	    $message->to($email)->subject('Rachunek hasztag.info');
+	    $message->to($email)->subject('[hasztag.info] Potwierdzenie wpłaty');
 	    $message->attach($savepath);
 	});
     
@@ -146,7 +146,7 @@ Event::listen('deactivate.subscription', function($subscriptionId, $paymentDate)
 		
 		Mail::later(5, 'emails.warning', array() , function($message) use ($email)
 		{
-	    	$message->to($email)->subject('Problem!');
+	    	$message->to($email)->subject('[hasztag.info] Mamy problem!');
 		});
 	}
 	else{
@@ -159,7 +159,7 @@ Event::listen('deactivate.subscription', function($subscriptionId, $paymentDate)
 
 			Mail::later(5, 'emails.warning', array() , function($message) use ($email)
 			{
-		    	$message->to($email)->subject('Problem!');
+		    	$message->to($email)->subject('[hasztag.info] Mamy problem!');
 			});
 
 		}
@@ -331,7 +331,7 @@ Event::listen('subscriptions.check', function(){
 
 		    }
 
-		    	echo 'Done';
+
 		});
 
 
