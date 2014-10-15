@@ -254,9 +254,14 @@ LAYOUT & GRID STYLES
   }
 }
 
+.home-section,
+.home-section-pro {
+  padding-top:50px;
+}
+
 .home-section-left {
   text-align:left;
-  padding-top:70px;
+  padding-top:60px;
 
 
   p {
@@ -275,6 +280,12 @@ LAYOUT & GRID STYLES
     }
   }
 }
+
+.home-gallery {
+  .gallery-item {
+    margin-bottom:0;
+    }
+  }
 
 
 

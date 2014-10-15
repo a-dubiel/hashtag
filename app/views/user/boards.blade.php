@@ -43,7 +43,7 @@
 						<a class="hashtag not-active" href="#">#{{ $board->hashtag }}</a>
 					@endif	
 				</td>
-			    <td data-th="Ustawienia"><a class="btn-default btn-sm btn-green-inverted" href="{{ URL::to("konto/tablica/$board->hashtag/$board->id/ustawienia") }}"><i class="fa fa-cog"></i> Ustawienia</a></td>
+			    <td data-th="Ustawienia"><a class="btn-default btn-sm btn-green-inverted" href="{{ URL::to("konto/tablica/$board->hashtag/$board->id/ustawienia") }}">Ustawienia</a></td>
 			    <td data-th="Promowane Posty">
 			    	@if($board->featuredPost()->count() > 0)
 						<a class="btn-default btn-sm btn-green-inverted" href="{{ URL::to("konto/tablica/$board->hashtag/$board->id/promowane") }}"><i class="fa fa-star"></i> Zobacz Posty</a>

@@ -247,9 +247,13 @@ LAYOUT & GRID STYLES
   .home-search .search-bar input {
     line-height: 58px; }
 
+.home-section,
+.home-section-pro {
+  padding-top: 50px; }
+
 .home-section-left {
   text-align: left;
-  padding-top: 70px; }
+  padding-top: 60px; }
   .home-section-left p {
     padding: 0; }
   .home-section-left h4:after {
@@ -259,6 +263,9 @@ LAYOUT & GRID STYLES
     height: 3px;
     background: #42a80b;
     margin: 5px 0 0 0; }
+
+.home-gallery .gallery-item {
+  margin-bottom: 0; }
 
 /*********************
 HEADER STYLES
@@ -339,3 +346,6 @@ Stylesheet: Desktop Stylsheet
 
 .board-settings-wrapper {
   width: 70%; }
+
+.home-section-left {
+  padding-top: 70px; }

@@ -183,7 +183,12 @@
 
 <div class="block-cta">
 	<p>Podoba się? Załóż swoją pierwszą tablicę za darmo!</p>
-	<a href="{{ URL::to('/zarejestruj') }}" class="btn-default btn-lg btn-white-inverted">Zarejestruj się</a>
+	@if(Auth::check())
+		<a href="{{ URL::to('/konto/tablice') }}" class="btn-default btn-lg btn-white-inverted">Dodaj tablicę</a>
+	@else
+		<a href="{{ URL::to('/zarejestruj') }}" class="btn-default btn-lg btn-white-inverted">Zarejestruj się</a>
+	@endif
+	
 </div>
 
 @if(Auth::check())
