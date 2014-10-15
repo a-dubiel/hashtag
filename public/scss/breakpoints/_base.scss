@@ -108,6 +108,14 @@ HEADER STYLES
 	@include transparent($white, 0.9);
 	position:relative;
 	z-index:999;
+
+	&.home-top {
+		background:none;
+
+		.username {
+			color:$white;
+		}
+	}
 }
 
 .logo-main {
@@ -1011,6 +1019,268 @@ abbr[title] {
 	margin:40px 0;
 }
 
+
+.home-intro {
+	height:200px;
+	width:100%;
+	background-position: center;
+	background-size: cover;
+	padding-top:40px;
+	position:relative;
+	margin-bottom:30px;
+}
+
+.home-search-wrapper {
+	width:300px;
+	height:60px;
+	margin: 0 auto;
+	padding:10px;
+	@include transparent($white, 0.5);
+	@include border-radius(3px);
+}
+
+.home-search {
+	width:100%;
+	height:100%;
+	background: $white;
+	@include transparent($white, 0.9);
+	@include border-radius(3px);
+
+	.search-icon {
+		width:20%;
+		height:60px;
+		display:block;
+		float:left;
+		text-align: center;
+		@include font-size(20px);
+		color: $brand;
+		line-height: 40px;
+
+
+	}
+
+	.search-bar {
+		width:80%;
+		height:60px;
+		display:block;
+		float:left;
+
+		input {
+			display:block;
+			width:100%;
+			background:none;
+			line-height:35px;
+			@include font-size(18px);
+			
+		}
+	}
+
+	input[type="submit"] {
+		display:none;
+	}
+}
+
+.home-logo {
+	display:block;
+	width:200px;
+	height:50px;
+	margin:0 auto 5px;
+	text-indent:-9999px;
+	background: url('../images/logo-home-small.png') no-repeat;
+}
+
+.home-section-intro {
+	text-align:center;
+	
+	h2 {
+		text-transform:uppercase;
+		@include font-size(22px);
+		font-weight:700;
+		margin:0;
+	}
+	
+	p {
+		color: $gray;
+		margin:0;
+	}
+}
+
+.home-section,
+.home-section-pro {
+	text-align:center;
+	padding-top:50px;
+
+	.home-section-icon {
+		width:170px;
+		height:170px;
+		margin:0 auto;
+		background: lighten($light-gray, 7%);
+		@include border-radius(50%);
+		margin-bottom:20px;
+	}
+	h4 {
+		text-transform:uppercase;
+		@include font-size(14px);
+		font-weight:700;
+		margin:0;
+
+		&:after {
+			content: '';
+			display:block;
+			width:40px;
+			height:3px;
+			background: $brand;
+			margin:5px auto 0;
+
+		}
+	}
+
+	p {
+		padding:0 10px;
+		color: $gray;
+
+		&.bigger {
+			@include font-size(28px);
+			line-height:30px;
+			color: $black;
+			margin-top:45px;
+
+			a {
+				color: $brand;
+				text-decoration:none;
+			}
+		}
+	}
+
+	.svg {
+			width:130px;
+			height:auto;
+			margin: 20px auto;
+
+			&.svg-network-big {
+				width:100px;
+				margin-top:35px;
+			}
+
+			&.svg-audience {
+				width:110px;
+				margin-top:45px;
+			}
+
+			&.svg-hasztag {
+				width:80px;
+				margin-top:45px;
+			}
+
+			
+
+			
+		}
+}
+
+.home-section-pro {
+	.home-section-icon {
+		width:130px;
+		height:130px;
+		margin:0 auto;
+		background: lighten($light-gray, 7%);
+		@include border-radius(50%);
+		margin-bottom:20px;
+	}
+
+	.svg {
+		width:70px;
+		height:auto;
+		margin: 30px auto 0;
+
+		&.svg-network {
+			width:100px;
+			margin-top:15px;
+		}
+
+		&.svg-link {
+			width:50px;
+			margin-top:40px;
+		}
+	}
+}
+
+
+.block-cta {
+	width:100%;
+	padding:50px 0;
+	background: $brand;
+	margin: 40px 0 -20px 0;
+	text-align:center;
+
+	p {
+		@include font-size(18px);
+		margin:0 0 20px 0;
+		padding:0;
+		color: $white;
+	}
+
+}
+
+.block-trending {
+	background: $brand;
+	padding:10px 0;
+	margin-bottom:40px;
+	text-align:center;
+
+	p {
+		margin:0;
+		padding:0;
+		color: $white;
+	}
+
+	.hashtag {
+		margin:0 5px;
+		color: $white;
+	}
+}
+
+.block-cta-facebook {
+	width:100%;
+	padding:10px 0;
+	background: darken($facebook,3%);
+	margin: 0 0 -20px 0;
+	text-align:center;
+
+	p {
+		@include font-size(14px);
+		margin:0;
+		padding:0;
+		color: $white;
+	}
+}
+
+.home-gallery {
+	padding:40px 0 40px;
+	background: lighten($light-gray, 10%);
+	margin-bottom:40px;
+
+	.gallery-item {
+		display:block;
+		text-align: center;
+		text-decoration: none;
+
+		img {
+			width:100%;
+			@include border-radius(3px);
+			@include transition(opacity 0.3s ease-in-out);
+
+			&:hover {
+				@include opacity(0.7);
+			}
+
+		}
+	}
+
+	.home-section-intro {
+		margin-bottom:30px;
+	}
+}
 
 
 

@@ -66,6 +66,8 @@ class BoardsController extends \BaseController {
 					$data['avatar'] = '<img src="http://graph.facebook.com/'.$user->provider()->first()->provider_id.'/picture?type=small" alt="avatar" />';
 				}
 			}
+
+			$stats = Stat::firstOrCreate(array('board_id' => $board->id))->increment('hits');
 					
 			$data['board'] = $board;
 			$data['boardData'] = $this->layout->boardData = $board;

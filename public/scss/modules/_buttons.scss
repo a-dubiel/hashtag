@@ -71,6 +71,10 @@ Stylesheet: Button Styles
 	color: $gray;
 }
 
+.btn-link-secondary-home {
+	color: $white;
+}
+
 .btn-link-primary {
 	color: $brand;
 	
@@ -109,6 +113,17 @@ Stylesheet: Button Styles
 	&:hover {
 		background: $brand;
 		color: $white;
+	}
+}
+
+.btn-white-inverted {
+	color: $white;
+	border: 1px solid $white;
+	background: none;
+
+	&:hover {
+		background: $white;
+		color: $brand;
 	}
 }
 

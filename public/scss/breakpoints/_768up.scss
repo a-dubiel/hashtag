@@ -25,11 +25,15 @@ LAYOUT & GRID STYLES
 .board-top {
   height:75px;
   width:100%;
-  @include transparent($white, 0.9);
+  @include transparent($white, 0.7);
   position:fixed;
   left:0;
   top:0;
   z-index:999;
+
+  &.home-top {
+    position:absolute;
+  }
 }
 
 .logo-main {
@@ -201,10 +205,6 @@ LAYOUT & GRID STYLES
   width:100%;
 }
 
-.payment-popup {
-  
-}
-
 .alert-ssl {
   @include border-radius(3px);
     p {
@@ -224,6 +224,56 @@ LAYOUT & GRID STYLES
 
     margin-bottom:10px;
     margin-top:10px;
+}
+
+.home-intro {
+  height:400px;
+  padding-top:120px;
+  margin-bottom:0px;
+}
+
+.home-search-wrapper {
+  width:480px;
+  height:80px;
+}
+
+.home-search {
+
+  .search-icon {
+    height:60px;
+    line-height: 60px;
+    @include font-size(24px);
+  }
+
+  .search-bar {
+    height:60px;
+    input {  
+      line-height:58px;
+
+    }
+  }
+}
+
+.home-section-left {
+  text-align:left;
+  padding-top:70px;
+
+
+  p {
+    padding:0;
+  }
+
+  h4 {
+    &:after {
+    content: '';
+    display:block;
+    width:40px;
+    height:3px;
+    background: $brand;
+    margin:5px 0 0 0;
+
+    }
+  }
 }
 
 

@@ -32,6 +32,11 @@ class Board extends \Eloquent implements StaplerableInterface {
         return $this->hasMany('BoardConfig');
     }
 
+    public function stat()
+    {
+        return $this->hasMany('Stat');
+    }
+
     public function featuredPost()
     {
         return $this->hasMany('FeaturedPost');

@@ -248,7 +248,6 @@ Event::listen('subscriptions.check', function(){
 	Subscription::chunk(200, function($subscriptions)
 	{
 
-
 			$client = new Paylane\PayLaneRestClient('adubiel', 'dru9pra2');
 
 		    foreach ($subscriptions as $subscription)

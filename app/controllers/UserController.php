@@ -100,6 +100,7 @@ class UserController extends \BaseController {
 			$configs = BoardConfig::where('user_id', '=', $user->id)->get();
 					
 			foreach($configs as $config) {
+				$config->board()->first()->stat()->first()->delete();
 				$config->board()->first()->delete();
 				$config->delete();
 			}
@@ -143,6 +144,7 @@ class UserController extends \BaseController {
 					
 
 					foreach($configs as $config) {
+						$config->board()->first()->stat()->first()->delete();
 						$config->board()->first()->delete();
 						$config->delete();
 					}
@@ -528,6 +530,7 @@ class UserController extends \BaseController {
 			if($board->config()->first()->user_id == $user->id) {
 				
 				$board->config()->delete();
+				$board->stat()->delete();
 				$board->delete();
 				
 				return Redirect::to('/konto/tablice')->with('alert', array('type' => 'success', 'content' => 'Tablica usunięta!'));

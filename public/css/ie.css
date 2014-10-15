@@ -70,13 +70,15 @@ LAYOUT & GRID STYLES
   height: 75px;
   width: 100%;
   background-color: transparent;
-  background-color: rgba(255, 255, 255, 0.9);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6FFFFFF,endColorstr=#E6FFFFFF);
+  background-color: rgba(255, 255, 255, 0.7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B3FFFFFF,endColorstr=#B3FFFFFF);
   zoom: 1;
   position: fixed;
   left: 0;
   top: 0;
   z-index: 999; }
+  .board-top.home-top {
+    position: absolute; }
 
 .logo-main {
   margin-top: 25px;
@@ -225,6 +227,38 @@ LAYOUT & GRID STYLES
     font-size: 32px;
     font-size: 2rem;
     line-height: 50px; }
+
+.home-intro {
+  height: 400px;
+  padding-top: 120px;
+  margin-bottom: 0px; }
+
+.home-search-wrapper {
+  width: 480px;
+  height: 80px; }
+
+.home-search .search-icon {
+  height: 60px;
+  line-height: 60px;
+  font-size: 24px;
+  font-size: 1.5rem; }
+.home-search .search-bar {
+  height: 60px; }
+  .home-search .search-bar input {
+    line-height: 58px; }
+
+.home-section-left {
+  text-align: left;
+  padding-top: 70px; }
+  .home-section-left p {
+    padding: 0; }
+  .home-section-left h4:after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #42a80b;
+    margin: 5px 0 0 0; }
 
 /*********************
 HEADER STYLES

@@ -11,6 +11,20 @@
 |
 */
 
+Route::get('/pdf', function(){
+
+	$data['user'] = User::find(11);
+	$data['subscription'] = Subscription::find(10);
+	$data['payment'] = Payment::find(34);
+
+	//$pdf = PDF::loadView('docs.faktura', $data);
+
+	return View::make('docs.faktura', $data);
+	
+	//return $pdf->stream();
+
+});
+
 //sitewide
 Route::get('/', array('uses' =>'HomeController@showHome')); 
 Route::get('/informacje', array('uses' =>'HomeController@showAboutUs')); 

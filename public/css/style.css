@@ -1897,6 +1897,9 @@ Stylesheet: Button Styles
 .btn-link-secondary {
   color: #666; }
 
+.btn-link-secondary-home {
+  color: #fff; }
+
 .btn-link-primary {
   color: #42a80b; }
   .btn-link-primary:hover {
@@ -1925,6 +1928,14 @@ Stylesheet: Button Styles
   .btn-green-inverted:hover {
     background: #42a80b;
     color: #fff; }
+
+.btn-white-inverted {
+  color: #fff;
+  border: 1px solid #fff;
+  background: none; }
+  .btn-white-inverted:hover {
+    background: #fff;
+    color: #42a80b; }
 
 .btn-facebook {
   background: #3b5998; }
@@ -2416,6 +2427,10 @@ HEADER STYLES
   zoom: 1;
   position: relative;
   z-index: 999; }
+  .board-top.home-top {
+    background: none; }
+    .board-top.home-top .username {
+      color: #fff; }
 
 .logo-main {
   display: block;
@@ -3196,6 +3211,236 @@ abbr[title] {
   text-align: center;
   margin: 40px 0; }
 
+.home-intro {
+  height: 200px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  padding-top: 40px;
+  position: relative;
+  margin-bottom: 30px; }
+
+.home-search-wrapper {
+  width: 300px;
+  height: 60px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.5);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80FFFFFF,endColorstr=#80FFFFFF);
+  zoom: 1;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px; }
+
+.home-search {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.9);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6FFFFFF,endColorstr=#E6FFFFFF);
+  zoom: 1;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px; }
+  .home-search .search-icon {
+    width: 20%;
+    height: 60px;
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: 20px;
+    font-size: 1.25rem;
+    color: #42a80b;
+    line-height: 40px; }
+  .home-search .search-bar {
+    width: 80%;
+    height: 60px;
+    display: block;
+    float: left; }
+    .home-search .search-bar input {
+      display: block;
+      width: 100%;
+      background: none;
+      line-height: 35px;
+      font-size: 18px;
+      font-size: 1.125rem; }
+  .home-search input[type="submit"] {
+    display: none; }
+
+.home-logo {
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: 0 auto 5px;
+  text-indent: -9999px;
+  background: url("../images/logo-home-small.png") no-repeat; }
+
+.home-section-intro {
+  text-align: center; }
+  .home-section-intro h2 {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-size: 1.375rem;
+    font-weight: 700;
+    margin: 0; }
+  .home-section-intro p {
+    color: #666;
+    margin: 0; }
+
+.home-section,
+.home-section-pro {
+  text-align: center;
+  padding-top: 50px; }
+  .home-section .home-section-icon,
+  .home-section-pro .home-section-icon {
+    width: 170px;
+    height: 170px;
+    margin: 0 auto;
+    background: #e6e6e6;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    margin-bottom: 20px; }
+  .home-section h4,
+  .home-section-pro h4 {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin: 0; }
+    .home-section h4:after,
+    .home-section-pro h4:after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: #42a80b;
+      margin: 5px auto 0; }
+  .home-section p,
+  .home-section-pro p {
+    padding: 0 10px;
+    color: #666; }
+    .home-section p.bigger,
+    .home-section-pro p.bigger {
+      font-size: 28px;
+      font-size: 1.75rem;
+      line-height: 30px;
+      color: #333;
+      margin-top: 45px; }
+      .home-section p.bigger a,
+      .home-section-pro p.bigger a {
+        color: #42a80b;
+        text-decoration: none; }
+  .home-section .svg,
+  .home-section-pro .svg {
+    width: 130px;
+    height: auto;
+    margin: 20px auto; }
+    .home-section .svg.svg-network-big,
+    .home-section-pro .svg.svg-network-big {
+      width: 100px;
+      margin-top: 35px; }
+    .home-section .svg.svg-audience,
+    .home-section-pro .svg.svg-audience {
+      width: 110px;
+      margin-top: 45px; }
+    .home-section .svg.svg-hasztag,
+    .home-section-pro .svg.svg-hasztag {
+      width: 80px;
+      margin-top: 45px; }
+
+.home-section-pro .home-section-icon {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+  background: #e6e6e6;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  margin-bottom: 20px; }
+.home-section-pro .svg {
+  width: 70px;
+  height: auto;
+  margin: 30px auto 0; }
+  .home-section-pro .svg.svg-network {
+    width: 100px;
+    margin-top: 15px; }
+  .home-section-pro .svg.svg-link {
+    width: 50px;
+    margin-top: 40px; }
+
+.block-cta {
+  width: 100%;
+  padding: 50px 0;
+  background: #42a80b;
+  margin: 40px 0 -20px 0;
+  text-align: center; }
+  .block-cta p {
+    font-size: 18px;
+    font-size: 1.125rem;
+    margin: 0 0 20px 0;
+    padding: 0;
+    color: #fff; }
+
+.block-trending {
+  background: #42a80b;
+  padding: 10px 0;
+  margin-bottom: 40px;
+  text-align: center; }
+  .block-trending p {
+    margin: 0;
+    padding: 0;
+    color: #fff; }
+  .block-trending .hashtag {
+    margin: 0 5px;
+    color: #fff; }
+
+.block-cta-facebook {
+  width: 100%;
+  padding: 10px 0;
+  background: #37538d;
+  margin: 0 0 -20px 0;
+  text-align: center; }
+  .block-cta-facebook p {
+    font-size: 14px;
+    font-size: 0.875rem;
+    margin: 0;
+    padding: 0;
+    color: #fff; }
+
+.home-gallery {
+  padding: 40px 0 40px;
+  background: #eeeeee;
+  margin-bottom: 40px; }
+  .home-gallery .gallery-item {
+    display: block;
+    text-align: center;
+    text-decoration: none; }
+    .home-gallery .gallery-item img {
+      width: 100%;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      border-radius: 3px;
+      -webkit-transition: opacity 0.3s ease-in-out;
+      transition: opacity 0.3s ease-in-out;
+      -moz-transition: opacity 0.3s ease-in-out;
+      -o-transition: opacity 0.3s ease-in-out; }
+      .home-gallery .gallery-item img:hover {
+        filter: alpha(opacity=70);
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+        -moz-opacity: 0.7;
+        -khtml-opacity: 0.7;
+        opacity: 0.7; }
+  .home-gallery .home-section-intro {
+    margin-bottom: 30px; }
+
 /******************************************************************
 DROPDOWN
 ******************************************************************/
@@ -3431,13 +3676,15 @@ FOOTER STYLES
     height: 75px;
     width: 100%;
     background-color: transparent;
-    background-color: rgba(255, 255, 255, 0.9);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#E6FFFFFF,endColorstr=#E6FFFFFF);
+    background-color: rgba(255, 255, 255, 0.7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#B3FFFFFF,endColorstr=#B3FFFFFF);
     zoom: 1;
     position: fixed;
     left: 0;
     top: 0;
     z-index: 999; }
+    .board-top.home-top {
+      position: absolute; }
 
   .logo-main {
     margin-top: 25px;
@@ -3587,6 +3834,38 @@ FOOTER STYLES
       font-size: 2rem;
       line-height: 50px; }
 
+  .home-intro {
+    height: 400px;
+    padding-top: 120px;
+    margin-bottom: 0px; }
+
+  .home-search-wrapper {
+    width: 480px;
+    height: 80px; }
+
+  .home-search .search-icon {
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+    font-size: 1.5rem; }
+  .home-search .search-bar {
+    height: 60px; }
+    .home-search .search-bar input {
+      line-height: 58px; }
+
+  .home-section-left {
+    text-align: left;
+    padding-top: 70px; }
+    .home-section-left p {
+      padding: 0; }
+    .home-section-left h4:after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: #42a80b;
+      margin: 5px 0 0 0; }
+
   /*********************
   HEADER STYLES
   *********************/
@@ -3688,7 +3967,11 @@ FOOTER STYLES
 
   .logo-footer {
     background-image: url("../images/logo-footer@2x.png");
-    background-size: 125px 25px; } }
+    background-size: 125px 25px; }
+
+  .home-logo {
+    background: url("../images/logo-home-small@2x.png") no-repeat;
+    background-size: 200px 50px; } }
 @media print {
   /******************************************************************
   Site Name:
