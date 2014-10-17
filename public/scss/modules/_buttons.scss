@@ -135,6 +135,14 @@ Stylesheet: Button Styles
 	}
 }
 
+.btn-instagram {
+	background: $instagram;
+
+	&:hover {
+		background: darken($instagram, 5%);
+	}
+}
+
 .btn-twitter {
 	background: $twitter;
 }

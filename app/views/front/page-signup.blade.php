@@ -38,6 +38,7 @@
 						<h3>Zarejestruj się</h3>
 						<p>Masz już konto? <a href="{{ URL::to('/zaloguj') }}">Zaloguj się!</a></p>
 					</div>
+					<a class="btn-default btn-social-auth btn-instagram btn-green btn-block btn-lg" href="{{ route('social-login', array('instagram')) }}?onsuccess={{ $url }}&onerror=/zaloguj">Połącz przez Instagram</a>
 					<a class="btn-default btn-social-auth btn-facebook btn-green btn-block btn-lg" href="{{ route('social-login', array('facebook')) }}?onsuccess={{ $url }}&onerror=/login">Połącz przez Facebook</a>
 					<hr />
 					{{ Form::open(array('url' => '/auth/signup', 'class' => 'form-auth', 'action' => 'post')) }}

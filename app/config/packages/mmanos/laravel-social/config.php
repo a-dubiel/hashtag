@@ -52,15 +52,37 @@ return array(
 			},
 		),
 
+		'instagram' => array(
+			'client_id'       => 'b13d92eda3a244e69daa44304a832de4',
+			'client_secret'   => '46b2d03387034352bf6bea2e778b3d71',
+			'scope'           => array('basic'),
+			'fetch_user_info' => function ($service) {
+
+				$result = json_decode($service->request('users/self'), true);
+
+				
+
+			//	dd($result);
+				return array(
+					'id'         => $result['data']['id'],
+					'email'      => '',
+					'first_name' => array_get(explode(' ', $result['data']['full_name']), 0),
+					'last_name'  => array_get(explode(' ', $result['data']['full_name']), 1)
+				);
+			}
+		), 
+
+
 		'twitter' => array(
 			'client_id'       => '',
 			'client_secret'   => '',
 			'scope'           => array(),
 			'fetch_user_info' => function ($service) {
+
 				$result = json_decode($service->request('account/verify_credentials.json'), true);
 				return array(
 					'id'         => array_get($result, 'id'),
-					'email'      => null,
+					'email'      => '',
 					'first_name' => array_get(explode(' ', array_get($result, 'name')), 0),
 					'last_name'  => array_get(explode(' ', array_get($result, 'name')), 1)
 				);
@@ -96,7 +118,7 @@ return array(
 	*/
 
 	'user_validation' => array(
-		'email'      => 'required|email',
+		'email'      => 'email|required',
 		'first_name' => 'required',
 	),
 
@@ -141,7 +163,7 @@ return array(
 	|
 	*/
 
-	'user_failed_validation_redirect' => 'Mmanos\Social\SocialController@getComplete',
+	'user_failed_validation_redirect' => 'auth.complete',
 
 	/*
 	|--------------------------------------------------------------------------

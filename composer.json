@@ -18,6 +18,7 @@
 		"cviebrock/image-validator": "1.0.*",
 		"barryvdh/laravel-dompdf": "0.4.*"
 
+
        
 	},
 	"autoload": {

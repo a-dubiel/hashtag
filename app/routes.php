@@ -33,6 +33,8 @@ Route::get('/regulamin', array('uses' =>'HomeController@showLegal'));
 Route::get('/oferta', array('uses' =>'HomeController@showPricing')); 
 
 // auth
+Route::post('/auth/login/complete', array('uses' =>'UserController@postCompleteForm')); 
+Route::get('/zarejestruj/dokoncz', array('as' => 'auth.complete', 'uses' =>'UserController@getCompleteForm')); 
 Route::get('/pro/payment/update', array('before' => 'auth', 'uses' =>'UserController@postPaymentUpdateCard')); 
 Route::post('/pro/subscription/delete', array('before' => 'auth', 'uses' =>'UserController@postSubscriptionDelete')); 
 Route::post('/pro/subscription/downgrade', array('before' => 'auth', 'uses' =>'UserController@postSubscriptionDowngrade')); 

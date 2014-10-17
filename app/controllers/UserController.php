@@ -14,6 +14,69 @@ class UserController extends \BaseController {
 
 	}
 
+	public function postCompleteForm() {
+
+		$rules = array(		
+			'email'		=> 'email|required',				
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		if ($validator->fails()) {
+			$messages = $validator->messages();
+			return Redirect::to('/zaloguj')->with('alert', array('type' => 'error', 'content' => 'Niewłaściwy e-mail! Spróbuj jeszcze raz!'));
+		}
+		else {
+
+			$user = User::where('email', '=', Input::get('email'))->first();
+
+			if(is_null($user)) {
+				$user = new User;
+				$user->email = Input::get('email');
+				$user->password = Hash::make(Str::random());
+				$user->first_name = Input::get('first_name');
+				$user->last_name = Input::get('last_name');
+				$user->level = 1;
+				$user->save();
+			}
+			else {
+				$user->first_name = Input::get('first_name');
+				$user->last_name = Input::get('last_name');
+				$user->save();
+			}
+
+			$provider = new SocialProvider;
+			$provider->user_id = $user->id;
+			$provider->provider = Input::get('provider');
+			$provider->provider_id = Input::get('provider_id');
+			$provider->access_token = Input::get('access_token');
+			$provider->profile_picture = Input::get('profile_picture');
+			$provider->save();
+
+			Session::forget('mmanos.social.pending');
+
+			Auth::loginUsingId($user->id);
+
+			return Redirect::to('/')->with('alert', array('type' => 'success', 'content' => 'Witamy!'));
+
+
+
+
+
+
+		}
+	}	
+
+	public function getCompleteForm()
+	{
+
+		$data['title'] = $this->layout->title = 'Dokończ rejestrację';
+		$this->layout->content = View::make('front.page-complete', $data);
+	
+	}
+
+	
+
 	public function postPaymentUpdateCard()
 	{	
 

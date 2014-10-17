@@ -123,7 +123,7 @@
 <div class="container">
 
 	<div class="home-section-intro">
-		<h2>Bądź Pro</h2>
+		<h2>Konto Pro</h2>
 		<p>Dla bardziej wymagających hasztagowców mamy coś specjalnego.</p>
 	</div>
 	<div class="row">

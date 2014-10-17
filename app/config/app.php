@@ -132,6 +132,7 @@ return array(
 	    'Cviebrock\ImageValidator\ImageValidatorServiceProvider',
 	    'Barryvdh\DomPDF\ServiceProvider',
 
+
 	    
 
 	
@@ -212,6 +213,7 @@ return array(
 		'Carbon' => 'Carbon\Carbon',
 		'Social' => 'Mmanos\Social\Facades\Social',
 		'PDF' => 'Barryvdh\DomPDF\Facade',
+
 		
 
 

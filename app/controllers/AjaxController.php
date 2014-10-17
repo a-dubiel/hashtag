@@ -397,8 +397,7 @@ def sslify_instagram_cdn_url(url):
 		$board = Board::find($id);
 		$hashtag = $board->hashtag;
 		$config = $board->config()->first();
-		$instagramKeys = array('b13d92eda3a244e69daa44304a832de4', '86413546ae5f485292ba49606ced6e36');
-		$instagramKey = $instagramKeys[rand(0,1)];
+		$instagramKey = 'b13d92eda3a244e69daa44304a832de4';
 		$googleKey = 'AIzaSyDiywW3UvpbQ5aR7f_8tLVgNCzui7Gq6ek';
 		$postCount = 5;
 		$googleToken = $endpoints['google_token'];
@@ -652,8 +651,7 @@ def sslify_instagram_cdn_url(url):
 		$board = Board::find($id);
 		$hashtag = $board->hashtag;
 		$config = $board->config()->first();
-		$instagramKeys = array('b13d92eda3a244e69daa44304a832de4', '86413546ae5f485292ba49606ced6e36');
-		$instagramKey = $instagramKeys[rand(0,1)];
+		$instagramKey = 'b13d92eda3a244e69daa44304a832de4';
 		$googleKey = 'AIzaSyDiywW3UvpbQ5aR7f_8tLVgNCzui7Gq6ek';
 		$postCount = 5;
 		$googleToken = $endpoints['google_token'];
@@ -923,8 +921,7 @@ def sslify_instagram_cdn_url(url):
 		$board = Board::find($id);
 		$hashtag = $board->hashtag;
 		$config = $board->config()->first();
-		$instagramKeys = array('b13d92eda3a244e69daa44304a832de4', '86413546ae5f485292ba49606ced6e36');
-		$instagramKey = $instagramKeys[rand(0,1)];
+		$instagramKey = 'b13d92eda3a244e69daa44304a832de4';
 		$googleKey = 'AIzaSyDiywW3UvpbQ5aR7f_8tLVgNCzui7Gq6ek';
 		$postCount = 10;
 		$googleToken = '';
