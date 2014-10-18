@@ -79,10 +79,10 @@ App::down(function()
 
 require app_path().'/filters.php';
 
-
 // Errors
 
-/**
+if (App::environment('production')) {
+                           
 App::error(function($exception, $code)
 {
     switch ($code)
@@ -100,7 +100,9 @@ App::error(function($exception, $code)
             return Response::view('errors.default', array(), $code);
     }
 });
-*/
+
+}
+
 
 // Events
 
