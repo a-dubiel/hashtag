@@ -47,7 +47,8 @@ return array(
 					'id'         => array_get($result, 'id'),
 					'email'      => array_get($result, 'email'),
 					'first_name' => array_get($result, 'first_name'),
-					'last_name'  => array_get($result, 'last_name')
+					'last_name'  => array_get($result, 'last_name'),
+					'default_provider' => 'facebook',
 				);
 			},
 		),
@@ -60,49 +61,30 @@ return array(
 
 				$result = json_decode($service->request('users/self'), true);
 
-				
-
-			//	dd($result);
 				return array(
 					'id'         => $result['data']['id'],
 					'email'      => '',
 					'first_name' => array_get(explode(' ', $result['data']['full_name']), 0),
-					'last_name'  => array_get(explode(' ', $result['data']['full_name']), 1)
+					'last_name'  => array_get(explode(' ', $result['data']['full_name']), 1),
+					'default_provider' => 'instagram'
 				);
 			}
-		), 
-
+		),
 
 		'twitter' => array(
-			'client_id'       => '',
-			'client_secret'   => '',
+			'client_id'       => 'JzvZArs0oaCmljOxpAOfgjMlF',
+			'client_secret'   => 'XZSB4B6JNKADFD0QVkOwLccPF5Qque8tOaeGJKJnzJ6KtbbNxh',
 			'scope'           => array(),
 			'fetch_user_info' => function ($service) {
-
 				$result = json_decode($service->request('account/verify_credentials.json'), true);
 				return array(
 					'id'         => array_get($result, 'id'),
-					'email'      => '',
+					'email'      => null,
 					'first_name' => array_get(explode(' ', array_get($result, 'name')), 0),
 					'last_name'  => array_get(explode(' ', array_get($result, 'name')), 1)
 				);
 			},
-		),
-
-		'google' => array(
-			'client_id'       => '',
-			'client_secret'   => '',
-			'scope'           => array('userinfo_email', 'userinfo_profile'),
-			'fetch_user_info' => function ($service) {
-				$result = json_decode($service->request('https://www.googleapis.com/oauth2/v1/userinfo'), true);
-				return array(
-					'id'         => array_get($result, 'id'),
-					'email'      => array_get($result, 'email'),
-					'first_name' => array_get(explode(' ', array_get($result, 'name')), 0),
-					'last_name'  => array_get(explode(' ', array_get($result, 'name')), 1)
-				);
-			},
-		),
+		), 
 
 	),
 
@@ -140,11 +122,12 @@ return array(
 			$user->email = array_get($data, 'email');
 			$user->password = Hash::make(Str::random());
 			$user->first_name = array_get($data, 'first_name');
+			$user->last_name = array_get($data, 'last_name');
 			$user->level = 1;
+			$user->default_provider = array_get($data, 'default_provider');
 			$user->save();
 		}
 		else {
-			$user->first_name = array_get($data, 'first_name');
 			$user->save();
 		}
 		

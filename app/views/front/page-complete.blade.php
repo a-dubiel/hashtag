@@ -40,17 +40,26 @@
 					</div>
 					
 					{{ Form::open(array('url' => '/auth/login/complete', 'class' => 'form-auth')) }}
-		
 						<?php $session = Session::all(); ?>
 						<input type="email" id="email" name="email" class="input-default @if ($errors->has('email'))has-error @endif" placeholder="Twój E-mail">
 						@if ($errors->has('email')) <p class="help-block">{{ $errors->first('email') }}</p> @endif	
-						
+						@if(strtolower($session['mmanos']['social']['pending']['provider']) == 'instagram')
 						<input type="hidden" name="provider" value="{{ strtolower($session['mmanos']['social']['pending']['provider']) }}">
 						<input type="hidden" name="provider_id" value="{{ $session['mmanos']['social']['pending']['provider_id'] }}">
 						<input type="hidden" name="first_name" value="{{ $session['mmanos']['social']['pending']['user_info']['first_name'] }}">
 						<input type="hidden" name="last_name" value="{{ $session['mmanos']['social']['pending']['user_info']['last_name'] }}">
 						<input type="hidden" name="access_token" value="{{ $session['mmanos']['social']['pending']['access_token']['token'] }}">
 						<input type="hidden" name="profile_picture" value="{{$session['mmanos']['social']['pending']['access_token']['extra_params']['user']['profile_picture']}}">
+						@elseif(strtolower($session['mmanos']['social']['pending']['provider']) == 'twitter')
+							<input type="hidden" name="provider" value="{{ strtolower($session['mmanos']['social']['pending']['provider']) }}">
+							<input type="hidden" name="provider_id" value="{{ $session['mmanos']['social']['pending']['provider_id'] }}">
+							<input type="hidden" name="first_name" value="{{ $session['mmanos']['social']['pending']['user_info']['first_name'] }}">
+							<input type="hidden" name="last_name" value="{{ $session['mmanos']['social']['pending']['user_info']['last_name'] }}">
+							<input type="hidden" name="access_token" value="{{ $session['mmanos']['social']['pending']['access_token']['token'] }}">
+						@endif
+						
+					
+
 						<input type="submit" value="Dokończ rejestrację" class="btn-default btn-green btn-block btn-lg btn-submit">
 			
 					{{ Form::close() }}

@@ -1905,6 +1905,18 @@ Stylesheet: Button Styles
   .btn-link-primary:hover {
     text-decoration: underline; }
 
+.home-top .btn-green-inverted {
+  background-color: #42a80b;
+  color: #fff;
+  border: none; }
+  .home-top .btn-green-inverted:hover {
+    background-color: #399009; }
+.home-top .nav-user .btn-link-secondary,
+.home-top .nav-user .fa {
+  color: #fff; }
+.home-top .nav-user .fa-twitter {
+  color: #55acee; }
+
 .btn-gray-inverted {
   color: #666;
   border: 1px solid #666;
@@ -1938,14 +1950,21 @@ Stylesheet: Button Styles
     color: #42a80b; }
 
 .btn-facebook {
-  background: #3b5998; }
+  background: #3b5998;
+  margin-bottom: 10px; }
   .btn-facebook:hover {
     background: #344e86; }
 
 .btn-instagram {
-  background: #3f729b; }
+  background: #3f729b;
+  margin-bottom: 10px; }
   .btn-instagram:hover {
     background: #386589; }
+
+.btn-twitter {
+  background: #55acee; }
+  .btn-twitter:hover {
+    background: #3ea1ec; }
 
 .btn-twitter {
   background: #55acee; }
@@ -2468,6 +2487,8 @@ NAVIGATION STYLES
   .nav-user li {
     display: inline;
     position: relative; }
+  .nav-user .fa-twitter {
+    color: #55acee; }
 
 a.nav-main-link {
   float: left;
@@ -3057,15 +3078,10 @@ abbr[title] {
     right: 10px;
     top: 5px; }
 
-.form-provider .fa {
-  float: right;
-  background: none;
-  border: none;
-  color: #42a80b;
-  font-size: 18px;
-  font-size: 1.125rem; }
-.form-provider span {
-  text-transform: capitalize; }
+.form-provider {
+  margin-bottom: 5px; }
+  .form-provider span {
+    text-transform: capitalize; }
 
 .account-type {
   display: inline-block;

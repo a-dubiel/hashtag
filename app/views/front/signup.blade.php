@@ -5,12 +5,7 @@
 	</div>
 	<a class="btn-default btn-social-auth btn-instagram btn-green btn-block btn-lg" href="{{ route('social-login', array('instagram')) }}?onsuccess={{ $url }}&onerror=/zaloguj">Połącz przez Instagram</a>
 	<a class="btn-default btn-social-auth btn-facebook btn-green btn-block btn-lg" href="{{ route('social-login', array('facebook')) }}?onsuccess={{ $url }}&onerror=/zaloguj">Połącz przez Facebook</a>
+	<a class="btn-default btn-social-auth btn-twitter btn-green btn-block btn-lg" href="{{ route('social-login', array('twitter')) }}?onsuccess={{ $url }}&onerror=/zaloguj">Połącz przez Twitter</a>
 	<hr />
-	{{ Form::open(array('url' => '/auth/signup', 'class' => 'form-auth', 'action' => 'post')) }}
-		<input type="email" id="email" name="email" class="input-default" placeholder="Twój E-mail">	
-		<input type="password" id="password" name="password" class="input-default" placeholder="Hasło">
-		<input type="password" id="password" name="password_confirm" class="input-default" placeholder="Potwierdź hasło">
-		<input type="hidden" name="redirect" value="{{ $url }}">
-		<input type="submit" value="Zarejestruj" class="btn-default btn-green btn-block btn-lg btn-submit">
-	{{ Form::close() }}
+	<p class="form-note">Rejestrując się w naszym serwisie akceptujesz <a href="{{ URL::to('/regulamin') }}">regulamin</a></p>
 </div>

@@ -39,18 +39,8 @@
 						<p>Nie masz konta? <a href="{{ URL::to('/zarejestruj ') }}">Zarejestruj się!</a></p>
 					</div>
 					<a class="btn-default btn-social-auth btn-instagram btn-green btn-block btn-lg" href="{{ route('social-login', array('instagram')) }}?onsuccess={{ $url }}&onerror=/zaloguj">Połącz przez Instagram</a>
-					<a class="btn-default btn-social-auth btn-facebook btn-green btn-block btn-lg" href="{{ route('social-login', array('facebook')) }}?onsuccess={{ $url }}&onerror=/login">Połącz przez Facebook</a>
-					<hr />
-					{{ Form::open(array('url' => '/auth/login', 'class' => 'form-auth')) }}
-						<input type="email" id="email" name="email" class="input-default @if ($errors->has('email'))has-error @endif" placeholder="Twój E-mail">
-						@if ($errors->has('email')) <p class="help-block">{{ $errors->first('email') }}</p> @endif		
-						<input type="password" id="password" name="password" class="input-default @if ($errors->has('password'))has-error @endif" placeholder="Hasło">
-						@if ($errors->has('password')) <p class="help-block">{{ $errors->first('password') }}</p> @endif
-						<label class="remember-me"><input type="checkbox" name="remember" value="1" id=""> Zapamiętaj mnie</label>
-						<input type="submit" value="Zaloguj" class="btn-default btn-green btn-block btn-lg btn-submit">
-						<a href="{{ URL::to('/niepamietam') }}" class="btn-sm-link">Nie pamiętam hasła</a>
-					{{ Form::close() }}
-					</form>	
+	<a class="btn-default btn-social-auth btn-facebook btn-green btn-block btn-lg" href="{{ route('social-login', array('facebook')) }}?onsuccess={{ $url }}&onerror=/zaloguj">Połącz przez Facebook</a>
+	<a class="btn-default btn-social-auth btn-twitter btn-green btn-block btn-lg" href="{{ route('social-login', array('twitter')) }}?onsuccess={{ $url }}&onerror=/zaloguj">Połącz przez Twitter</a>
 				</div>
 		
 		</div>
@@ -60,18 +50,7 @@
 
 
 @if(Auth::check())
-    <div id="dropdown-1" class="dropdown dropdown-tip dropdown-anchor-right">
-        <ul class="dropdown-menu">
-            <li><a href="{{ URL::to('/konto')}}"><i class="fa fa-cog"></i> Konto</a></li>
-            <li><a href="{{ URL::to('/wyloguj')}}"><i class="fa fa-sign-out"></i> Wyloguj</a></li>      
-            @if($user->boardConfig()->count() > 0 )
-                <li class="divider"></li>
-                @foreach($user->boardConfig()->get() as $board )
-                    <li><a href="{{ URL::to("/".$board->board()->first()->hashtag."/".$board->board()->first()->id )}}"><i class="fa fa-th"></i> #{{ $board->board()->first()->hashtag }}</a></li>
-                @endforeach
-            @endif
-        </ul>
-    </div>
+   @include('user.user-dropdown')
 @endif
 
 

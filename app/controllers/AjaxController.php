@@ -458,8 +458,23 @@ def sslify_instagram_cdn_url(url):
 
 		if($config->has_insta != -1) {
 
-			$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&client_id='.$instagramKey.'&min_tag_id='.$instagramMinTagId);
+			if(Auth::check()) {
+				$user = Auth::user();
+				$provider = SocialProvider::where('user_id','=',$user->id)->where('provider', '=', 'instagram')->first();
 
+				if(is_null($provider)) {
+					$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&client_id='.$instagramKey.'&min_tag_id='.$instagramMinTagId);
+				}
+				else {
+					$token = $provider->access_token;
+					$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&access_token='.$token.'&min_tag_id='.$instagramMinTagId);
+				}	
+			}
+			else {
+				$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&client_id='.$instagramKey.'&min_tag_id='.$instagramMinTagId);
+			}
+
+			
 			if($instagram->getStatusCode() == 200 ) {
 				$instagramData = $instagram->json();
 				
@@ -668,8 +683,24 @@ def sslify_instagram_cdn_url(url):
 
 		if($config->has_insta != -1) {
 			if(!empty($instagramNextMaxId)) {
-				$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&client_id='.$instagramKey.'&max_tag_id='.$instagramNextMaxId);
 
+				if(Auth::check()) {
+					$user = Auth::user();
+					$provider = SocialProvider::where('user_id','=',$user->id)->where('provider', '=', 'instagram')->first();
+
+					if(is_null($provider)) {
+						$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&client_id='.$instagramKey.'&max_tag_id='.$instagramNextMaxId);
+					}
+					else {
+						$token = $provider->access_token;
+						$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&access_token='.$token.'&max_tag_id='.$instagramNextMaxId);
+					}	
+				}
+				else {
+					$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&client_id='.$instagramKey.'&max_tag_id='.$instagramNextMaxId);
+				}
+
+				
 				if($instagram->getStatusCode() == 200) {
 					$instagramData = $instagram->json();
 				
@@ -936,7 +967,21 @@ def sslify_instagram_cdn_url(url):
 
 		if($config->has_insta != -1) {
 
-			$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&client_id='.$instagramKey);
+			if(Auth::check()) {
+				$user = Auth::user();
+				$provider = SocialProvider::where('user_id','=',$user->id)->where('provider', '=', 'instagram')->first();
+
+				if(is_null($provider)) {
+					$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&client_id='.$instagramKey);
+				}
+				else {
+					$token = $provider->access_token;
+					$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&access_token='.$token);
+				}	
+			}
+			else {
+				$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&client_id='.$instagramKey);
+			}
 
 			if($instagram->getStatusCode() == 200 ) {
 				$instagramData = $instagram->json();

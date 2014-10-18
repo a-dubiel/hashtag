@@ -14,10 +14,42 @@ class UserController extends \BaseController {
 
 	}
 
+	public function getDeleteProvider($provider) {
+
+		if(isset($provider) && Auth::check()) {
+			$user = Auth::user();
+
+			if($user->default_provider == $provider) {
+				return Redirect::to('konto')->with('alert', array('type' => 'error', 'content' => 'Nie możesz usunąć domyślnego połączenia!'));
+			}
+
+			if($user->provider->count() == 1) {
+				return Redirect::to('konto')->with('alert', array('type' => 'error', 'content' => 'Nie możesz usunąć tego połączenia!'));
+			}
+
+			SocialProvider::where('user_id', '=', $user->id)->where('provider', '=', $provider)->delete();
+			return Redirect::to('konto')->with('alert', array('type' => 'success', 'content' => 'Połączenie usunięte!'));	
+		}
+	}
+
+	public function getUpdateProvider($provider) {
+
+		if(isset($provider) && Auth::check()) {
+			$user = Auth::user();
+
+			$user->default_provider = $provider;
+			$user->save();
+
+			return Redirect::to('konto')->with('alert', array('type' => 'success', 'content' => 'Połączenie zaktualizowane!'));	
+
+		}
+	}
+
 	public function postCompleteForm() {
 
 		$rules = array(		
-			'email'		=> 'email|required',				
+			'email'		=> 'email|required',
+			'provider_id' => 'unique:user_providers,provider_id'				
 		);
 
 		$validator = Validator::make(Input::all(), $rules);
@@ -36,6 +68,7 @@ class UserController extends \BaseController {
 				$user->password = Hash::make(Str::random());
 				$user->first_name = Input::get('first_name');
 				$user->last_name = Input::get('last_name');
+				$user->default_provider = Input::get('provider');
 				$user->level = 1;
 				$user->save();
 			}
@@ -849,7 +882,7 @@ class UserController extends \BaseController {
 			
 			$data['user'] = $user;
 			$data['boards'] = Board::byUserId($user)->orderBy('created_at', 'asc')->get();
-			$data['providers'] = $user->provider();
+			$data['providers'] = $user->providers;
 			$data['username'] = preg_replace('/@.*?$/', '', $user->email);
 
 			$data['title'] = $this->layout->title = 'Konto';
@@ -1013,6 +1046,7 @@ class UserController extends \BaseController {
 			$user = new User;
 			$user->email    = Input::get('email');
 			$user->password = Hash::make(Input::get('password'));
+			$user->default_provider = 'email';
 			$user->level = 1;
 
 			$user->save();

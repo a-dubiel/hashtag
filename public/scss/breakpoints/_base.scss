@@ -158,6 +158,10 @@ NAVIGATION STYLES
 		display:inline;
 		position:relative;
 	}
+
+	.fa-twitter {
+		color:$twitter;
+	}
 }
 
 
@@ -828,17 +832,14 @@ abbr[title] {
 }
 
 .form-provider {
-	.fa {
-		float:right;
-		background:none;
-		border:none;
-		color: $brand;
-		@include font-size(18px);
+	.fa { 
+		
 	}
 
 	span {
 		text-transform: capitalize;
 	}
+	margin-bottom:5px;
 }
 
 .account-type {

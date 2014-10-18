@@ -74,35 +74,14 @@
         </div>
 
         <nav class="nav-user">
-            <ul>
-                @if(Auth::check())
-                    <?php $user = Auth::user() ?>
-                    @if(!is_null($user->provider()->first()) && ($user->provider()->first()->provider == 'facebook'))
-                        <li><a href="#" data-dropdown="#dropdown-1" class="user-dropdown"><div class="user-avatar"><img src="http://graph.facebook.com/{{$user->provider()->first()->provider_id}}/picture?type=small" alt="avatar" /></div><div class="username hidden-xs">{{ preg_replace('/@.*?$/', '', $user->email) }}</div> <i class="fa fa-caret-down"></i></a></li>
-                    @else
-                        <li><a href="#" data-dropdown="#dropdown-1" class="user-dropdown"><div class="user-avatar"><i class="fa fa-user"></i></div><div class="username hidden-xs">{{ preg_replace('/@.*?$/', '', $user->email) }}  <i class="fa fa-caret-down"></i></div></a></li>
-                    @endif
-                        <li><a class="btn-default btn-sm btn-green-inverted hidden-xs" href="{{ URL::to('/konto/tablice') }}">Dodaj Tablicę</a></li>
-                @endif
-            </ul>
+              @include('user.user-nav')
         </nav>
     </div>
 </header>
 	@yield('content')
 
     @if(Auth::check())
-    <div id="dropdown-1" class="dropdown dropdown-tip dropdown-anchor-right">
-        <ul class="dropdown-menu">
-            <li><a href="{{ URL::to('/konto')}}"><i class="fa fa-cog"></i> Konto</a></li>
-            <li><a href="{{ URL::to('/wyloguj')}}"><i class="fa fa-sign-out"></i> Wyloguj</a></li>      
-            @if($user->boardConfig()->count() > 0 )
-                <li class="divider"></li>
-                @foreach($user->boardConfig()->get() as $board )
-                    <li><a href="{{ URL::to("/".$board->board()->first()->hashtag."/".$board->board()->first()->id )}}"><i class="fa fa-th"></i> #{{ $board->board()->first()->hashtag }}</a></li>
-                @endforeach
-            @endif
-        </ul>
-    </div>
+        @include('user.user-dropdown')
     @endif
     @include('front.footer')
 

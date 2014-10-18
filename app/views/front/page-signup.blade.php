@@ -39,18 +39,8 @@
 						<p>Masz już konto? <a href="{{ URL::to('/zaloguj') }}">Zaloguj się!</a></p>
 					</div>
 					<a class="btn-default btn-social-auth btn-instagram btn-green btn-block btn-lg" href="{{ route('social-login', array('instagram')) }}?onsuccess={{ $url }}&onerror=/zaloguj">Połącz przez Instagram</a>
-					<a class="btn-default btn-social-auth btn-facebook btn-green btn-block btn-lg" href="{{ route('social-login', array('facebook')) }}?onsuccess={{ $url }}&onerror=/login">Połącz przez Facebook</a>
-					<hr />
-					{{ Form::open(array('url' => '/auth/signup', 'class' => 'form-auth', 'action' => 'post')) }}
-						<input type="email" id="email" name="email" class="input-default @if ($errors->has('email'))has-error @endif" placeholder="Twój E-mail">
-						@if ($errors->has('email')) <p class="help-block">{{ $errors->first('email') }}</p> @endif	
-						<input type="password" id="password" name="password" class="input-default @if ($errors->has('password'))has-error @endif" placeholder="Hasło">
-						@if ($errors->has('password')) <p class="help-block">{{ $errors->first('password') }}</p> @endif
-						<input type="password" id="password" name="password_confirm" class="input-default @if ($errors->has('password'))has-error @endif" placeholder="Potwierdź hasło">
-						@if ($errors->has('password_confirm')) <p class="help-block">{{ $errors->first('password_confirm') }}</p> @endif
-						<input type="hidden" name="redirect" value="{{ $url }}">
-						<input type="submit" value="Zarejestruj" class="btn-default btn-green btn-block btn-lg btn-submit">
-					{{ Form::close() }}
+	<a class="btn-default btn-social-auth btn-facebook btn-green btn-block btn-lg" href="{{ route('social-login', array('facebook')) }}?onsuccess={{ $url }}&onerror=/zaloguj">Połącz przez Facebook</a>
+	<a class="btn-default btn-social-auth btn-twitter btn-green btn-block btn-lg" href="{{ route('social-login', array('twitter')) }}?onsuccess={{ $url }}&onerror=/zaloguj">Połącz przez Twitter</a>
 				</div>
 		
 		</div>
@@ -60,18 +50,7 @@
 
 
 @if(Auth::check())
-    <div id="dropdown-1" class="dropdown dropdown-tip dropdown-anchor-right">
-        <ul class="dropdown-menu">
-            <li><a href="{{ URL::to('/konto')}}"><i class="fa fa-cog"></i> Konto</a></li>
-            <li><a href="{{ URL::to('/wyloguj')}}"><i class="fa fa-sign-out"></i> Wyloguj</a></li>      
-            @if($user->boardConfig()->count() > 0 )
-                <li class="divider"></li>
-                @foreach($user->boardConfig()->get() as $board )
-                    <li><a href="{{ URL::to("/".$board->board()->first()->hashtag."/".$board->board()->first()->id )}}"><i class="fa fa-th"></i> #{{ $board->board()->first()->hashtag }}</a></li>
-                @endforeach
-            @endif
-        </ul>
-    </div>
+   @include('user.user-dropdown')
 @endif
 
 

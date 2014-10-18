@@ -18,13 +18,19 @@
 	<div class="account-content clearfix">
 		<div class="account-user-info">
 		
-			@if($providers->count() == 0)
+			@if($user->default_provider == 'facebook')
+                <img src="http://graph.facebook.com/{{ $providers->first()->provider_id }}/picture?type=large" alt="avatar" class="user-avatar-lg" />
+            @elseif($user->default_provider == 'instagram')
+                @foreach($user->provider()->get() as $provider)
+                    @if($provider->provider == 'instagram')
+                    	<img src="{{ $provider->profile_picture }}" alt="avatar" class="user-avatar-lg" /> 
+                    @endif
+                @endforeach
+             @else		
 				<i class="fa fa-user"></i>
-			@else
-				@if($providers->first()->provider == 'facebook')
-					<img src="http://graph.facebook.com/{{ $providers->first()->provider_id }}/picture?type=large" alt="avatar" class="user-avatar-lg" />
-				@endif
-			@endif
+             @endif
+                
+
 			<h3>{{ $username }}</h3>
 			<p>
 			<?php 
@@ -55,10 +61,21 @@
 		@if($providers->count() > 0)
 			<div class="account-user-module">
 				<h3>Połączone konta</h3>
-					@foreach($providers->get() as $provider)
+			
+					@foreach($providers as $provider)
 						
-						<div class="form-provider">
-							<span>{{ $provider->provider }}</span><i class="fa fa-check"></i>
+						<div class="form-provider clearfix">
+							<span>{{ $provider->provider }}</span>
+							@if($user->default_provider == $provider->provider)
+								<i class="fa fa-check green"></i>
+							@endif
+							<div class="pull-right">
+								@if($user->default_provider != $provider->provider)
+									<a href="{{ URL::to('/konto/login/ustaw/'.$provider->provider) }}" class="btn-default btn-sm btn-green-inverted">Ustaw Domyślne</a>
+								@endif
+								
+								<a href="{{ URL::to('/konto/login/usun/'.$provider->provider) }}" class="btn-default btn-sm btn-red-inverted"><i class="fa fa-times"></i></a>
+							</div>
 						</div>	
 				
 					@endforeach

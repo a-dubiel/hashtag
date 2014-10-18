@@ -83,6 +83,29 @@ Stylesheet: Button Styles
 	}
 }
 
+.home-top {
+	.btn-green-inverted {
+		background-color: $brand;
+		color: $white;
+		border:none;
+
+		&:hover {
+			background-color: darken($brand, 5%);
+		}
+	}
+	.nav-user {
+		.btn-link-secondary,
+		.fa {
+			color: $white;
+		}
+
+		.fa-twitter {
+			color:$twitter;
+		}
+	}
+	
+}
+
 .btn-gray-inverted {
 	color: $gray;
 	border: 1px solid $gray;
@@ -129,7 +152,7 @@ Stylesheet: Button Styles
 
 .btn-facebook {
 	background: $facebook;
-
+	margin-bottom:10px;
 	&:hover {
 		background: darken($facebook, 5%);
 	}
@@ -137,9 +160,17 @@ Stylesheet: Button Styles
 
 .btn-instagram {
 	background: $instagram;
+	margin-bottom:10px;
 
 	&:hover {
 		background: darken($instagram, 5%);
+	}
+}
+
+.btn-twitter {
+	background: $twitter;
+	&:hover {
+		background: darken($twitter, 5%);
 	}
 }
 
