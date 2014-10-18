@@ -7,7 +7,7 @@ class Board extends \Eloquent implements StaplerableInterface {
 
     use EloquentTrait;
 
-	protected $fillable = ['hashtag', 'description', 'avatar', 'cover', 'fb_user', 'tw_user', 'insta_user', 'google_user', 'website_url']; 
+	protected $fillable = ['hashtag', 'description', 'avatar', 'presentation_cover' ,'cover', 'fb_user', 'tw_user', 'insta_user', 'google_user', 'website_url']; 
 	
 	public function __construct(array $attributes = array()) {
         $this->hasAttachedFile('avatar', [
@@ -21,6 +21,12 @@ class Board extends \Eloquent implements StaplerableInterface {
             'styles' => [
             'standard' => '1200x250',
             'standardCrop' => '1200x250#'
+            ]
+        ]);
+
+        $this->hasAttachedFile('presentation_cover', [
+            'styles' => [
+            'standard' => '1200',
             ]
         ]);
 

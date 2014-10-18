@@ -504,8 +504,14 @@ POSTS & CONTENT STYLES
 	}
 }
 
-#posts {
+.posts-container {
 	margin: 0 auto;
+
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
 }
 
 abbr[title] {
@@ -1285,6 +1291,21 @@ abbr[title] {
 	.home-section-intro {
 		margin-bottom:30px;
 	}
+}
+
+.board-presentation {
+	padding-top:10px !important;
+	
+	.footer-bottom,
+	.board-description-wrapper,
+	.board-info {
+		display:none !important;
+	}
+}
+
+.logo-presentation {
+	display:none;
+
 }
 
 

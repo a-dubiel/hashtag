@@ -32,7 +32,7 @@
 	                        <span>#</span>
 	                    </div>
 	                    <div class="input-with-icon">
-	                        <input type="text" class="input-default @if ($errors->has('hashtag'))has-error @endif" name="hashtag" placeholder="hasztag">
+	                        <input type="text" class="input-default @if ($errors->has('hashtag'))has-error @endif" name="hashtag" placeholder="hasztag" value="{{ Input::old('hashtag') }}">
 	                        @if ($errors->has('hashtag')) <p class="help-block">{{ $errors->first('hashtag') }}</p> @endif
 	                    </div>
 	                </div>
@@ -178,11 +178,30 @@
 				<div class="board-setting">
 					<label class="setting-description">Ilość odświeżeń @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
 					<div class="input-wrapper">
-						<input type="number" value="{{ Input::old('refresh_count') }}" min="1" max="10" placeholder="1-10" class="input-default input-number @if ($errors->has('refresh_count ')) has-error @endif" @if($user->level == 1 ) disabled="disabled" @endif name="refresh_count">
+						<input type="number" value="{{ Input::old('refresh_count') }}" min="1" max="100" placeholder="1-100" class="input-default input-number @if ($errors->has('refresh_count ')) has-error @endif" @if($user->level == 1 ) disabled="disabled" @endif name="refresh_count">
 						<p class="input-info">Ilość odświeżeń tablicy (domyślnie: 2)</p>
 						@if ($errors->has('refresh_count')) <p class="help-block">{{ $errors->first('refresh_count') }}</p> @endif
 	                </div>
 				</div>
+
+				<div class="board-setting">
+					<label class="setting-description">Prezentacja @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<div class="input-wrapper">
+						<label class="label-inline"><input  @if($user->level == 1 ) disabled="disabled" @endif type="checkbox" name="presentation" @if(Input::old('presentation')) checked="checked" @endif value="1"> Włączone</label>
+						<p class="input-info">Opis prezentacji</p>
+	                </div>
+				</div>
+
+				<div class="board-setting">
+				<label class="setting-description">Tło prezentacji</label>
+				<div class="input-wrapper">	
+					<h4>Dodaj tło prezentacji</h4>				
+					<input type="file" name="presentation_cover" id="">
+					<p class="input-info">Format: JPEG, PNG, JPG. Max: 4 MB. Conajmniej: 1200px szerokości</p>
+					@if ($errors->has('presentation_cover')) <p class="help-block">{{ $errors->first('presentation_cover') }}</p> @endif
+				</div>
+			</div>
+
 				
 				
 				<input type="submit" class="btn-default btn-submit btn-lg btn-green" value="Dodaj">	

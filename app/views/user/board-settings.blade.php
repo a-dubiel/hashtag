@@ -200,11 +200,37 @@
 				<div class="board-setting">
 					<label class="setting-description">Ilość odświeżeń @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
 					<div class="input-wrapper">
-						<input type="number" @if($config->refresh_count != 2 ) value="{{ $config->refresh_count }}"  @endif min="1" max="10" placeholder="1-10" class="input-default input-number @if ($errors->has('refresh_count ')) has-error @endif" @if($user->level == 1 ) disabled="disabled" @endif name="refresh_count">
+						<input type="number" @if($config->refresh_count != 2 ) value="{{ $config->refresh_count }}"  @endif min="1" max="100" placeholder="1-100" class="input-default input-number @if ($errors->has('refresh_count ')) has-error @endif" @if($user->level == 1 ) disabled="disabled" @endif name="refresh_count">
 						<p class="input-info">Ilość odświeżeń tablicy (domyślnie: 2)</p>
 						@if ($errors->has('refresh_count')) <p class="help-block">{{ $errors->first('refresh_count') }}</p> @endif
 	                </div>
 				</div>
+
+				<div class="board-setting">
+					<label class="setting-description">Live @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<div class="input-wrapper">
+						<label class="label-inline"><input  @if($user->level == 1 ) disabled="disabled" @endif type="checkbox" name="presentation" @if($config->presentation == 1) checked="checked" @endif value="1"> Włączone</label>
+						<p class="input-info">Opis prezentacji</p>
+	                </div>
+				</div>
+
+				<div class="board-setting">
+				<label class="setting-description">Tło prezentacji</label>
+				<div class="input-wrapper">
+					@if(is_null($board->presentation_cover_file_name))
+						<span class="no-data">Brak tła. Dodaj je!</span>
+					@else
+					<div class="board-cover">
+						<img src="{{ $board->presentation_cover->url('standard') }}" alt="" />		
+					</div>
+					<label><input type="checkbox" name="delete_presentation_cover" value="1" id=""> Usuń tło</label>
+					@endif
+					<h4>Zmień tło</h4>				
+					<input type="file" name="presentation_cover" id="">
+					<p class="input-info">Format: JPEG, PNG, JPG. Max: 4 MB. Conajmniej: 1200px szerokości</p>
+					@if ($errors->has('presentation_cover')) <p class="help-block">{{ $errors->first('presentation_cover') }}</p> @endif
+				</div>
+			</div>
 				
 				<input type="hidden" name="board_id" value="{{ $board->id }}">
 

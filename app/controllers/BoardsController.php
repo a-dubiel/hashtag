@@ -8,7 +8,7 @@ class BoardsController extends \BaseController {
 		parent::__construct();
 	}
 
-	public function showBoard($query, $id = NULL)
+	public function showBoard($query, $id = NULL, $presentation = NULL)
 	{	
 		Asset::add('//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js', 'footer');	
 		Asset::add('//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.min.js', 'footer');
@@ -73,7 +73,19 @@ class BoardsController extends \BaseController {
 			$data['boardData'] = $this->layout->boardData = $board;
 			$data['title'] = $this->layout->title = $board->hashtag;
 			$data['bodyClass'] = $this->layout->bodyClass = $board->hashtag . (isset($userOwned) ? ' user-owned' : '');
-			$this->layout->content = View::make('boards.index', $data);
+
+			if(isset($presentation) && $board->config()->first()->presentation == 0) {
+				App::abort(404);
+			}
+			
+			if(isset($userOwned) && isset($id) && isset($presentation) && $presentation = 'prezentacja' && $board->config()->first()->presentation == 1) {
+				$data['bodyClass'] = $this->layout->bodyClass = $board->hashtag . (isset($userOwned) ? ' user-owned' : ''). ' board-presentation';
+				$this->layout->content = View::make('boards.board-presentation', $data);
+			}
+			else {
+				$this->layout->content = View::make('boards.index', $data);
+			}
+			
 		}
 		else {
 			App::abort(404);

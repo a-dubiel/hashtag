@@ -2800,8 +2800,12 @@ POSTS & CONTENT STYLES
 .is-featured-post .featured-post a {
   color: #ebe16f; }
 
-#posts {
+.posts-container {
   margin: 0 auto; }
+  .posts-container:after {
+    content: '';
+    display: block;
+    clear: both; }
 
 abbr[title] {
   border: none; }
@@ -3463,6 +3467,16 @@ abbr[title] {
   .home-gallery .home-section-intro {
     margin-bottom: 30px; }
 
+.board-presentation {
+  padding-top: 10px !important; }
+  .board-presentation .footer-bottom,
+  .board-presentation .board-description-wrapper,
+  .board-presentation .board-info {
+    display: none !important; }
+
+.logo-presentation {
+  display: none; }
+
 /******************************************************************
 DROPDOWN
 ******************************************************************/
@@ -3915,6 +3929,21 @@ FOOTER STYLES
 
   .home-gallery .gallery-item {
     margin-bottom: 0; }
+
+  .logo-presentation {
+    display: block;
+    width: 100px;
+    height: 25px;
+    float: right;
+    margin-top: 10px;
+    text-indent: -9999px;
+    background: url("../images/logo-home-small.png") no-repeat;
+    background-size: 100px 25px;
+    filter: alpha(opacity=50);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5; }
 
   /*********************
   HEADER STYLES

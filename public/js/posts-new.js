@@ -10,7 +10,6 @@
 
 
 	$container.isotope({
-		animationEngine: 'css',
 		masonry: {
 			columnWidth: 270,
 			isFitWidth: true,
@@ -27,7 +26,7 @@
 				$loading.html('<div class="no-posts"><i class="fa fa-meh-o"></i><span>Brak wyników</span></div>');
 			}
 			else {
-				console.log(data.endpoints);
+			//	console.log(data.endpoints);
 				display_posts(data.posts, false);
 				endpoints = data.endpoints;
 			
@@ -183,8 +182,8 @@
   		var the_refresh_count = 0;
 
   		var func = setInterval(function(){
-  			console.log(refresh_count);
-  			console.log(the_refresh_count);
+  		//	console.log(refresh_count);
+  		//	console.log(the_refresh_count);
   			if(the_refresh_count < parseInt(refresh_count)) {
   				
 	  			if($count <= 50 ) {
@@ -197,7 +196,7 @@
 						},
 						type: 'POST',	
 						success: function(data, status, xhr) {
-							console.log(data);
+						//	console.log(data);
 							if(data.message != 'No posts') {
 
 								endpoints.twitter_since_id = data.endpoints.twitter_since_id;
@@ -264,7 +263,7 @@
                 callbacks: {
                 markupParse: function(template, values, item) {
                     // optionally apply your own logic - modify "template" element based on data in "values"
-                     console.log('Parsing:', template, values, item);
+                  //   console.log('Parsing:', template, values, item);
                   }
                 }
               });

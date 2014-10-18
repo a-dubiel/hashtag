@@ -304,6 +304,18 @@ LAYOUT & GRID STYLES
   }
 
 
+.logo-presentation {
+  display:block;
+  width:100px;
+  height:25px;
+  float:right;
+  margin-top:10px;
+  text-indent:-9999px;
+  background: url('../images/logo-home-small.png') no-repeat;
+  background-size:100px 25px;
+  @include opacity(0.5);
+}
+
 
 
 

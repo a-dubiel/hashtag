@@ -120,7 +120,7 @@
 </header>
 <div class="clearfix"></div>
 
-<div id="posts">
+<div id="posts" class="posts-container">
 	<div class="board-loading"><i class="fa fa-circle-o-notch fa-spin"></i></div>
 </div>
 <a href="#" class="load-more">Pokaż Więcej</a>

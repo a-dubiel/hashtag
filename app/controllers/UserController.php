@@ -650,12 +650,13 @@ class UserController extends \BaseController {
 			if($board->config()->first()->user_id == $user->id) {	
 
 				$rules = array(						
-					'hashtag'			=> 'required|min:3',
-					'avatar'  			=> 'mimes:jpg,jpeg,png|image|max:1024|image_size:>=300',
-					'cover'  			=> 'mimes:jpg,jpeg,png|image|max:3072|image_size:>=1200,>=150',
-					'website_url' 		=> 'url',
-					'refresh_interval' 	=> 'integer|min:10|max:120',
-					'refresh_count' 	=> 'integer|min:1|max:10'
+					'hashtag'				=> 'required|min:3',
+					'avatar'  				=> 'mimes:jpg,jpeg,png|image|max:1024|image_size:>=300',
+					'cover'  				=> 'mimes:jpg,jpeg,png|image|max:3072|image_size:>=1200,>=150',
+					'presentation_cover'	=> 'mimes:jpg,jpeg,png|image|max:4096|image_size:>=1200,*',
+					'website_url' 			=> 'url',
+					'refresh_interval' 		=> 'integer|min:10|max:120',
+					'refresh_count' 		=> 'integer|min:1|max:100'
 				);
 
 				$validator = Validator::make(Input::all(), $rules);
@@ -687,6 +688,13 @@ class UserController extends \BaseController {
 					else if(Input::has('delete_avatar')) {
 						$board->avatar = STAPLER_NULL;
 					}
+
+					if(Input::hasFile('presentation_cover')) {
+						$board->presentation_cover = Input::file('presentation_cover');
+					}
+					else if(Input::has('delete_presentation_cover')) {
+						$board->presentation_cover = STAPLER_NULL;
+					}
 					
 					$board->fb_user = Input::get('fb_user');
 					$board->tw_user = Input::get('tw_user');
@@ -709,6 +717,7 @@ class UserController extends \BaseController {
 					$bannedUsers = Input::has('banned_users') ? Input::get('banned_users') : '';
 					$filter = Input::has('filter') ? Input::get('filter') : '';
 					$live = Input::has('live') ? 1 : 0;
+					$presentation = Input::has('presentation') ? 1 : 0;
 
 					$config = BoardConfig::where('board_id', '=', $board->id)->first();
 
@@ -722,6 +731,7 @@ class UserController extends \BaseController {
 					$config->refresh_interval = $refreshInterval;
 					$config->refresh_count = $refreshCount;
 					$config->live = $live;
+					$config->presentation = $presentation;
 					$config->banned_users = $bannedUsers;
 					$config->filter = $filter;
 
@@ -802,12 +812,13 @@ class UserController extends \BaseController {
 		if(Auth::check()) {
 
 			$rules = array(						
-				'hashtag'			=> 'required|min:3',
-				'avatar'  			=> 'mimes:jpg,jpeg,png|image|max:1024|image_size:>=300',
-				'cover'  			=> 'mimes:jpg,jpeg,png|image|max:3072|image_size:>=1200,>=150',
-				'website_url' 		=> 'url',
-				'refresh_interval' 	=> 'integer|min:10|max:120',
-				'refresh_count' 	=> 'integer|min:1|max:10'
+				'hashtag'				=> 'required|min:3',
+				'avatar'  				=> 'mimes:jpg,jpeg,png|image|max:1024|image_size:>=300',
+				'cover'  				=> 'mimes:jpg,jpeg,png|image|max:3072|image_size:>=1200,>=150',
+				'presentation_cover'	=> 'mimes:jpg,jpeg,png|image|max:4096|image_size:>=1200,*',
+				'website_url' 			=> 'url',
+				'refresh_interval' 		=> 'integer|min:10|max:120',
+				'refresh_count' 		=> 'integer|min:1|max:100'
 			);
 
 			$user = Auth::user();
@@ -830,6 +841,7 @@ class UserController extends \BaseController {
 							'description' => Input::get('description'),
 							'avatar' => Input::file('avatar'),
 							'cover' => Input::file('cover'),
+							'presentation_cover' => Input::file('presentation_cover'),
 							'fb_user' => Input::get('fb_user'),
 							'tw_user' => Input::get('tw_user'),
 							'insta_user' => Input::get('insta_user'),
@@ -843,13 +855,13 @@ class UserController extends \BaseController {
 				$google = Input::has('has_google') ? 0 : -1;
 				$vine = Input::has('has_vine') ? 0 : -1;
 
+
 				$refreshInterval = Input::has('refresh_interval') ? Input::get('refresh_interval') : 30;
 				$refreshCount = Input::has('refresh_count') ? Input::get('refresh_count') : 2;
 				$bannedUsers = Input::has('banned_users') ? Input::get('banned_users') : '';
 				$filter = Input::has('filters') ? Input::get('filters') : '';
 				$live = Input::has('live') ? 1 : 0;
-
-			//	dd($live);
+				$presentation = Input::has('presentation') ? 1 : 0;
 
 				$config = BoardConfig::create(array(
 							'board_id' => $board->id,
@@ -861,6 +873,7 @@ class UserController extends \BaseController {
 							'has_vine' => $vine,
 							'refresh_interval' => $refreshInterval,
 							'refresh_count' => $refreshCount,
+							'presentation' => $presentation,
 							'live' => $live,
 							'banned_users' => $bannedUsers,
 							'filter' => $filter

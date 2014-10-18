@@ -83,8 +83,10 @@ Route::post('/board/update/description' , array('uses' => 'AjaxController@postUp
 Route::get('/show/board/{id}', array('uses' =>'AjaxController@showBoard')); 
 Route::post('/show/board/more/{id}', array('uses' =>'AjaxController@showBoardMore'));
 Route::post('/show/board/new/{id}', array('uses' =>'AjaxController@showBoardNew'));
+Route::get('{hashtag}/{id}/{presentation}', array('uses' =>'BoardsController@showBoard') ); 
 Route::get('{query}/szukaj', array('uses' =>'BoardsController@showBoard') ); 
 Route::get('{hashtag}/{id}', array('uses' =>'BoardsController@showBoard') ); 
+
 Route::post('/szukaj', function() {
 	$data = Input::get('query');
 	if(strlen($data) > 2) {
