@@ -9,6 +9,7 @@ class UserController extends \BaseController {
 
 		Asset::add('//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js', 'footer');	
 		Asset::add('//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.min.js', 'footer');
+		Asset::add('/js/libs/colpick.js', 'footer');
 		Asset::add('/js/admin.js', 'footer');
 		Asset::add('/js/libs/jquery.dropdown.js', 'footer');
 
@@ -718,6 +719,7 @@ class UserController extends \BaseController {
 					$filter = Input::has('filter') ? Input::get('filter') : '';
 					$live = Input::has('live') ? 1 : 0;
 					$presentation = Input::has('presentation') ? 1 : 0;
+					$color = Input::has('color') ? Input::get('color') : '';
 
 					$config = BoardConfig::where('board_id', '=', $board->id)->first();
 
@@ -730,6 +732,7 @@ class UserController extends \BaseController {
 					$config->has_vine = $vine;
 					$config->refresh_interval = $refreshInterval;
 					$config->refresh_count = $refreshCount;
+					$config->color = $color;
 					$config->live = $live;
 					$config->presentation = $presentation;
 					$config->banned_users = $bannedUsers;
@@ -862,6 +865,7 @@ class UserController extends \BaseController {
 				$filter = Input::has('filters') ? Input::get('filters') : '';
 				$live = Input::has('live') ? 1 : 0;
 				$presentation = Input::has('presentation') ? 1 : 0;
+				$color = Input::has('color') ? Input::get('color') : '';
 
 				$config = BoardConfig::create(array(
 							'board_id' => $board->id,
@@ -874,6 +878,7 @@ class UserController extends \BaseController {
 							'refresh_interval' => $refreshInterval,
 							'refresh_count' => $refreshCount,
 							'presentation' => $presentation,
+							'color' => $color,
 							'live' => $live,
 							'banned_users' => $bannedUsers,
 							'filter' => $filter

@@ -31,6 +31,7 @@ Route::get('/informacje', array('uses' =>'HomeController@showAboutUs'));
 Route::get('/kontakt', array('uses' =>'HomeController@showContact')); 
 Route::get('/regulamin', array('uses' =>'HomeController@showLegal')); 
 Route::get('/oferta', array('uses' =>'HomeController@showPricing')); 
+Route::post('/contact/send', array('uses' =>'HomeController@postContactForm')); 
 
 // auth
 Route::get('/konto/login/ustaw/{provider}', array('before' => 'auth', 'uses' =>'UserController@getUpdateProvider')); 

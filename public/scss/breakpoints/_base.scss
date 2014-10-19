@@ -23,6 +23,10 @@ body {
 	margin-bottom:20px;
 }
 
+.add-right {
+	margin-right:10px;
+}
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -1301,11 +1305,56 @@ abbr[title] {
 	.board-info {
 		display:none !important;
 	}
+
+	.filters
+	{
+		display:none;
+	}
 }
 
 .logo-presentation {
 	display:none;
+}
 
+.board-top-links {
+	@extend .clearfix;
+	margin-bottom:20px;
+	.btn-default {
+		width:100%;
+		margin: 5px 0;
+		text-align:center;
+	}
+}
+
+.page-content {
+	padding:10px;
+	background: $white;
+	@include border-radius(3px)
+}
+
+.contact-form {
+	padding:30px;
+	background: $white;
+	@include border-radius(3px);
+
+	.input-default {
+		height:40px;
+	}
+
+	input[type="text"] {
+		margin-bottom:20px;
+	}
+
+	.textarea-default {
+		max-width:100%;
+		margin:20px 0;
+	}
+}
+
+.contact-info {
+	p {
+		margin-top:0;
+	}
 }
 
 

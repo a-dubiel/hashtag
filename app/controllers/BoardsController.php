@@ -74,11 +74,13 @@ class BoardsController extends \BaseController {
 			$data['title'] = $this->layout->title = $board->hashtag;
 			$data['bodyClass'] = $this->layout->bodyClass = $board->hashtag . (isset($userOwned) ? ' user-owned' : '');
 
-			if(isset($presentation) && $board->config()->first()->presentation == 0) {
+
+
+			if(isset($presentation) && $presentation != 'live') {
 				App::abort(404);
 			}
 			
-			if(isset($userOwned) && isset($id) && isset($presentation) && $presentation = 'prezentacja' && $board->config()->first()->presentation == 1) {
+			if(isset($id) && $presentation == 'live' && $board->config()->first()->presentation == 1) {
 				$data['bodyClass'] = $this->layout->bodyClass = $board->hashtag . (isset($userOwned) ? ' user-owned' : ''). ' board-presentation';
 				$this->layout->content = View::make('boards.board-presentation', $data);
 			}

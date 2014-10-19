@@ -11,6 +11,33 @@ class HomeController extends BaseController {
 
 
 	}
+
+	public function postContactForm() {
+
+		$rules = array(		
+			'email'		=> 'email|required',			
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		if ($validator->fails()) {
+			$messages = $validator->messages();
+			return Redirect::to('/kontakt')->withInput(Input::flash())->withErrors($validator)->with('alert', array('type' => 'error', 'content' => 'Podaj właściwy e-mail'));
+		}
+		else {
+			Contact::create(Input::all());
+
+			$data['email'] = Input::all();
+
+			Mail::later(5, 'emails.contact', $data, function($message)
+			{
+			    $message->to('andrzej.dubiel@gmail.com')->subject('[hasztag.info] Nowa wiadomość');
+			});
+
+			return Redirect::to('/')->with('alert', array('type' => 'success', 'content' => 'Wiadomość wysłana. Odezwiemy się wkrótce!'));
+
+		}
+	}
 	
 	public function showHome()
 	{		

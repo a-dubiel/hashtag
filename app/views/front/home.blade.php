@@ -144,7 +144,7 @@
 		<div class="col-lg-3 col-md-3 col-sm-3 home-section home-section-pro">
 			<div class="home-section-icon"><img src="{{ URL::to('/images/brand.svg') }}" class="svg svg-brand" /></div>
 			<h4>Własny Branding</h4>
-			<p>Wyróżnij się. Każda tablica posiada swój avatar oraz tło, które możesz zmienić wedle życzenia.</p>
+			<p>Wyróżnij się. Każda tablica posiada swój avatar, tło oraz kolory które możesz zmienić wedle życzenia.</p>
 		</div>
 
 		<div class="col-lg-3 col-md-3 col-sm-3 home-section home-section-pro">

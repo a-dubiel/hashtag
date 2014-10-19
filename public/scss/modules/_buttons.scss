@@ -152,6 +152,7 @@ Stylesheet: Button Styles
 
 .btn-facebook {
 	background: $facebook;
+	color: $white;
 	margin-bottom:10px;
 	&:hover {
 		background: darken($facebook, 5%);
@@ -160,6 +161,7 @@ Stylesheet: Button Styles
 
 .btn-instagram {
 	background: $instagram;
+	color: $white;
 	margin-bottom:10px;
 
 	&:hover {

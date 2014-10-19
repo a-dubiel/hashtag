@@ -17,9 +17,14 @@
 	</nav>
 	<div class="account-content clearfix">
 		<div class="account-module-info">
-			@if($board->config()->first()->is_active == 1)
-				<a href="{{ URL::to("$board->hashtag/$board->id") }}" class="btn-default btn-sm btn-green-inverted pull-right">Zobacz Tablicę</a>
-			@endif
+			<div class="board-top-links">
+				@if($board->config()->first()->is_active == 1)
+					<a href="{{ URL::to("$board->hashtag/$board->id") }}" class="btn-default btn-sm btn-green-inverted pull-right">Zobacz Tablicę</a>
+				@endif
+				@if($board->config()->first()->presentation == 1)
+					<a href="{{ URL::to("$board->hashtag/$board->id/live") }}" class="btn-default btn-sm btn-green-inverted pull-right add-right">Zobacz Prezentację</a>
+				@endif
+			</div>
 			<h3>#{{ $board->hashtag }}</h3>
 			<p>Tutaj możesz zmienić ustawienia tej tablicy.</p>
 
@@ -205,9 +210,9 @@
 						@if ($errors->has('refresh_count')) <p class="help-block">{{ $errors->first('refresh_count') }}</p> @endif
 	                </div>
 				</div>
-
+				<hr />
 				<div class="board-setting">
-					<label class="setting-description">Live @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<label class="setting-description">Prezentacja @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
 					<div class="input-wrapper">
 						<label class="label-inline"><input  @if($user->level == 1 ) disabled="disabled" @endif type="checkbox" name="presentation" @if($config->presentation == 1) checked="checked" @endif value="1"> Włączone</label>
 						<p class="input-info">Opis prezentacji</p>
@@ -229,6 +234,15 @@
 					<input type="file" name="presentation_cover" id="">
 					<p class="input-info">Format: JPEG, PNG, JPG. Max: 4 MB. Conajmniej: 1200px szerokości</p>
 					@if ($errors->has('presentation_cover')) <p class="help-block">{{ $errors->first('presentation_cover') }}</p> @endif
+				</div>
+
+				<div class="board-setting">
+					<label class="setting-description">Kolor @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<div class="input-wrapper">
+						<label class="label-inline"><input  @if($user->level == 1 ) disabled="disabled" @endif type="text" class="input-default input-number @if ($errors->has('color')) has-error @endif" id="picker" name="color" value="{{ $config->color }}"></label>
+						<p class="input-info">Kolor linków i przycisków. Kliknij aby wybrać.</p>
+						@if ($errors->has('color')) <p class="help-block">{{ $errors->first('color') }}</p> @endif
+	                </div>
 				</div>
 			</div>
 				
@@ -265,6 +279,12 @@
 </div>
 
 </div>
+
+{{ Asset::add('js/libs/colpick.css') }}
+
+
+	
+	
 
 
 

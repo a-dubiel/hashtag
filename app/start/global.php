@@ -79,31 +79,6 @@ App::down(function()
 
 require app_path().'/filters.php';
 
-// Errors
-
-if (App::environment('production')) {
-                           
-App::error(function($exception, $code)
-{
-    switch ($code)
-    {
-        case 403:
-            return Response::view('errors.403', array(), 403);
-
-        case 404:
-            return Response::view('errors.404', array(), 404);
-
-        case 500:
-            return Response::view('errors.500', array(), 500);
-
-        default:
-            return Response::view('errors.default', array(), $code);
-    }
-});
-
-}
-
-
 // Events
 
 Event::listen('invoice.email', function($userId, $subscriptionId, $paymentId, $faktura = false)

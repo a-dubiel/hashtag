@@ -401,12 +401,12 @@ table {
   white-space: nowrap;
   overflow: hidden; }
 
-.clearfix, .board-setting, .cf {
+.clearfix, .board-setting, .board-top-links, .cf {
   zoom: 1; }
-  .clearfix:before, .board-setting:before, .clearfix:after, .board-setting:after, .cf:before, .cf:after {
+  .clearfix:before, .board-setting:before, .board-top-links:before, .clearfix:after, .board-setting:after, .board-top-links:after, .cf:before, .cf:after {
     content: "";
     display: table; }
-  .clearfix:after, .board-setting:after, .cf:after {
+  .clearfix:after, .board-setting:after, .board-top-links:after, .cf:after {
     clear: both; }
 
 /*
@@ -1513,9 +1513,10 @@ Stylesheet: Grid Stylesheet
 
   .col-lg-offset-0 {
     margin-left: 0%; } }
-.clearfix:before, .board-setting:before,
+.clearfix:before, .board-setting:before, .board-top-links:before,
 .clearfix:after,
 .board-setting:after,
+.board-top-links:after,
 .container:before,
 .container:after,
 .container-fluid:before,
@@ -1525,7 +1526,7 @@ Stylesheet: Grid Stylesheet
   content: " ";
   display: table; }
 
-.clearfix:after, .board-setting:after,
+.clearfix:after, .board-setting:after, .board-top-links:after,
 .container:after,
 .container-fluid:after,
 .row:after {
@@ -1951,12 +1952,14 @@ Stylesheet: Button Styles
 
 .btn-facebook {
   background: #3b5998;
+  color: #fff;
   margin-bottom: 10px; }
   .btn-facebook:hover {
     background: #344e86; }
 
 .btn-instagram {
   background: #3f729b;
+  color: #fff;
   margin-bottom: 10px; }
   .btn-instagram:hover {
     background: #386589; }
@@ -2282,7 +2285,6 @@ select {
 .input-default {
   background-color: #f6f6f6;
   height: 30px;
-  line-height: 30px;
   padding-left: 10px; }
   .input-default.input-number {
     width: 50px; }
@@ -2388,6 +2390,9 @@ body {
 
 .add-bottom {
   margin-bottom: 20px; }
+
+.add-right {
+  margin-right: 10px; }
 
 /*********************
 LAYOUT & GRID STYLES
@@ -3473,9 +3478,44 @@ abbr[title] {
   .board-presentation .board-description-wrapper,
   .board-presentation .board-info {
     display: none !important; }
+  .board-presentation .filters {
+    display: none; }
 
 .logo-presentation {
   display: none; }
+
+.board-top-links {
+  margin-bottom: 20px; }
+  .board-top-links .btn-default {
+    width: 100%;
+    margin: 5px 0;
+    text-align: center; }
+
+.page-content {
+  padding: 10px;
+  background: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px; }
+
+.contact-form {
+  padding: 30px;
+  background: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px; }
+  .contact-form .input-default {
+    height: 40px; }
+  .contact-form input[type="text"] {
+    margin-bottom: 20px; }
+  .contact-form .textarea-default {
+    max-width: 100%;
+    margin: 20px 0; }
+
+.contact-info p {
+  margin-top: 0; }
 
 /******************************************************************
 DROPDOWN
@@ -3938,12 +3978,48 @@ FOOTER STYLES
     margin-top: 10px;
     text-indent: -9999px;
     background: url("../images/logo-home-small.png") no-repeat;
-    background-size: 100px 25px;
-    filter: alpha(opacity=50);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-    -moz-opacity: 0.5;
-    -khtml-opacity: 0.5;
-    opacity: 0.5; }
+    background-size: 100px 25px; }
+
+  .board-presentation .filters {
+    float: right;
+    display: block;
+    clear: both;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1; }
+  .board-presentation h1,
+  .board-presentation .logo-presentation {
+    position: relative;
+    z-index: 1; }
+  .board-presentation:before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    height: 150px;
+    width: 100%;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, transparent));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+    /* IE6-9 */ }
+
+  .board-top-links .btn-default {
+    width: auto;
+    margin: 0 5px 0 0; }
+
+  .contact-form input[type="text"] {
+    margin-bottom: 0px; }
 
   /*********************
   HEADER STYLES

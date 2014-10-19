@@ -296,12 +296,48 @@ LAYOUT & GRID STYLES
   margin-top: 10px;
   text-indent: -9999px;
   background: url("../images/logo-home-small.png") no-repeat;
-  background-size: 100px 25px;
-  filter: alpha(opacity=50);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  -moz-opacity: 0.5;
-  -khtml-opacity: 0.5;
-  opacity: 0.5; }
+  background-size: 100px 25px; }
+
+.board-presentation .filters {
+  float: right;
+  display: block;
+  clear: both;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1; }
+.board-presentation h1,
+.board-presentation .logo-presentation {
+  position: relative;
+  z-index: 1; }
+.board-presentation:before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  height: 150px;
+  width: 100%;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, transparent));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+  /* IE6-9 */ }
+
+.board-top-links .btn-default {
+  width: auto;
+  margin: 0 5px 0 0; }
+
+.contact-form input[type="text"] {
+  margin-bottom: 0px; }
 
 /*********************
 HEADER STYLES

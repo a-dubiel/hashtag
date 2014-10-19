@@ -183,7 +183,7 @@
 						@if ($errors->has('refresh_count')) <p class="help-block">{{ $errors->first('refresh_count') }}</p> @endif
 	                </div>
 				</div>
-
+				<hr />
 				<div class="board-setting">
 					<label class="setting-description">Prezentacja @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
 					<div class="input-wrapper">
@@ -200,6 +200,14 @@
 					<p class="input-info">Format: JPEG, PNG, JPG. Max: 4 MB. Conajmniej: 1200px szerokości</p>
 					@if ($errors->has('presentation_cover')) <p class="help-block">{{ $errors->first('presentation_cover') }}</p> @endif
 				</div>
+
+				<div class="board-setting">
+					<label class="setting-description">Kolor @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<div class="input-wrapper">
+						<label class="label-inline"><input  @if($user->level == 1 ) disabled="disabled" @endif type="text" class="input-default input-number" id="picker" name="color" value="{{ Input::old('color') }}"></label>
+						<p class="input-info">Kolor linków i przycisków. Kliknij aby wybrać.</p>
+	                </div>
+				</div>
 			</div>
 
 				
@@ -212,5 +220,8 @@
 </div>
 
 </div>
+
+{{ Asset::add('js/libs/colpick.css') }}
+
 
 @stop
