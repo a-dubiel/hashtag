@@ -48,6 +48,13 @@ function facebook_parser(url){
 */
 jQuery(document).ready(function($) {
 
+  $('.faq-item').click(function(){
+    el = $(this);
+    el.find('.fa').toggleClass('fa-minus');
+    el.parent().find('.faq-content').toggleClass('hide');
+    return false;
+  });
+
   if(('.timeago').length > 0) {
     $('.timeago').timeago();
   }

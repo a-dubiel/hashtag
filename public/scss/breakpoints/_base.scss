@@ -1222,6 +1222,7 @@ abbr[title] {
 .block-cta {
 	width:100%;
 	padding:50px 0;
+	color:$white;
 	background: $brand;
 	margin: 40px 0 -20px 0;
 	text-align:center;
@@ -1231,6 +1232,11 @@ abbr[title] {
 		margin:0 0 20px 0;
 		padding:0;
 		color: $white;
+	}
+
+	&.block-cta-white {
+		background:none;
+		margin-top:0px;
 	}
 
 }
@@ -1327,18 +1333,19 @@ abbr[title] {
 }
 
 .page-content {
-	padding:10px;
+	padding:10px 10px 30px;
 	background: $white;
 	@include border-radius(3px)
 }
 
 .contact-form {
 	padding:30px;
-	background: $white;
+	background: $background-main;
 	@include border-radius(3px);
 
 	.input-default {
 		height:40px;
+		background-color: $white;
 	}
 
 	input[type="text"] {
@@ -1348,12 +1355,154 @@ abbr[title] {
 	.textarea-default {
 		max-width:100%;
 		margin:20px 0;
+		background-color: $white;
 	}
 }
 
 .contact-info {
 	p {
 		margin-top:0;
+	}
+}
+
+.about-intro {
+	text-align:center;
+	margin-bottom:20px;
+
+	img {
+		width:300px;
+	}
+
+	h1 {
+		text-transform: uppercase;
+		@include font-size(28px);
+		font-weight: 700;
+	}
+
+	p {
+		color: $gray;
+		@include font-size(18px);
+
+	}
+}
+
+.about-section {
+	margin-bottom:20px;
+	h3 {
+		text-align: center;
+		text-transform:uppercase;
+		@include font-size(18px);
+		font-weight:700;
+		margin:0;
+
+		&:after {
+			content: '';
+			display:block;
+			width:40px;
+			height:3px;
+			background: $brand;
+			margin:5px auto 0;
+
+		}
+	}
+
+	h4 {
+		text-transform:uppercase;
+		margin:10px 0;
+	}
+
+	p {
+		color: $gray;
+	}
+}
+
+.logo-big {
+	width:200px;
+	height:200px;
+	margin:20px auto;
+	background: url('../images/logo-big.png') no-repeat;
+	background-size:200px;
+}
+
+.faq-big {
+	width:200px;
+	height:200px;
+	margin:20px auto;
+	background: url('../images/faq-big.png') no-repeat;
+	background-size:200px;
+}
+
+.contact-big {
+	width:200px;
+	height:200px;
+	margin:20px auto;
+	background: url('../images/contact-big.png') no-repeat;
+	background-size:200px;
+}
+
+.faq-item {
+	color: $black;
+	text-decoration:none;
+
+	.fa {
+		margin-right:15px;
+		color: $brand;
+	}
+}
+
+.section-pricing {
+
+	.table-pricing {
+		margin-top:20px;
+	}
+
+	h3 {
+		text-align: center;
+		text-transform:uppercase;
+		@include font-size(18px);
+		font-weight:700;
+		margin:0;
+
+		&:after {
+			content: '';
+			display:block;
+			width:40px;
+			height:3px;
+			background: $brand;
+			margin:5px auto 0;
+
+		}
+
+	}
+
+	.home-section-pro {
+		padding-top:20px;
+		.home-section-icon {
+	
+
+			width:50px;
+			height:50px;
+			margin-bottom:10px;
+
+
+			img {
+				width:25px;
+				margin-top:12px;
+			}
+		}
+
+		h4 {
+	
+
+			&:after {
+				display:none;
+			}
+		}
+
+		p {
+			margin-top:0;
+			padding:0;
+		}
 	}
 }
 

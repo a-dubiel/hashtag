@@ -884,6 +884,8 @@ class UserController extends \BaseController {
 							'filter' => $filter
 						));
 
+				Stat::create(array('board_id' => $board->id));
+
 
 				return Redirect::to('/konto/tablice')->with('alert', array('type' => 'success', 'content' => 'Tablica utworzona!'));
 
@@ -914,9 +916,9 @@ class UserController extends \BaseController {
 			
 			$user = Auth::user();
 			$data['user'] = $user;
-		
-			$data['boards'] = Board::byUserId($user);
 
+			$data['boards'] = Board::byUserId($user);
+					
 			if($user->level == 1) {
 				$data['width'] = ($data['boards']->count() / 1) * 100;
 				$data['max'] = 1;

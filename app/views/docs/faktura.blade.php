@@ -30,6 +30,6 @@ table td {
 </style>
 </head>
 <body>
-	kuuurwa
+
 </body>
 </html>

@@ -28,6 +28,7 @@ Route::get('/pdf', function(){
 //sitewide
 Route::get('/', array('uses' =>'HomeController@showHome')); 
 Route::get('/informacje', array('uses' =>'HomeController@showAboutUs')); 
+Route::get('/faq', array('uses' =>'HomeController@showFaq')); 
 Route::get('/kontakt', array('uses' =>'HomeController@showContact')); 
 Route::get('/regulamin', array('uses' =>'HomeController@showLegal')); 
 Route::get('/oferta', array('uses' =>'HomeController@showPricing')); 

@@ -71,7 +71,7 @@
 		<div class="col-lg-5 col-md-5 col-sm-6 home-section home-section-left">
 			<h4>Dla wszystkich</h4>
 			<p>Desktop, tablet czy komórka - nie ma różnicy. Nie ważne z jakiego urządzenia korzystasz, nasz serwis dostoswany jest do najpopularniejszych urządzeń i przeglądarek (oprócz IE8 i poniżej). Lubimy optymalizację i wydajność, więc dołożyliśmy wielkich starań, żeby oddać Ci najwyższej jakości produkt.</p>
-			<a href="" class="btn-default btn-green-inverted">Jak to robimy?</a>
+			<a href="{{URL::to('/informacje') }}" class="btn-default btn-green-inverted">Jak to robimy?</a>
 		</div>
 	</div>
 </div>
@@ -111,7 +111,7 @@
 <div class="container">
 
 	<div class="home-section-intro">
-		<h2>Konto Pro</h2>
+		<h2>Plan Pro</h2>
 		<p>Dla bardziej wymagających hasztagowców mamy coś specjalnego.</p>
 	</div>
 	<div class="row">
@@ -170,13 +170,14 @@
 
 
 <div class="block-cta">
-	<p>Podoba się? Załóż swoją pierwszą tablicę za darmo!</p>
+	<p>Załóż swoją pierwszą tablicę za darmo lub zapoznaj się z naszą ofertą.</p>
 	@if(Auth::check())
 		<a href="{{ URL::to('/konto/tablice') }}" class="btn-default btn-lg btn-white-inverted">Dodaj tablicę</a>
+		<a href="{{ URL::to('/oferta') }}" class="btn-default btn-lg btn-white-inverted">Nasza oferta</a>
 	@else
 		<a href="{{ URL::to('/zarejestruj') }}" class="btn-default btn-lg btn-white-inverted">Zarejestruj się</a>
+		<a href="{{ URL::to('/oferta') }}" class="btn-default btn-lg btn-white-inverted">Nasza oferta</a>
 	@endif
-	
 </div>
 
 @if(Auth::check())

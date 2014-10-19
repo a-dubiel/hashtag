@@ -15,9 +15,7 @@ $breakpoint-alpha: 996px; // adjust to your needs
 
   .prices {
     @include font-size(18px);
-  }
-  
-  
+  } 
   
   td {
     
@@ -26,16 +24,16 @@ $breakpoint-alpha: 996px; // adjust to your needs
     }
     &:last-child {
       padding-bottom: .5em;
-    }
+    } 
+  }
 
-    
+  th {
+    font-weight: 400;
   }
   
   th, td {
 
-
-
-      text-align: center;
+    text-align: center;
 
     @media (min-width: $breakpoint-alpha) {
       display: table-cell;

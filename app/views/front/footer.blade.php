@@ -4,7 +4,7 @@
 		<nav class="footer-nav">
 			<ul>
 				<li><a href="{{ URL::to('/informacje') }}">Informacje</a></li>
-				<li><a href="{{ URL::to('/informacje') }}">FAQ</a></li>
+				<li><a href="{{ URL::to('/faq') }}">FAQ</a></li>
 				<li><a href="{{ URL::to('/oferta') }}">Oferta</a></li>
 				<li><a href="{{ URL::to('/kontakt') }}">Kontakt</a></li>
 				<li><a href="{{ URL::to('/regulamin') }}">Regulamin</a></li>

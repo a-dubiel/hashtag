@@ -1788,6 +1788,8 @@ Stylesheet: Alert Styles
     font-size: 1.125rem; }
   .table-pricing td:last-child {
     padding-bottom: .5em; }
+  .table-pricing th {
+    font-weight: 400; }
   .table-pricing th, .table-pricing td {
     text-align: center; }
     @media (min-width: 996px) {
@@ -3408,6 +3410,7 @@ abbr[title] {
 .block-cta {
   width: 100%;
   padding: 50px 0;
+  color: #fff;
   background: #42a80b;
   margin: 40px 0 -20px 0;
   text-align: center; }
@@ -3417,6 +3420,9 @@ abbr[title] {
     margin: 0 0 20px 0;
     padding: 0;
     color: #fff; }
+  .block-cta.block-cta-white {
+    background: none;
+    margin-top: 0px; }
 
 .block-trending {
   background: #42a80b;
@@ -3492,7 +3498,7 @@ abbr[title] {
     text-align: center; }
 
 .page-content {
-  padding: 10px;
+  padding: 10px 10px 30px;
   background: #fff;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -3501,21 +3507,119 @@ abbr[title] {
 
 .contact-form {
   padding: 30px;
-  background: #fff;
+  background: #f6f6f6;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   border-radius: 3px; }
   .contact-form .input-default {
-    height: 40px; }
+    height: 40px;
+    background-color: #fff; }
   .contact-form input[type="text"] {
     margin-bottom: 20px; }
   .contact-form .textarea-default {
     max-width: 100%;
-    margin: 20px 0; }
+    margin: 20px 0;
+    background-color: #fff; }
 
 .contact-info p {
   margin-top: 0; }
+
+.about-intro {
+  text-align: center;
+  margin-bottom: 20px; }
+  .about-intro img {
+    width: 300px; }
+  .about-intro h1 {
+    text-transform: uppercase;
+    font-size: 28px;
+    font-size: 1.75rem;
+    font-weight: 700; }
+  .about-intro p {
+    color: #666;
+    font-size: 18px;
+    font-size: 1.125rem; }
+
+.about-section {
+  margin-bottom: 20px; }
+  .about-section h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 0; }
+    .about-section h3:after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: #42a80b;
+      margin: 5px auto 0; }
+  .about-section h4 {
+    text-transform: uppercase;
+    margin: 10px 0; }
+  .about-section p {
+    color: #666; }
+
+.logo-big {
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  background: url("../images/logo-big.png") no-repeat;
+  background-size: 200px; }
+
+.faq-big {
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  background: url("../images/faq-big.png") no-repeat;
+  background-size: 200px; }
+
+.contact-big {
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  background: url("../images/contact-big.png") no-repeat;
+  background-size: 200px; }
+
+.faq-item {
+  color: #333;
+  text-decoration: none; }
+  .faq-item .fa {
+    margin-right: 15px;
+    color: #42a80b; }
+
+.section-pricing .table-pricing {
+  margin-top: 20px; }
+.section-pricing h3 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0; }
+  .section-pricing h3:after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #42a80b;
+    margin: 5px auto 0; }
+.section-pricing .home-section-pro {
+  padding-top: 20px; }
+  .section-pricing .home-section-pro .home-section-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px; }
+    .section-pricing .home-section-pro .home-section-icon img {
+      width: 25px;
+      margin-top: 12px; }
+  .section-pricing .home-section-pro h4:after {
+    display: none; }
+  .section-pricing .home-section-pro p {
+    margin-top: 0;
+    padding: 0; }
 
 /******************************************************************
 DROPDOWN
@@ -4129,7 +4233,19 @@ FOOTER STYLES
 
   .home-logo {
     background: url("../images/logo-home-small@2x.png") no-repeat;
-    background-size: 200px 50px; } }
+    background-size: 200px 50px; }
+
+  .logo-big {
+    background: url("../images/logo-big@2x.png") no-repeat;
+    background-size: 200px 200px; }
+
+  .faq-big {
+    background: url("../images/faq-big@2x.png") no-repeat;
+    background-size: 200px 200px; }
+
+  .contact-big {
+    background: url("../images/contact-big@2x.png") no-repeat;
+    background-size: 200px 200px; } }
 @media print {
   /******************************************************************
   Site Name:
