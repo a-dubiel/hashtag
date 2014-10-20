@@ -3659,6 +3659,21 @@ abbr[title] {
     width: 250px;
     margin: 20px auto; }
 
+.not-found {
+  width: 300px;
+  margin: 100px auto;
+  text-align: center; }
+  .not-found h1 {
+    font-size: 32px;
+    font-size: 2rem;
+    line-height: 32px;
+    margin: 0;
+    padding: 0; }
+  .not-found p {
+    color: #666;
+    padding: 0;
+    margin: 0; }
+
 /******************************************************************
 DROPDOWN
 ******************************************************************/

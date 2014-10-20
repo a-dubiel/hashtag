@@ -117,14 +117,13 @@
 				
 
 <div class="notice">
-					 <p>Aktualnie jesteśmy w fazie testów. Opcja Pro będzie dostępna za około 2 tygodnie.<br />Jeżeli chcesz dostać e-mail z powiadomieniem podaj swój poniżej.</p>
+	 <p>Aktualnie jesteśmy w fazie testów. Opcja Pro będzie dostępna za około 2 tygodnie.<br />Jeżeli chcesz dostać powiadomienie podaj swój e-mail poniżej.</p>
 
-					 {{ Form::open(array('method' => 'post', 'url' => '/contact/send')) }}	
-						<input type="email" name="email" class="input-default @if ($errors->has('email'))has-error @endif" id="" placeholder="E-mail">
-						<button type="submit" class="btn-default btn-submit btn-green btn-lg">Powiadom mnie</button>	
-					{{ Form::close() }}
-
-					 </div>
+	 {{ Form::open(array('method' => 'post', 'url' => '/contact/send')) }}	
+		<input type="email" name="email" class="input-default @if ($errors->has('email'))has-error @endif" id="" placeholder="E-mail">
+		<button type="submit" class="btn-default btn-submit btn-green btn-lg">Powiadom mnie</button>	
+	{{ Form::close() }}
+</div>
 
 
 

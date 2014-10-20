@@ -1552,8 +1552,25 @@ abbr[title] {
 		width:250px;
 		margin: 20px auto;
 	}
+}
 
+.not-found {
+	width:300px;
+	margin:100px auto;
+	text-align:center;
 
+	h1 {
+		@include font-size(32px);
+		line-height:32px;
+		margin:0;
+		padding:0;
+	}
+
+	p {
+		color:$gray;
+		padding:0;
+		margin:0;
+	}
 }
 
 

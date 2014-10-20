@@ -50,6 +50,10 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+App::missing(function($exception){
+     return Response::view('errors.default',array(),404);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
@@ -63,7 +67,7 @@ App::error(function(Exception $exception, $code)
 
 App::down(function()
 {
-	return Response::make("Be right back!", 503);
+	 return Response::view('errors.down',array(),503);
 });
 
 /*
@@ -185,7 +189,7 @@ Event::listen('activate.subscription', function($subscriptionId) {
 
        		$resale_params = array(
 			    'id_authorization' => $sale->sale_id,
-			    'amount'      => 149.00,
+			    'amount'      => 189.00,
 			    'currency'    => 'PLN',
 			    'description' => 'Subskrypcja Hasztag.info',
 			);
@@ -196,7 +200,7 @@ Event::listen('activate.subscription', function($subscriptionId) {
        		
        		$params = array(
 			    'id_sale'     => $sale->sale_id,
-			    'amount'      => 149.00,
+			    'amount'      => 189.00,
 			    'currency'    => 'PLN',
 			    'description' => 'Subskrypcja Hasztag.info',
 			);

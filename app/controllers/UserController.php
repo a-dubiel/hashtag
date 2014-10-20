@@ -420,7 +420,7 @@ class UserController extends \BaseController {
 				$client = new Paylane\PayLaneRestClient('adubiel', 'dru9pra2');
 				$card_params = array(
 				    'sale'     => array(
-				        'amount'      => 149.00,
+				        'amount'      => 189.00,
 				        'currency'    => 'PLN',
 				        'description' => 'Subskrypcja Hasztag.info'
 				    ),

@@ -204,8 +204,6 @@ return array(
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
 
-		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
-		'OAuth' => 'Artdarek\OAuth\Facade\OAuth',
 		'Asset' => 'Roumen\Asset\Asset',
 		'Sanitize' => 'Webpatser\Sanitize\Sanitize',
 		'Twitter' => 'Thujohn\Twitter\TwitterFacade',

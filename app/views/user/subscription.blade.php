@@ -26,7 +26,7 @@
 		<p>Status @if($subscription->first()->is_active == 1) <i class="fa green fa-check"></i>@else <i class="fa fa-times red"></i>@endif</p>
 		@if($subscription->first()->is_active == 1)
 		<div class="alert alert-success add-bottom">
-			<p>Twoja subskrypcja odnowi się automatycznie za {{ Carbon::parse($subscription->first()->expires_at)->diffInDays() }} dni ({{ date('d-m-Y', strtotime($subscription->first()->expires_at) )}}). W tym dniu obciążymy Twoją kartę kwotą 149 złotych, chyba że zrezygnujesz z subskrypcji przed tym terminem.</p>
+			<p>Twoja subskrypcja odnowi się automatycznie za {{ Carbon::parse($subscription->first()->expires_at)->diffInDays() }} dni ({{ date('d-m-Y', strtotime($subscription->first()->expires_at) )}}). W tym dniu obciążymy Twoją kartę kwotą 189 złotych, chyba że zrezygnujesz z subskrypcji przed tym terminem.</p>
 		</div>
 
 		@endif
