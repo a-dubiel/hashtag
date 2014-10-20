@@ -20,8 +20,8 @@
 <body class="page">
     <div class="not-found">
         <img src="{{ URL::to('/images/down.svg') }}" />
-        <h1>Przerwa techniczna.</h1>
-        <p>Wróć za chwilkę.</p>
+        <h1>Przerwa techniczna!</h1>
+        <p>Zabijamy robaki kluczem francuskim.</p>
     </div>
 </body>
 </html>

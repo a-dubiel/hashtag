@@ -20,7 +20,7 @@
 <body class="page">
     <div class="not-found">
         <img src="{{ URL::to('/images/notfound.svg') }}" />
-        <h1>Coś poszło nie tak.</h1>
+        <h1>Ale wstyd!</h1>
         <p>Nie ma takiej strony.</p>
     </div>
 </body>
