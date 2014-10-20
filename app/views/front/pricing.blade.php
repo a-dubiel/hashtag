@@ -93,6 +93,19 @@
 					</div>
 
 				</div>
+
+				<div class="col-lg-8 col-lg-offset-2 col-md-8 cold-md-offset-2 col-sm-8 col-sm-offset-2 hidden-xs hidden-sm">
+					<h3>Prezentacja</h3>
+						<div class="row">
+							<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 home-section home-section-pro">
+								<p>Opcja prezentacji, czyli pełnoekranowa wersja tablicy to doskonały sposób aby zachęcić uczestników Twojej imprezy lub konferencji do udziału w wydarzeniu.</p>
+							</div>
+					</div>
+					<div class="mac-background ">
+						<div class="presentation-image"></div>
+					</div>
+					
+				</div>
 				
 				<div class="col-lg-8 col-lg-offset-2 col-md-8 cold-md-offset-2 col-sm-8 col-sm-offset-2">
 					<h3>Porównaj Plany</h3>
@@ -173,11 +186,21 @@
 					  	<td></td>
 					  	<td>0 zł</td>
 					  	<td>
-					  		149 zł/miesiąc
+					  		189 zł/miesiąc
 					  	</td>
 					  </tr>
 						
 					 </table>
+				</div>
+
+				<div class="col-lg-8 col-lg-offset-2 col-md-8 cold-md-offset-2 col-sm-8 col-sm-offset-2">
+
+				<div class="block-cta block-cta-white">
+						<p>Załóż swoją pierwszą tablicę za darmo lub wykup Plan Pro!</p>
+							<a href="{{ URL::to('/konto/tablice') }}" class="btn-default btn-lg btn-green-inverted">Dodaj tablicę</a>
+							<a href="{{ URL::to('/konto/pro') }}" class="btn-default btn-lg btn-green">Wykup Plan Pro</a>
+					</div>
+
 				</div>
 
 			</div>

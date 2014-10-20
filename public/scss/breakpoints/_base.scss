@@ -1237,6 +1237,10 @@ abbr[title] {
 	&.block-cta-white {
 		background:none;
 		margin-top:0px;
+
+		p {
+			color:$gray;
+		}
 	}
 
 }
@@ -1440,6 +1444,14 @@ abbr[title] {
 	background-size:200px;
 }
 
+.terms-big {
+	width:200px;
+	height:200px;
+	margin:20px auto;
+	background: url('../images/terms-big.png') no-repeat;
+	background-size:200px;
+}
+
 .faq-item {
 	color: $black;
 	text-decoration:none;
@@ -1504,6 +1516,44 @@ abbr[title] {
 			padding:0;
 		}
 	}
+}
+
+.mac-background {
+
+	display:block;
+	background: url('../images/mac-presentation.svg') no-repeat;
+	background-size: 640px 521px;
+	width:640px;
+	height:521px;
+	margin: 20px auto 40px;
+	position:relative;
+}
+
+.presentation-image {
+	display:block;
+	width:610px;
+	height:340px;
+	background-image: url('../images/presentation.jpg');
+	background-size:cover;
+	position:absolute;
+	top:20px;
+	right:15px
+}
+
+.notice {
+	margin:40px 0;
+	text-align:center;
+	p {
+		@include font-size(18px);
+
+	}
+
+	.input-default {
+		width:250px;
+		margin: 20px auto;
+	}
+
+
 }
 
 

@@ -3423,6 +3423,8 @@ abbr[title] {
   .block-cta.block-cta-white {
     background: none;
     margin-top: 0px; }
+    .block-cta.block-cta-white p {
+      color: #666; }
 
 .block-trending {
   background: #42a80b;
@@ -3583,6 +3585,13 @@ abbr[title] {
   background: url("../images/contact-big.png") no-repeat;
   background-size: 200px; }
 
+.terms-big {
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  background: url("../images/terms-big.png") no-repeat;
+  background-size: 200px; }
+
 .faq-item {
   color: #333;
   text-decoration: none; }
@@ -3620,6 +3629,35 @@ abbr[title] {
   .section-pricing .home-section-pro p {
     margin-top: 0;
     padding: 0; }
+
+.mac-background {
+  display: block;
+  background: url("../images/mac-presentation.svg") no-repeat;
+  background-size: 640px 521px;
+  width: 640px;
+  height: 521px;
+  margin: 20px auto 40px;
+  position: relative; }
+
+.presentation-image {
+  display: block;
+  width: 610px;
+  height: 340px;
+  background-image: url("../images/presentation.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 20px;
+  right: 15px; }
+
+.notice {
+  margin: 40px 0;
+  text-align: center; }
+  .notice p {
+    font-size: 18px;
+    font-size: 1.125rem; }
+  .notice .input-default {
+    width: 250px;
+    margin: 20px auto; }
 
 /******************************************************************
 DROPDOWN
@@ -4125,6 +4163,17 @@ FOOTER STYLES
   .contact-form input[type="text"] {
     margin-bottom: 0px; }
 
+  .mac-background {
+    background-size: 640px 521px;
+    width: 640px;
+    height: 521px; }
+
+  .presentation-image {
+    width: 610px;
+    height: 340px;
+    top: 20px;
+    right: 15px; }
+
   /*********************
   HEADER STYLES
   *********************/
@@ -4245,6 +4294,10 @@ FOOTER STYLES
 
   .contact-big {
     background: url("../images/contact-big@2x.png") no-repeat;
+    background-size: 200px 200px; }
+
+  .terms-big {
+    background: url("../images/terms-big@2x.png") no-repeat;
     background-size: 200px 200px; } }
 @media print {
   /******************************************************************

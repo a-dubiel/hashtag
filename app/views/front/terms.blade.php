@@ -31,9 +31,9 @@
 			
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-8 cold-md-offset-2 col-sm-8 col-sm-offset-2 about-intro">
-					<div class="contact-big"></div>
+					<div class="terms-big"></div>
 					<h1>Regulamin</h1>
-					<p>Jeżeli masz ochotę się z nami skontaktować wypełnij ten formularz. Nie zapomnij podać swojego e-maila. Odpiszemy najszybciej jak tylko się da.</p>
+					<p>Zbiór zasad.</p>
 				</div>
 				<div class="clearfix"></div>
 

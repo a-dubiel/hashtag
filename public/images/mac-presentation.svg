@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 639.6 521.1" enable-background="new 0 0 639.6 521.1" xml:space="preserve">
+<g id="macs.psd_1_">
+	<g id="macs_1_">
+		<g id="iMac_1_">
+			<g id="Shadow_22_" enable-background="new    ">
+				<defs>
+					<ellipse id="SVGID_1_" enable-background="new    " cx="322.5" cy="515.8" rx="159.5" ry="5.3"/>
+				</defs>
+				<clipPath id="SVGID_2_">
+					<use xlink:href="#SVGID_1_"  overflow="visible"/>
+				</clipPath>
+				<g transform="matrix(1 0 0 1 0 7.629395e-06)" clip-path="url(#SVGID_2_)">
+					
+						<image overflow="visible" width="600" height="400" id="Shadow_23_" xlink:href="A2C5F4F0D13613EB.png"  transform="matrix(2.0765 0 0 2.0765 -307.5928 -124.5918)">
+					</image>
+				</g>
+			</g>
+			<g id="Device_9_">
+				<g id="Stand_2_">
+					<g>
+						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#E9EBEF" points="402.1,505.1 383.2,439.6 256.3,439.6 237.4,505.1 
+							214.4,508.2 214.4,514.2 425.2,514.2 425.2,508.2 						"/>
+					</g>
+				</g>
+				<g id="Shadow_20_" opacity="0.102">
+					<g>
+						<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#474E5D" points="383.2,439.6 256.3,439.6 252.2,453.8 387.3,453.8 
+													"/>
+					</g>
+				</g>
+				<g id="iMac_base_2_">
+					<g>
+						<path fill-rule="evenodd" clip-rule="evenodd" fill="#474E5D" d="M625.4,0H14.2C6.3,0,0,6.3,0,14.2v366.9h639.6V14.2
+							C639.6,6.3,633.2,0,625.4,0z"/>
+					</g>
+				</g>
+				<g id="iMac_bottom_base_2_">
+					<g>
+						<path fill-rule="evenodd" clip-rule="evenodd" fill="#E8EBEF" d="M0,381.1v44.3c0,7.8,6.3,14.2,14.2,14.2h611.2
+							c7.8,0,14.2-6.3,14.2-14.2v-44.3H0z"/>
+					</g>
+				</g>
+				<g id="Apple_2_">
+					<g>
+						<ellipse fill-rule="evenodd" clip-rule="evenodd" fill="#474E5D" cx="319.8" cy="407.7" rx="12.7" ry="12.7"/>
+					</g>
+				</g>
+				<g id="Camera_6_">
+					<g>
+						<circle fill-rule="evenodd" clip-rule="evenodd" fill="#A5ADBD" cx="320.7" cy="12.4" r="3"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g>
+		<defs>
+			<rect id="SVGID_3_" x="24.8" y="24.6" width="592" height="332"/>
+		</defs>
+		<clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_"  overflow="visible"/>
+		</clipPath>
+	</g>
+</g>
+</svg>
