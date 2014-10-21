@@ -28,7 +28,7 @@ $env = $app->detectEnvironment(array(
 
 	 'local' => ['*.local', 'localost:8888'],
 	 'dev' => ['dev.*'],
-     'production' => ['*.info']
+     'production' => ['www.hasztag.info']
 
 ));
 
