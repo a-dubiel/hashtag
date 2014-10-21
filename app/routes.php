@@ -25,8 +25,6 @@ Route::get('/pdf', function(){
 
 });
 
-
-
 //sitewide
 Route::get('/', array('uses' =>'HomeController@showHome')); 
 Route::get('/informacje', array('uses' =>'HomeController@showAboutUs')); 
