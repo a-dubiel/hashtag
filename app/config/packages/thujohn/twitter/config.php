@@ -11,8 +11,8 @@ return array(
 	'REQUEST_TOKEN_URL'   => 'oauth/request_token',
 	'USE_SSL'             => true,
 
-	'CONSUMER_KEY'        => 'JzvZArs0oaCmljOxpAOfgjMlF',
-	'CONSUMER_SECRET'     => 'XZSB4B6JNKADFD0QVkOwLccPF5Qque8tOaeGJKJnzJ6KtbbNxh',
+	'CONSUMER_KEY'        => Config::get('laravel-social::providers.twitter.client_id'),
+	'CONSUMER_SECRET'     => Config::get('laravel-social::providers.twitter.client_secret'),
 	'ACCESS_TOKEN'        => '',
 	'ACCESS_TOKEN_SECRET' => '',
 );

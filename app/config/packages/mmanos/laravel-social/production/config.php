@@ -38,8 +38,8 @@ return array(
 	'providers' => array(
 
 		'facebook' => array(
-			'client_id'       => '792521940804353',
-			'client_secret'   => 'ad7d858b92ff66b520930abdd1074b3a',
+			'client_id'       => '557077937758056',
+			'client_secret'   => '8ed300196cbd527d28b110387e90c75c',
 			'scope'           => array('email'),
 			'fetch_user_info' => function ($service) {
 				$result = json_decode($service->request('/me'), true);
@@ -54,8 +54,8 @@ return array(
 		),
 
 		'instagram' => array(
-			'client_id'       => '8b13eee3098e4079ab9faae9075ab989',
-			'client_secret'   => '701915cf89b74b9d8f14ab3e62f6ea9b',
+			'client_id'       => 'ab8c8c14805d4836ab4c9ad7cd341386',
+			'client_secret'   => 'fa5bde551b1c4570a6076b9e7fb071cb',
 			'scope'           => array('basic'),
 			'fetch_user_info' => function ($service) {
 
@@ -72,8 +72,8 @@ return array(
 		),
 
 		'twitter' => array(
-			'client_id'       => 'ys1AoNlvpCkIle4dpvl3GDFFu',
-			'client_secret'   => 'EI8NGU5emwZtwZWWHtaZ9GH6db2Qee39ME7vgre2r17NFg38io',
+			'client_id'       => 'A0WR0rKVDYrn8RMWyWx5qbWmt',
+			'client_secret'   => 'ZezMhhwrqVbi0QLB9twoF4cDUqofX50Vo4rzBDDyAAaDLJKbmL',
 			'scope'           => array(),
 			'fetch_user_info' => function ($service) {
 				$result = json_decode($service->request('account/verify_credentials.json'), true);

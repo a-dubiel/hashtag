@@ -397,9 +397,9 @@ def sslify_instagram_cdn_url(url):
 		$board = Board::find($id);
 		$hashtag = $board->hashtag;
 		$config = $board->config()->first();
-		$instagramKey = 'b13d92eda3a244e69daa44304a832de4';
+		$instagramKey = Config::get('laravel-social::providers.instagram.client_id');
 		$googleKey = 'AIzaSyDiywW3UvpbQ5aR7f_8tLVgNCzui7Gq6ek';
-		$postCount = 5;
+		$postCount = 10;
 		$googleToken = $endpoints['google_token'];
 		$instagramNextMaxId = $endpoints['instagram_max_id'];
 		$instagramMinTagId = $endpoints['instagram_min_tag'];
@@ -666,9 +666,9 @@ def sslify_instagram_cdn_url(url):
 		$board = Board::find($id);
 		$hashtag = $board->hashtag;
 		$config = $board->config()->first();
-		$instagramKey = 'b13d92eda3a244e69daa44304a832de4';
+		$instagramKey = Config::get('laravel-social::providers.instagram.client_id');
 		$googleKey = 'AIzaSyDiywW3UvpbQ5aR7f_8tLVgNCzui7Gq6ek';
-		$postCount = 5;
+		$postCount = 10;
 		$googleToken = $endpoints['google_token'];
 		$instagramNextMaxId = $endpoints['instagram_max_id'];
 		$instagramMinTagId = $endpoints['instagram_min_tag'];
@@ -952,9 +952,9 @@ def sslify_instagram_cdn_url(url):
 		$board = Board::find($id);
 		$hashtag = $board->hashtag;
 		$config = $board->config()->first();
-		$instagramKey = 'b13d92eda3a244e69daa44304a832de4';
+		$instagramKey = Config::get('laravel-social::providers.instagram.client_id');
 		$googleKey = 'AIzaSyDiywW3UvpbQ5aR7f_8tLVgNCzui7Gq6ek';
-		$postCount = 10;
+		$postCount = 15;
 		$googleToken = '';
 		$instagramNextMaxId = '';
 		$instagramMinTagId = '';
