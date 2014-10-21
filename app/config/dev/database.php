@@ -22,7 +22,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
+			'host'      => 'vps-1047395-7634.cp.homecloud.pl',
 			'database'  => 'hashtag_dev',
 			'username'  => 'hasztag_dev_user',
 			'password'  => '~h16xUt7',
