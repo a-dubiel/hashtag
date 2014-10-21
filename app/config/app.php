@@ -131,6 +131,7 @@ return array(
 	    'Codesleeve\LaravelStapler\LaravelStaplerServiceProvider',
 	    'Cviebrock\ImageValidator\ImageValidatorServiceProvider',
 	    'Barryvdh\DomPDF\ServiceProvider',
+	    'Healey\Robots\RobotsServiceProvider',
 
 
 	    

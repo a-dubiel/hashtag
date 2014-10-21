@@ -122,5 +122,19 @@ class HomeController extends BaseController {
 		$this->layout->content = View::make('front.faq', $data);
 	}
 
+	public function generateRobots() {
+		
+		if (App::environment() == 'production')
+    	{
+	        Robots::addUserAgent('*');
+	        Robots::addDisallow('/konto');
+	      //  Robots::addSitemap('sitemap.xml');
+	    } else {
+	        Robots::addDisallow('*');
+	    }
+
+	    return Response::make(Robots::generate(), 200, array('Content-Type' => 'text/plain'));
+	}
+
 
 }
