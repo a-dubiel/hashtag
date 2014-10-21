@@ -27,7 +27,7 @@ Route::get('/pdf', function(){
 
 Route::get('/', function(){
 
-	dd(App::environment());
+	dd(App::environment()); 
 
 });
 
