@@ -27,7 +27,7 @@ $app = new Illuminate\Foundation\Application;
 $env = $app->detectEnvironment(array(
 
 	 'local' => ['*.local', 'localost:8888'],
-	 'dev' => ['dev.hasztag.info'],
+	 'dev' => ['dev.*'],
      'production' => ['*.info']
 
 ));
