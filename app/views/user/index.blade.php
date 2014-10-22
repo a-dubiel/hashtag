@@ -19,14 +19,24 @@
 		<div class="account-user-info">
 		
 			@if($user->default_provider == 'facebook')
-                <img src="http://graph.facebook.com/{{ $providers->first()->provider_id }}/picture?type=large" alt="avatar" class="user-avatar-lg" />
+				@foreach($user->provider()->get() as $provider)
+                    @if($provider->provider == 'facebook')
+                    	<img src="https://graph.facebook.com/{{ $provider->provider_id }}/picture?type=large" alt="avatar" class="user-avatar-lg" />
+                  	@endif
+                @endforeach
             @elseif($user->default_provider == 'instagram')
                 @foreach($user->provider()->get() as $provider)
                     @if($provider->provider == 'instagram')
                     	<img src="{{ $provider->profile_picture }}" alt="avatar" class="user-avatar-lg" /> 
                     @endif
                 @endforeach
-             @else		
+             @elseif($user->default_provider == 'twitter')
+                @foreach($user->provider()->get() as $provider)
+                    @if($provider->provider == 'twitter')
+                    	<img src="{{ $provider->profile_picture }}" alt="avatar" class="user-avatar-lg" /> 
+                    @endif
+                @endforeach
+             @else				
 				<i class="fa fa-user"></i>
              @endif
                 
