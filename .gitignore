@@ -1,11 +1,13 @@
 ### Laravel 4 ###
 /public/system
 /bootstrap/compiled.php
+/bootstrap/environment.php
 /vendor
 composer.phar
 composer.lock
 .DS_Store
 Thumbs.db
+
 
 ### Sass ###
 .sass-cache
