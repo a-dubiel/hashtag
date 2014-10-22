@@ -51,11 +51,13 @@
 						<input type="hidden" name="access_token" value="{{ $session['mmanos']['social']['pending']['access_token']['token'] }}">
 						<input type="hidden" name="profile_picture" value="{{$session['mmanos']['social']['pending']['access_token']['extra_params']['user']['profile_picture']}}">
 						@elseif(strtolower($session['mmanos']['social']['pending']['provider']) == 'twitter')
+	
 							<input type="hidden" name="provider" value="{{ strtolower($session['mmanos']['social']['pending']['provider']) }}">
 							<input type="hidden" name="provider_id" value="{{ $session['mmanos']['social']['pending']['provider_id'] }}">
 							<input type="hidden" name="first_name" value="{{ $session['mmanos']['social']['pending']['user_info']['first_name'] }}">
 							<input type="hidden" name="last_name" value="{{ $session['mmanos']['social']['pending']['user_info']['last_name'] }}">
 							<input type="hidden" name="access_token" value="{{ $session['mmanos']['social']['pending']['access_token']['token'] }}">
+							<input type="hidden" name="profile_picture" value="{{$session['mmanos']['social']['pending']['user_info']['profile_picture'] }}">
 						@endif
 						
 					

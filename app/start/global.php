@@ -339,3 +339,6 @@ Event::listen('subscriptions.check', function(){
 
 	
 });
+
+
+require app_path().'/helpers.php';

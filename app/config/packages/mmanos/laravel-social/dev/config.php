@@ -82,6 +82,7 @@ return array(
 					'email'      => null,
 					'first_name' => array_get(explode(' ', array_get($result, 'name')), 0),
 					'last_name'  => array_get(explode(' ', array_get($result, 'name')), 1)
+					'profile_picture' => array_get($result, 'profile_image_url_https')
 				);
 			},
 		), 

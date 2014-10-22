@@ -3280,7 +3280,7 @@ abbr[title] {
   border-radius: 3px; }
   .home-search .search-icon {
     width: 20%;
-    height: 60px;
+    height: 40px;
     display: block;
     float: left;
     text-align: center;
@@ -3290,14 +3290,15 @@ abbr[title] {
     line-height: 40px; }
   .home-search .search-bar {
     width: 80%;
-    height: 60px;
+    height: 40px;
     display: block;
     float: left; }
     .home-search .search-bar input {
       display: block;
+      height: 40px;
       width: 100%;
       background: none;
-      line-height: 35px;
+      line-height: 100%;
       font-size: 18px;
       font-size: 1.125rem; }
   .home-search input[type="submit"] {
@@ -4105,7 +4106,8 @@ FOOTER STYLES
   .home-search .search-bar {
     height: 60px; }
     .home-search .search-bar input {
-      line-height: 58px; }
+      line-height: 100%;
+      height: 60px; }
 
   .home-section,
   .home-section-pro {

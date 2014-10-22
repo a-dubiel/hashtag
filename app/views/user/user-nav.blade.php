@@ -13,7 +13,7 @@
             @elseif($user->default_provider == 'twitter')
                 @foreach($user->provider()->get() as $provider)
                     @if($provider->provider == 'twitter')
-                        <li><a href="#" data-dropdown="#dropdown-1" class="user-dropdown"><div class="user-avatar"><i class="fa fa-twitter"></i></div><div class="username hidden-xs">{{ preg_replace('/@.*?$/', '', $user->email) }}</div> <i class="fa fa-caret-down"></i></a></li>
+                        <li><a href="#" data-dropdown="#dropdown-1" class="user-dropdown"><div class="user-avatar"><img src="{{ $provider->profile_picture }}" alt="avatar" /></div><div class="username hidden-xs">{{ preg_replace('/@.*?$/', '', $user->email) }}</div> <i class="fa fa-caret-down"></i></a></li>
                     @endif
                 @endforeach    
             @endif

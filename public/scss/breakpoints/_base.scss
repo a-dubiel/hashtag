@@ -1061,7 +1061,7 @@ abbr[title] {
 
 	.search-icon {
 		width:20%;
-		height:60px;
+		height:40px;
 		display:block;
 		float:left;
 		text-align: center;
@@ -1074,15 +1074,16 @@ abbr[title] {
 
 	.search-bar {
 		width:80%;
-		height:60px;
+		height:40px;
 		display:block;
 		float:left;
 
 		input {
 			display:block;
+			height:40px;
 			width:100%;
 			background:none;
-			line-height:35px;
+			line-height:100%;
 			@include font-size(18px);
 			
 		}

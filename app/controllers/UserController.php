@@ -84,7 +84,13 @@ class UserController extends \BaseController {
 			$provider->provider = Input::get('provider');
 			$provider->provider_id = Input::get('provider_id');
 			$provider->access_token = Input::get('access_token');
-			$provider->profile_picture = Input::get('profile_picture');
+			if(Input::get('provider') == 'instagram') {
+				$provider->profile_picture = sslInstagramProfilePic(Input::get('profile_picture'));
+			}
+			else {
+				$provider->profile_picture = Input::get('profile_picture');
+			}
+			
 			$provider->save();
 
 			Session::forget('mmanos.social.pending');
