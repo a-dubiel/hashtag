@@ -3,6 +3,7 @@
 /bootstrap/compiled.php
 /bootstrap/environment.php
 /vendor
+/public/cgi-bin
 composer.phar
 composer.lock
 .DS_Store
