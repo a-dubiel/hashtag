@@ -27,8 +27,8 @@ $app = new Illuminate\Foundation\Application;
 $env = $app->detectEnvironment(array(
 
 	 'local' => ['*.local', 'localost:8888'],
-	 'dev' => ['vps-1047395-7634.cp.homecloud.pl'],
-     'production' => ['*.info']
+	 'dev' => ['http://dev.*'],
+     'production' => ['https://www.*']
 
 ));
 
