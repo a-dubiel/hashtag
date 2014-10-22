@@ -3460,10 +3460,10 @@ abbr[title] {
   .home-gallery .gallery-item {
     display: block;
     text-align: center;
-    text-decoration: none;
-    margin-bottom: 10px; }
+    text-decoration: none; }
     .home-gallery .gallery-item img {
       width: 100%;
+      margin-top: 10px;
       -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
       -ms-border-radius: 3px;

@@ -1288,11 +1288,9 @@ abbr[title] {
 		display:block;
 		text-align: center;
 		text-decoration: none;
-		margin-bottom:10px;
-
 		img {
 			width:100%;
-
+			margin-top:10px;
 			@include border-radius(3px);
 			@include transition(opacity 0.3s ease-in-out);
 

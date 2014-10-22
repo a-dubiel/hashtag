@@ -85,20 +85,21 @@
 		<div class="row">
 			<div class="col-lg-4 col-md-4 col-sm-4">
 				<a href="{{ URL::to('/wroclaw/szukaj') }}" class="gallery-item">
-					<img src="{{ URL::to('/images/wroclaw-screen.jpg')}}" alt="wroclaw" />
 					<span class="hashtag">#wroclaw</span>
+					<img src="{{ URL::to('/images/wroclaw-screen.jpg')}}" alt="wroclaw" />
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 gallery-item">
+			
 				<a href="{{ URL::to('/instafood/szukaj') }}" class="gallery-item">
-					<img src="{{ URL::to('/images/instafood-screen.jpg')}}">
 					<span class="hashtag">#instafood</span>	
+					<img src="{{ URL::to('/images/instafood-screen.jpg')}}">
 				</a>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 gallery-item">
 				<a href="{{ URL::to('/reprezentacjapolski/szukaj') }}" class="gallery-item">
-					<img src="{{ URL::to('/images/poland-screen.jpg')}}">
 					<span class="hashtag">#reprezentacjapolski</span>
+					<img src="{{ URL::to('/images/poland-screen.jpg')}}">
 				</a>
 			</div>
 			
