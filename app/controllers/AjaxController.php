@@ -251,19 +251,27 @@ def sslify_instagram_cdn_url(url):
 				}
 				if($post['vendor'] == 'twitter') {
 					$html .= '<a href="http://www.twitter.com/'.$post['username'].'" target="_blank" rel="nofollow">'.$post['username'].'</a>';
+					$post['date_created'] = Carbon::createFromFormat('m-d-y H:i:s', $post['date_created'])->toIso8601String();
 				}
 				else if($post['vendor'] == 'instagram') {
 					$html .= '<a href="http://www.instagram.com/'.$post['username'].'" target="_blank" rel="nofollow">'.$post['username'].'</a>';
+					$post['date_created'] = Carbon::createFromFormat('m-d-y H:i:s', $post['date_created'])->toIso8601String();
 				}
 				else if($post['vendor'] == 'google-plus') {
 					$html .= '<a href="https://plus.google.com/'.$post['user_id'].'" target="_blank" rel="nofollow">'.$post['username'].'</a>';
+					$post['date_created'] = Carbon::parse($post['date_created'])->toIso8601String();
 				}
 				else if($post['vendor'] == 'facebook') {
 					$html .= '<a href="http://facebook.com/profile.php?id='.$post['user_id'].'" target="_blank" rel="nofollow">'.$post['username'].'</a>';
+					$post['date_created'] = Carbon::parse($post['date_created'])->toIso8601String();
 				}
 				else if($post['vendor'] == 'vine') {
 					$html .= '<a href="https://vine.co/u/'.$post['user_id'].'" target="_blank" rel="nofollow">'.$post['username'].'</a>';
+					$post['date_created'] = Carbon::createFromFormat('Y-m-d H:i:s', $post['date_created'])->toIso8601String();
 				}
+
+		
+				
 				$html .= '<p><abbr class="timeago" title="'.$post['date_created'].'">'.$post['date_created'].'</abbr></p>';
 				$html .= '</div><div class="clearfix"></div>';
 				if($post['post_type'] == 'image') {
@@ -471,7 +479,14 @@ def sslify_instagram_cdn_url(url):
 				}	
 			}
 			else {
-				$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&client_id='.$instagramKey.'&min_tag_id='.$instagramMinTagId);
+				$provider = SocialProvider::where('user_id','=',$config->user_id)->where('provider', '=', 'instagram')->first();
+				if(is_null($provider)) {
+					$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&client_id='.$instagramKey.'&min_tag_id='.$instagramMinTagId);
+				}
+				else {
+					$token = $provider->access_token;
+					$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&access_token='.$token.'&min_tag_id='.$instagramMinTagId);
+				}	
 			}
 
 			
@@ -697,7 +712,15 @@ def sslify_instagram_cdn_url(url):
 					}	
 				}
 				else {
-					$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&client_id='.$instagramKey.'&max_tag_id='.$instagramNextMaxId);
+					$provider = SocialProvider::where('user_id','=',$config->user_id)->where('provider', '=', 'instagram')->first();
+
+					if(is_null($provider)) {
+						$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&client_id='.$instagramKey.'&max_tag_id='.$instagramNextMaxId);
+					}
+					else {
+						$token = $provider->access_token;
+						$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&access_token='.$token.'&max_tag_id='.$instagramNextMaxId);
+					}	
 				}
 
 				
@@ -980,7 +1003,15 @@ def sslify_instagram_cdn_url(url):
 				}	
 			}
 			else {
-				$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&client_id='.$instagramKey);
+				$provider = SocialProvider::where('user_id','=',$config->user_id)->where('provider', '=', 'instagram')->first();
+
+				if(is_null($provider)) {
+					$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&client_id='.$instagramKey);
+				}
+				else {
+					$token = $provider->access_token;
+					$instagram = $client->get('https://api.instagram.com/v1/tags/'.$hashtag.'/media/recent?count='.$postCount.'&access_token='.$token);
+				}	
 			}
 
 			if($instagram->getStatusCode() == 200 ) {
