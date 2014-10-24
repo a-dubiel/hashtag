@@ -127,7 +127,7 @@
 		e.preventDefault();
 	});
 
-	$('.filters').on( 'click', 'a.filter', function() {
+	$('.filters').on( 'click', 'a.filter', function(e) {
 		var $el = $(this);
 		if($el.attr('data-filter') == filterValue) {
 			$('a.filter').removeClass('active').removeClass('inactive');
@@ -140,6 +140,8 @@
 		}		
 
     	$container.isotope({ filter: filterValue });
+    	
+    	e.preventDefault();
   	});
 
 
