@@ -6,6 +6,7 @@ class BaseController extends Controller {
 	 	//JS
 	 	Asset::add('//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js', 'header');
 	 	Asset::add('/js/libs/cssua.min.js', 'header');
+	 	Asset::add('//cdnjs.cloudflare.com/ajax/libs/pace/0.6.0/pace.min.js', 'header');
 	 	Asset::add('//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js','footer');
 	 	Asset::add('//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/0.9.9/jquery.magnific-popup.min.js', 'footer');
 	 	Asset::add('//cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.4.0/jquery.timeago.min.js', 'footer');
