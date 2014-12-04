@@ -28,6 +28,7 @@
 			else {
 			//	console.log(data.endpoints);
 				display_posts(data.posts, false);
+				//$container.isotope({ sortBy : 'random'});
 				endpoints = data.endpoints;
 			
 				if(is_logged_in == true) {
@@ -48,12 +49,15 @@
 			$items.imagesLoaded(function(){
 				$loading.remove();
 				$container.isotope( 'insert', $items );
+			//	$container.isotope({ sortBy : 'original-order'});
 				$('abbr.timeago').timeago();
+
 			});
 		}
 		else if(option == true){
 			$items.imagesLoaded(function(){
 				$container.prepend( $items ).isotope( 'prepended', $items );
+			//	$container.isotope({ sortBy : 'original-order'});
 				$('abbr.timeago').timeago();
 			});
 		}

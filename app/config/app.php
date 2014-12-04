@@ -132,6 +132,7 @@ return array(
 	    'Cviebrock\ImageValidator\ImageValidatorServiceProvider',
 	    'Barryvdh\DomPDF\ServiceProvider',
 	    'Healey\Robots\RobotsServiceProvider',
+	    'Roumen\Sitemap\SitemapServiceProvider',
 
 
 	    

@@ -17,7 +17,8 @@
 		"codesleeve/laravel-stapler": "1.0.*",
 		"cviebrock/image-validator": "1.0.*",
 		"barryvdh/laravel-dompdf": "0.4.*",
-		"healey/robots": "dev-master"
+		"healey/robots": "dev-master",
+		"roumen/sitemap": "~2.4"
 
 
        

@@ -184,8 +184,12 @@ def sslify_instagram_cdn_url(url):
 
 	public function postsToHtml($posts, $boardId = NULL, $featured = NULL) {
 
+
 		$html = '';
 		$base = URL::to('/');
+
+		shuffle($posts);
+		//dd($posts);
 
 		if(isset($boardId)) {
 			$config = BoardConfig::where('board_id', '=', $boardId)->first();
@@ -644,7 +648,7 @@ def sslify_instagram_cdn_url(url):
 		if($count > 0) {
 			
 
-			$html = $this->postsToHtml($posts, $board->id);
+			$html = $this->postsToHtml(shuffle($posts), $board->id);
 
 		
 			return Response::json(
@@ -977,7 +981,7 @@ def sslify_instagram_cdn_url(url):
 		$config = $board->config()->first();
 		$instagramKey = Config::get('laravel-social::providers.instagram.client_id');
 		$googleKey = 'AIzaSyDiywW3UvpbQ5aR7f_8tLVgNCzui7Gq6ek';
-		$postCount = 15;
+		$postCount = 10;
 		$googleToken = '';
 		$instagramNextMaxId = '';
 		$instagramMinTagId = '';

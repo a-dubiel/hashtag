@@ -521,6 +521,7 @@ class UserController extends \BaseController {
 					Event::fire('invoice.email', array($user->id, $subscription->id, $payment->id, $faktura));
 					EmailNotification::where('subscription_id', '=', $subscription->id )->delete();
 					
+					//here
 					$user->level = 2;
 					$user->save();
 

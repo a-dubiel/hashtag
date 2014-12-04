@@ -67,7 +67,10 @@ class BoardsController extends \BaseController {
 				}
 			}
 
-			$stats = Stat::firstOrCreate(array('board_id' => $board->id))->increment('hits');
+			if(Session::get('session-stat') != $board->id) {
+				$stats = Stat::firstOrCreate(array('board_id' => $board->id))->increment('hits');
+				Session::put('session-stat', $board->id);
+			}
 					
 			$data['board'] = $board;
 			$data['boardData'] = $this->layout->boardData = $board;
