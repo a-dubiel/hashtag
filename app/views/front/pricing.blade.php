@@ -39,7 +39,7 @@
 					<div class="col-lg-8 col-lg-offset-2 col-md-8 cold-md-offset-2 col-sm-8 col-sm-offset-2 add-bottom">
 						
 						<div class="row">
-						<h3>Plan Pro</h3>
+						<h3>Plan Pro i Plan Extreme</h3>
 						<div class="col-lg-6 col-md-6 col-sm-6 home-section home-section-pro">
 							<div class="home-section-icon"><img src="{{ URL::to('/images/filter.svg') }}" class="svg svg-filter" /></div>
 							<h4>Administracja</h4>

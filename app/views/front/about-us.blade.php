@@ -7,19 +7,19 @@
 		<a href="{{ URL::to('/') }}" class="logo-main">hashtag.info</a>
 		<div class="board-top-search">
 			{{ Form::open(array('url' => 'szukaj')) }}
-				<div class="input-prepend">
-					<div class="input-icon">
-						<i class="fa fa-search"></i>
-					</div>
-					<div class="input-with-icon">
-						<input type="text" class="input-default" name="query" placeholder="Wpisz dowolny hasztag">
-					</div>
+			<div class="input-prepend">
+				<div class="input-icon">
+					<i class="fa fa-search"></i>
 				</div>
-				<input type="submit" value="Szukaj">
+				<div class="input-with-icon">
+					<input type="text" class="input-default" name="query" placeholder="Wpisz dowolny hasztag">
+				</div>
+			</div>
+			<input type="submit" value="Szukaj">
 			{{ Form::close() }}
 		</div>
 		<nav class="nav-user">
-			 @include('user.user-nav')
+			@include('user.user-nav')
 		</nav>
 	</div>
 </header>
@@ -38,54 +38,60 @@
 				<div class="col-lg-8 col-lg-offset-2 col-md-8 cold-md-offset-2 col-sm-8 col-sm-offset-2 about-section">
 					<h3>Nasza misja</h3>
 
-					<div class="row">
-						<div class="col-lg-6 col-md-6 col-sm-6">
-							<p>Stworzyliśmy narzędzie, które pomoże zbudować społeczności oraz pomoże je odnaleźć w zalewie informacji. Nasz cel numer jeden to umożliwienie ludziom o podobnych zainteresowaniach odnalezienie siebie nawzajem, bez względu na kanał przez jaki płyną informacje.</p>
-						</div>
+					
+					<p>Nasz cel to umożliwienie zgromadzenia informacji z wielu serwisów w jednym. Hasztag, to prosty zabieg który pozwala na dotarcie do większej ilości platform. Nasz serwis to świetne rozwiązanie dla organizacji, firm lub marek które cenią sobie społeczność którą budują wokół siebie oraz ludzi którzy do niej należą.</p>
 
-						<div class="col-lg-6 col-md-6 col-sm-6">
-							<p>Nasz serwis to świetne rozwiązanie dla organizacji, firm lub marek które cenią sobie społeczność którą budują wokół siebie oraz ludzi którzy do niej należą. Dzięki naszej technologii łatwiej oraz szybciej zbudujesz społeczność swojej marki oraz skupisz ludzi, których łączą te same pasję, poglądy i cele. </p>
-						</div>
-					</div>
+					<p>Dzięki naszej technologii łatwiej oraz szybciej zbudujesz społeczność swojej marki oraz skupisz ludzi, których łączą te same pasję, poglądy i cele. Hasztag.info to świetne rozwiązanie w różnego akcjach marketingowych i nie tylko. Nasz serwis pozwala Ci zgromadzić wszystkie najnowsze posty w jednym miejscu. Daje to ci dostęp do większej ilości użytkowników a niżeli jakakolwiek akcja promocyjna na indywidualnej platformie.</p>
+					
+
+				</div>
+
+				<div class="col-lg-8 col-lg-offset-2 col-md-8 cold-md-offset-2 col-sm-8 col-sm-offset-2 about-section">
+					<h3>Jak to robimy?</h3>
+
+					
+					<p>Wszystkie serwisy społecznościowe łączy jeden wspólny mianownik - hasztagi. Nasz serwis przeszukuje te serwisy oraz w kilka sekund odnajduje posty oznaczone danym hasztagiem. Znalezione informacje prezentuje w piękny i przystępny sposób w postaci interaktywnych tablic.</p>
+					
+					
+					<p>Żaden mechanizm mediów społecznościowych nie ma w sobie tyle skuteczności, piękna i prostoty co hasztagi. Jedno słowo, które potrafi stworzyć społeczności, wyznaczyć trend lub rozpocząć rewolucję. Słowo, które potrafi połączyć lub poróżnić ludzi.</p>
 
 				</div>
 
 				<div class="col-lg-8 col-lg-offset-2 col-md-8 cold-md-offset-2 col-sm-8 col-sm-offset-2 about-section">
 					<img src="{{ URL::to('/images/macs.svg') }}" class="" />
-					<h3>Jak to robimy?</h3>
+					
 
-					<div class="row">
-						<div class="col-lg-6 col-md-6 col-sm-6">
-							<p>Wszystkie serwisy społecznościowe łączy jeden wspólny mianownik - hasztagi. Nasz serwis przeszukuje te serwisy oraz w kilka sekund odnajduje posty oznaczone danym hasztagiem. Znalezione informacje prezentuje w piękny i przystępny sposób w postaci interaktywnych tablic.</p>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6">
-								<p>Żaden mechanizm mediów społecznościowycb nie ma w sobie tyle skuteczności, piękna i prostoty co hasztagi. Jedno słowo, które potrafi stworzyć społeczności, wyznaczyć trend lub rozpocząć rewolucję. Słowo, które potrafi połączyć lub poróżnić ludzi.</p>
-						</div>
+					<h3>Dla wszystkich</h3>
 
-					</div>
-
-					<div class="block-cta block-cta-white">
-						<p>Załóż swoją pierwszą tablicę za darmo lub zapoznaj się z naszą ofertą.</p>
-						@if(Auth::check())
-							<a href="{{ URL::to('/konto/tablice') }}" class="btn-default btn-lg btn-green-inverted">Dodaj tablicę</a>
-							<a href="{{ URL::to('/oferta') }}" class="btn-default btn-lg btn-green-inverted">Nasza oferta</a>
-						@else
-							<a href="{{ URL::to('/zarejestruj') }}" class="btn-default btn-lg btn-green-inverted">Zarejestruj się</a>
-							<a href="{{ URL::to('/oferta') }}" class="btn-default btn-lg btn-green-inverted">Nasza oferta</a>
-						@endif
-					</div>
-
+					
+					<p>Laptop, tablet czy komórka - nie ma różnicy. Nie ważne z jakiego urządzenia korzystasz, nasz serwis dostoswany jest do najpopularniejszych urządzeń i przeglądarek (oprócz IE8 i poniżej). Lubimy optymalizację i wydajność, więc dołożyliśmy wielkich starań, żeby oddać Ci najwyższej jakości produkt.</p>
+					
 				</div>
 
-
 			</div>
+
+			<div class="block-cta block-cta-white">
+				<p>Załóż swoją pierwszą tablicę za darmo lub zapoznaj się z naszą ofertą.</p>
+				@if(Auth::check())
+				<a href="{{ URL::to('/konto/tablice') }}" class="btn-default btn-lg btn-green-inverted">Dodaj tablicę</a>
+				<a href="{{ URL::to('/oferta') }}" class="btn-default btn-lg btn-green-inverted">Nasza oferta</a>
+				@else
+				<a href="{{ URL::to('/zarejestruj') }}" class="btn-default btn-lg btn-green-inverted">Zarejestruj się</a>
+				<a href="{{ URL::to('/oferta') }}" class="btn-default btn-lg btn-green-inverted">Nasza oferta</a>
+				@endif
+			</div>
+
 		</div>
+
 
 	</div>
 </div>
 
+</div>
+</div>
+
 @if(Auth::check())
-   @include('user.user-dropdown')
+@include('user.user-dropdown')
 @endif
 
 

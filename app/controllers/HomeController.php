@@ -51,10 +51,9 @@ class HomeController extends BaseController {
 			}
 		}
 		$items = ['home-bg-1.jpg', 'home-bg-2.jpg', 'home-bg-3.jpg', 'home-bg-4.jpg', 'home-bg-5.jpg', 'home-bg-6.jpg', 'home-bg-7.jpg',
-		'home-bg-8.jpg', 'home-bg-9.jpg', 'home-bg-10.jpg', 'home-bg-11.jpg', 'home-bg-12.jpg', 'home-bg-13.jpg', 'home-bg-14.jpg', 'home-bg-15.jpg', 
+		'home-bg-8.jpg', 'home-bg-9.jpg', 'home-bg-10.jpg', 'home-bg-12.jpg', 'home-bg-13.jpg', 'home-bg-14.jpg', 'home-bg-15.jpg', 
 		'home-bg-16.jpg', 'home-bg-17.jpg','home-bg-18.jpg', 'home-bg-19.jpg', 'home-bg-20.jpg', 'home-bg-21.jpg', 'home-bg-22.jpg', 'home-bg-23.jpg', 
-		'home-bg-24.jpg', 'home-bg-25.jpg', 'home-bg-26.jpg', 'home-bg-27.jpg','home-bg-28.jpg', 'home-bg-29.jpg', 'home-bg-30.jpg', 
-		'home-bg-31.jpg', 'home-bg-32.jpg', 'home-bg-33.jpg', 'home-bg-34.jpg' ];
+		'home-bg-24.jpg', 'home-bg-25.jpg', 'home-bg-26.jpg', 'home-bg-27.jpg','home-bg-28.jpg', 'home-bg-29.jpg', 'home-bg-30.jpg', 'home-bg-32.jpg', 'home-bg-33.jpg', 'home-bg-34.jpg' ];
 		
 		$data['introImg'] = $items[array_rand($items)];
 		$lastMonth = Carbon::now()->subMonth();

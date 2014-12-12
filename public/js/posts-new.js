@@ -46,20 +46,24 @@
 		
 		var $items = $(posts);
 		if(option == false) {
-			$items.imagesLoaded(function(){
+			//$items.imagesLoaded(function(){
 				$loading.remove();
 				$container.isotope( 'insert', $items );
 			//	$container.isotope({ sortBy : 'original-order'});
 				$('abbr.timeago').timeago();
+			
+				$items.imagesLoaded(function(){ $container.isotope('layout') });
 
-			});
+		//	});
 		}
 		else if(option == true){
-			$items.imagesLoaded(function(){
+		//	$items.imagesLoaded(function(){
 				$container.prepend( $items ).isotope( 'prepended', $items );
 			//	$container.isotope({ sortBy : 'original-order'});
 				$('abbr.timeago').timeago();
-			});
+				$items.imagesLoaded(function(){ $container.isotope('layout') });
+				
+		//	});
 		}
 		
 	};

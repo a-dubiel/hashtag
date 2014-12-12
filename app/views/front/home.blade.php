@@ -30,57 +30,29 @@
 
 <div class="block-trending hidden-xs">
 	<div class="container">
-	
 		<p>popularne @foreach($popularHashtags as $hashtag) {{ $hashtag }} @endforeach</p>
-	
 	</div>
 </div>
 
+
 <div class="container add-bottom">
+	<div class="text-center add-bottom">
+		<img src="{{ URL::to('images/intro@2x.png') }}" style="width:721px" alt="">
+	</div>
 	<div class="home-section-intro">
-		<h2>Pokochasz to</h2>
-		<p>Znajdź posty oznaczone hasztagiem i zobacz je w piękny i przejrzysty sposób.</p>
-	</div>
-	<div class="row">
-		<div class="col-lg-4 col-md-4 col-sm-4 home-section">
-			<div class="home-section-icon"><img src="{{ URL::to('/images/connected.svg') }}" class="svg svg-network-big" /></div>
-			<h4>Wszystko w jednym</h4>
-			<p>Stwórz swoją tablicę, znajdź i zarządzaj wszystkimi postami z popularnych sieci społecznościowych takich jak Facebook, Instagram, Twitter, Google czy Vine. </p>
+		<h2 class="intro-title">Social Media w jednym miejscu</h2>
+		<p class="intro-text add-bottom">Hasztag.info to nowy sposób aby odkryć social media. To miejsce w którym w kilka sekund odnajdziesz posty oznaczone danym hasztagiem i przedstawisz je w postaci interaktywnych tablic. Każdą tablicę możesz dostosować do własnych potrzeb - przedstaw ją na stronie, w telefonie lub dużym ekranie.</p>	
+		<div class="block-cta block-cta-white">
+			<a href="{{ URL::to('/informacje') }}" class="btn-default btn-lg btn-green">Więcej informacji</a>
 		</div>
-
-		<div class="col-lg-4 col-md-4 col-sm-4 home-section">
-			<div class="home-section-icon"><img src="{{ URL::to('/images/audience.svg') }}" class="svg svg-audience" /></div>
-			<h4>Poznaj społeczność</h4>
-			<p>Twoja tablica to miejsce gdzie znajdziesz ludzi z całego świata o tych samych zainteresowaniach, celach, upodobaniach lub poglądach.</p>
-		</div>
-
-		<div class="col-lg-4 col-md-4 col-sm-4 home-section">
-			<div class="home-section-icon"><img src="{{ URL::to('/images/hasztag.svg') }}" class="svg svg-hasztag" /></div>
-			<h4>Siła hasztaga</h4>
-			<p>Żaden zabieg marketingowy nie jest tak uniwersalny, prosty i szybki. Hasztag skutecznie dociera do użytkowników każdej sieci społecznościowej.</p>
-		</div>
-		
-	</div>
-</div>
-
-<div class="container add-bottom">
-	<div class="row">
-		<div class="col-lg-7 col-md-7 col-sm-6 home-section">
-			<img src="{{ URL::to('/images/macs.svg') }}" class="" />
-		</div>
-		<div class="col-lg-5 col-md-5 col-sm-6 home-section home-section-left">
-			<h4>Dla wszystkich</h4>
-			<p>Desktop, tablet czy komórka - nie ma różnicy. Nie ważne z jakiego urządzenia korzystasz, nasz serwis dostoswany jest do najpopularniejszych urządzeń i przeglądarek (oprócz IE8 i poniżej). Lubimy optymalizację i wydajność, więc dołożyliśmy wielkich starań, żeby oddać Ci najwyższej jakości produkt.</p>
-			<a href="{{URL::to('/informacje') }}" class="btn-default btn-green-inverted">Jak to robimy?</a>
-		</div>
-	</div>
+	</div>	
 </div>
 
 <div class="home-gallery">
 	<div class="container">
 		<div class="home-section-intro add-bottom">
 		<h2>Przykładowe tablice</h2>
-		<p>Zobacz jakie mamy możliwości.</p>
+		<p>Zobacz jak to działa.</p>
 	</div>
 		<div class="row">
 			<div class="col-lg-4 col-md-4 col-sm-4">
@@ -107,12 +79,37 @@
 	</div>
 </div>
 
+<div class="container add-more-bottom">
+	<div class="home-section-intro">
+		<h2>Jak to działa?</h2>
+		<p>Facebook, Instagram, Twitter, Google oraz Vine w jednym.</p>
+	</div>
+	<div class="row">
+		<div class="col-lg-4 col-md-4 col-sm-4 home-section">
+			<div class="home-section-icon"><img src="{{ URL::to('/images/connected.svg') }}" class="svg svg-network-big" /></div>
+			<h4>Wszystko w jednym</h4>
+			<p>Facebook, Twitter czy Instagram? Nie ma różnicy. Znajdź wszystkie posty z popularnych sieci społecznościowych w jednym miejscu.</p>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 home-section">
+			<div class="home-section-icon"><img src="{{ URL::to('/images/hasztag.svg') }}" class="svg svg-hasztag" /></div>
+			<h4>Uniwersalne medium</h4>
+			<p>Hasztag to wspólny mianownik social media. Mechanizm, który szybko i bezpośrednio łączy wszystkie sieci niezależnie od platformy.</p>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 home-section">
+			<div class="home-section-icon"><img src="{{ URL::to('/images/presentation.svg') }}" class="svg svg-audience" /></div>
+			<h4>Hasztag to społeczność</h4>
+			<p>Żaden mechanizm mediów nie ma w sobie tyle skuteczności i prostoty co hasztagi. Jedno słowo, które potrafi wyznaczyć trend lub rozpocząć rewolucję.</p>
+		</div>
+	</div>
+
+</div>
+
 
 
 <div class="container">
 
 	<div class="home-section-intro">
-		<h2>Plan Pro</h2>
+		<h2>Plan Pro i Plan Extreme</h2>
 		<p>Dla bardziej wymagających hasztagowców mamy coś specjalnego.</p>
 	</div>
 	<div class="row">

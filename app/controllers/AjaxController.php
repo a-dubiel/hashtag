@@ -188,9 +188,6 @@ def sslify_instagram_cdn_url(url):
 		$html = '';
 		$base = URL::to('/');
 
-		shuffle($posts);
-		//dd($posts);
-
 		if(isset($boardId)) {
 			$config = BoardConfig::where('board_id', '=', $boardId)->first();
 
@@ -648,7 +645,7 @@ def sslify_instagram_cdn_url(url):
 		if($count > 0) {
 			
 
-			$html = $this->postsToHtml(shuffle($posts), $board->id);
+			$html = $this->postsToHtml($posts, $board->id);
 
 		
 			return Response::json(
@@ -826,7 +823,9 @@ def sslify_instagram_cdn_url(url):
 
 		if($config->has_google != -1) {
 
-			$google = $client->get('https://www.googleapis.com/plus/v1/activities?maxResults='.$postCount.'&query='.$hashtag.'&key='.$googleKey.'&pageToken='.$googleToken);
+
+
+			$google = $client->get('https://www.googleapis.com/plus/v1/activities?maxResults=2&query='.$hashtag.'&key='.$googleKey.'&pageToken='.$googleToken);
 			$first = true;
 			
 			if($google->getStatusCode() == 200 ) {
@@ -981,7 +980,7 @@ def sslify_instagram_cdn_url(url):
 		$config = $board->config()->first();
 		$instagramKey = Config::get('laravel-social::providers.instagram.client_id');
 		$googleKey = 'AIzaSyDiywW3UvpbQ5aR7f_8tLVgNCzui7Gq6ek';
-		$postCount = 10;
+		$postCount = 7;
 		$googleToken = '';
 		$instagramNextMaxId = '';
 		$instagramMinTagId = '';
@@ -1173,7 +1172,7 @@ def sslify_instagram_cdn_url(url):
 		if($config->has_google != -1) {
 
 			$first = true;
-			$google = $client->get('https://www.googleapis.com/plus/v1/activities?maxResults='.$postCount.'&query='.$hashtag.'&key='.$googleKey);
+			$google = $client->get('https://www.googleapis.com/plus/v1/activities?maxResults=2&query='.$hashtag.'&key='.$googleKey);
 
 			if($google->getStatusCode() == 200 ) {
 				$data = $google->json();

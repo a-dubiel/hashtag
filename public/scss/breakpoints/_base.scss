@@ -23,8 +23,20 @@ body {
 	margin-bottom:20px;
 }
 
+.add-more-bottom {
+	margin-bottom:80px;
+}
+
 .add-right {
 	margin-right:10px;
+}
+
+.text-center {
+	text-align:center;
+}
+
+.text-left {
+	text-align:left;
 }
 
 /*********************
@@ -1111,6 +1123,10 @@ abbr[title] {
 		@include font-size(22px);
 		font-weight:700;
 		margin:0;
+
+		&.intro-title {
+			@include font-size(28px);
+		}
 	}
 	
 	p {
@@ -1178,7 +1194,7 @@ abbr[title] {
 
 			&.svg-audience {
 				width:110px;
-				margin-top:45px;
+				margin-top:30ppx;
 			}
 
 			&.svg-hasztag {
@@ -1304,6 +1320,12 @@ abbr[title] {
 	.home-section-intro {
 		margin-bottom:30px;
 	}
+}
+
+.home-section-intro-big {
+	font-size:28px;
+	padding:20px 0 50px;
+	font-weight:300;
 }
 
 .board-presentation {
@@ -1841,3 +1863,12 @@ FOOTER STYLES
 		}
 	}
 }
+
+.intro-text {
+	@include font-size(18px);
+	padding:10px 120px 0;
+
+}
+
+
+
