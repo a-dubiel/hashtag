@@ -1123,16 +1123,16 @@ abbr[title] {
 		@include font-size(22px);
 		font-weight:700;
 		margin:0;
-
-		&.intro-title {
-			@include font-size(28px);
-		}
 	}
 	
 	p {
 		color: $gray;
 		margin:0;
 	}
+}
+
+.intro-img {
+	width:300px;
 }
 
 .home-section,
@@ -1864,11 +1864,6 @@ FOOTER STYLES
 	}
 }
 
-.intro-text {
-	@include font-size(18px);
-	padding:10px 120px 0;
-
-}
 
 
 

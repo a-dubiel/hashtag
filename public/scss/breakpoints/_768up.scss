@@ -276,6 +276,16 @@ LAYOUT & GRID STYLES
   padding-top:50px;
 }
 
+.home-section-intro {
+    h2.intro-title {
+      @include font-size(28px);
+    }
+}
+
+.intro-img {
+  width:721px;
+}
+
 .home-section-left {
   text-align:left;
   padding-top:60px;
@@ -474,6 +484,13 @@ FOOTER STYLES
       color:darken($footer-link,25%);
   }
 }
+
+.intro-text {
+  @include font-size(18px);
+  padding:10px 120px 0;
+
+}
+
 
 
 

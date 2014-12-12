@@ -40,6 +40,9 @@ Stylesheet: 480px and Up Stylesheet
 
 
 ******************************************************************/
+.intro-img {
+  width: 420px; }
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -273,6 +276,13 @@ LAYOUT & GRID STYLES
 .home-section-pro {
   padding-top: 50px; }
 
+.home-section-intro h2.intro-title {
+  font-size: 28px;
+  font-size: 1.75rem; }
+
+.intro-img {
+  width: 721px; }
+
 .home-section-left {
   text-align: left;
   padding-top: 60px; }
@@ -414,6 +424,11 @@ FOOTER STYLES
     -moz-transition: color 0.3s ease-in-out;
     -o-transition: color 0.3s ease-in-out;
     color: #6e6e6e; }
+
+.intro-text {
+  font-size: 18px;
+  font-size: 1.125rem;
+  padding: 10px 120px 0; }
 
 /******************************************************************
 Site Name:

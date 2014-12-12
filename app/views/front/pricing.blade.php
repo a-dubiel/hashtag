@@ -39,7 +39,7 @@
 					<div class="col-lg-8 col-lg-offset-2 col-md-8 cold-md-offset-2 col-sm-8 col-sm-offset-2 add-bottom">
 						
 						<div class="row">
-						<h3>Plan Pro i Plan Extreme</h3>
+						<h3>Plan Pro</h3>
 						<div class="col-lg-6 col-md-6 col-sm-6 home-section home-section-pro">
 							<div class="home-section-icon"><img src="{{ URL::to('/images/filter.svg') }}" class="svg svg-filter" /></div>
 							<h4>Administracja</h4>
@@ -114,26 +114,22 @@
 					    <th>&nbsp;</th>
 					    <th>Plan Podstawowy</th>
 					    <th>Plan Pro</th>
-					    <th>Plan Extreme</th>
 					  </tr>
 					  
 					  <tr>
 					  	<td>Ilość Tablic</td>
 					  	<td>1</td>
-					  	<td>3</td>
 					  	<td>5</td>
 					  </tr>
 
 					  <tr>
 					  	<td>Promowane Posty</td>
 					  	<td>5</td>
-					  	<td>50</td>
 					  	<td>100</td>
 					  </tr>
 
 					  <tr>
 					  	<td>Avatar i tło Tablicy</td>
-					  	<td><i class="fa green fa-check"></i></td>
 					  	<td><i class="fa green fa-check"></i></td>
 					  	<td><i class="fa green fa-check"></i></td>
 					  </tr>
@@ -142,56 +138,55 @@
 					  	<td>Wybór sieci</td>
 					  	<td><i class="fa green fa-check"></i></td>
 					  	<td><i class="fa green fa-check"></i></td>
-					  	<td><i class="fa green fa-check"></i></td>
 					  </tr>
 
 					  <tr>
 					  	<td>Linki do profilów</td>
 					  	<td><i class="fa green fa-check"></i></td>
 					  	<td><i class="fa green fa-check"></i></td>
-					  	<td><i class="fa green fa-check"></i></td>
+					  	
 					  </tr>
 
 					  <tr>
 					  	<td>Blokowanie użytkowników</td>
 					  	<td><i class="fa red fa-times"></i></td>
 					  	<td><i class="fa green fa-check"></i></td>
-					  	<td><i class="fa green fa-check"></i></td>
+					  	
 					  </tr>
 
 					  <tr>
 					  	<td>Moderacja słów</td>
 					  	<td><i class="fa red fa-times"></i></td>
 					  	<td><i class="fa green fa-check"></i></td>
-					  	<td><i class="fa green fa-check"></i></td>
+					  	
 					  </tr>
 
 					  <tr>
 					  	<td>Funkcja Live</td>
 					  	<td><i class="fa red fa-times"></i></td>
 					  	<td><i class="fa green fa-check"></i></td>
-					  	<td><i class="fa green fa-check"></i></td>
+					  	
 					  </tr>
 
 					  <tr>
 					  	<td>Automatyczne odświeżanie</td>
 					  	<td><i class="fa red fa-times"></i></td>
 					  	<td><i class="fa green fa-check"></i></td>
-					  	<td><i class="fa green fa-check"></i></td>
+					  	
 					  </tr>
 
 					  <tr>
 					  	<td>Funkcja Prezentacji</td>
 					  	<td><i class="fa red fa-times"></i></td>
 					  	<td><i class="fa green fa-check"></i></td>
-					  	<td><i class="fa green fa-check"></i></td>
+					  	
 					  </tr>
 
 					  <tr>
 					  	<td>Branding</td>
 					  	<td><i class="fa red fa-times"></i></td>
 					  	<td><i class="fa green fa-check"></i></td>
-					  	<td><i class="fa green fa-check"></i></td>
+					  	
 					  </tr>
 
 					   <tr class="prices">
@@ -200,10 +195,7 @@
 					  	<td>
 					  		79 zł/miesiąc
 					  	</td>
-					  	<td>
-					  		189 zł/miesiąc
-					  	</td>
-					  	<td></td>
+					  	
 					  </tr>
 						
 					 </table>

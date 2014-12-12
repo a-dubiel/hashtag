@@ -37,7 +37,7 @@
 
 <div class="container add-bottom">
 	<div class="text-center add-bottom">
-		<img src="{{ URL::to('images/intro@2x.png') }}" style="width:721px" alt="">
+		<img src="{{ URL::to('images/intro@2x.png') }}" class="intro-img" alt="">
 	</div>
 	<div class="home-section-intro">
 		<h2 class="intro-title">Social Media w jednym miejscu</h2>
@@ -109,7 +109,7 @@
 <div class="container">
 
 	<div class="home-section-intro">
-		<h2>Plan Pro i Plan Extreme</h2>
+		<h2>Plan Pro</h2>
 		<p>Dla bardziej wymagających hasztagowców mamy coś specjalnego.</p>
 	</div>
 	<div class="row">
