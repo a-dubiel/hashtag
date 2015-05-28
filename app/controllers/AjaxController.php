@@ -585,7 +585,7 @@ def sslify_instagram_cdn_url(url):
 
 		}
 
-		if($config->has_fb != 999) {
+		if($config->has_fb == 999) {
 			$facebook = Facebook::api('/search?type=post&limit='.$postCount.'&q=%23'.$hashtag.'&since='.$facebookSinceId);
 
 			if($facebook) {
@@ -886,7 +886,7 @@ def sslify_instagram_cdn_url(url):
 
 		}
 
-		if($config->has_fb != -1) {
+		if($config->has_fb == 999) {
 			$facebook = Facebook::api('/search?type=post&limit='.$postCount.'&q=%23'.$hashtag.'&until='.$facebookUntilId);
 
 			if($facebook) {
@@ -1060,7 +1060,7 @@ def sslify_instagram_cdn_url(url):
 			
 		}
 
-		if($config->has_fb != -1) {
+		if($config->has_fb == 9999) {
 			$facebook = Facebook::api('/search?type=post&limit='.$postCount.'&q=%23'.$hashtag);
 
 			if($facebook) {
