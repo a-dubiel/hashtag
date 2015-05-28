@@ -104,3 +104,52 @@ Route::post('/szukaj', function() {
 	}
 	
 }); 
+
+
+Route::get('/chuj', function(){
+
+	$facebook = Facebook::api('/search?type=post&limit=10&q=%23nature');
+	$posts = array();
+	$count = 0;
+
+	if($facebook) {
+				
+				foreach($facebook['data'] as $post) {
+
+					$post['vendor'] = 'facebook';
+			    	$post['post_id'] = $post['id'];
+			    	//$post['url'] = $post['link'];
+			    	$post['user_id'] = $post['from']['id'];
+					$post['username'] = $post['from']['name'];
+					$post['user_img_url'] = 'https://graph.facebook.com/'.$post['from']['id'].'/picture?type=small';
+					if($post['type'] == 'photo') {		
+						$post['img_url'] = $post['picture'];
+						$post['post_type'] = 'image';
+					}
+					else if($post['type'] == 'video' && isset($post['picture'])) {
+						$post['post_type'] = 'video';
+						$post['img_url'] = $post['picture'];
+						$post['embed'] = $post['link'];
+					}
+					else {
+						$post['post_type'] = 'text';
+					}
+					if(isset($post['message'])) {		
+						$post['caption'] = $post['message'];
+					}
+				
+					$post['date_created'] = $post['created_time'];
+					array_push($posts, $post);
+					$count++;
+
+				}
+
+				
+
+
+			}
+
+			dd($posts);
+
+
+});

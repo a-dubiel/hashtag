@@ -585,7 +585,7 @@ def sslify_instagram_cdn_url(url):
 
 		}
 
-		if($config->has_fb != -1) {
+		if($config->has_fb != 999) {
 			$facebook = Facebook::api('/search?type=post&limit='.$postCount.'&q=%23'.$hashtag.'&since='.$facebookSinceId);
 
 			if($facebook) {
@@ -980,7 +980,7 @@ def sslify_instagram_cdn_url(url):
 		$config = $board->config()->first();
 		$instagramKey = Config::get('laravel-social::providers.instagram.client_id');
 		$googleKey = 'AIzaSyDiywW3UvpbQ5aR7f_8tLVgNCzui7Gq6ek';
-		$postCount = 7;
+		$postCount = 20;
 		$googleToken = '';
 		$instagramNextMaxId = '';
 		$instagramMinTagId = '';

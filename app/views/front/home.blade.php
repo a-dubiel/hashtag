@@ -41,7 +41,7 @@
 	</div>
 	<div class="home-section-intro">
 		<h2 class="intro-title">Social Media w jednym miejscu</h2>
-		<p class="intro-text add-bottom">Hasztag.info to nowy sposób aby odkryć social media. To miejsce w którym w kilka sekund odnajdziesz posty oznaczone danym hasztagiem i przedstawisz je w postaci interaktywnych tablic. Każdą tablicę możesz dostosować do własnych potrzeb - przedstaw ją na stronie, w telefonie lub dużym ekranie.</p>	
+		<p class="intro-text add-bottom">Hasztag.info to nowy sposób aby odkryć media społecznościowe. To miejsce w którym w kilka sekund odnajdziesz posty oznaczone danym hasztagiem i przedstawisz je w postaci interaktywnych tablic. Każdą tablicę możesz dostosować do własnych potrzeb - przedstaw ją na stronie, w telefonie lub dużym ekranie.</p>	
 		<div class="block-cta block-cta-white">
 			<a href="{{ URL::to('/informacje') }}" class="btn-default btn-lg btn-green">Więcej informacji</a>
 		</div>
