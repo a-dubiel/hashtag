@@ -423,7 +423,7 @@ def sslify_instagram_cdn_url(url):
 
 		if($config->has_vine != -1) {
 
-			$vine = $client->get('https://api.vineapp.com/timelines/tags/'.$hashtag.'?limit='.$postCount);
+			$vine = $client->get('https://api.vineapp.com/timelines/tags/'.$hashtag.'?limit=5');
 			$vineCount = 0;
 			$first = true;
 
@@ -1236,7 +1236,7 @@ def sslify_instagram_cdn_url(url):
 		}
 
 		if($config->has_vine != -1) {
-			$vine = $client->get('https://api.vineapp.com/timelines/tags/'.$hashtag.'?limit='.$postCount);
+			$vine = $client->get('https://api.vineapp.com/timelines/tags/'.$hashtag.'?limit=5');
 			$vineCount = 0;
 			$first = true;
 
