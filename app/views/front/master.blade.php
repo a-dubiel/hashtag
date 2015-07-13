@@ -61,6 +61,7 @@
             </div>
         </div>
     @endif
+
 	@yield('content')
     @include('front.footer')
 	<!-- js scripts -->

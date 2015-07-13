@@ -838,7 +838,8 @@ abbr[title] {
 	}
 }
 
-.alert-top {
+.alert-top,
+.alert-cookies {
   margin: auto;
   position: fixed;
   top: 0; left:0; right:0;
@@ -1922,6 +1923,16 @@ FOOTER STYLES
 		width:45px;
 		height:45px;
 	} 
+}
+
+.content-terms {
+	ul {
+		margin-left:20px;
+	}
+
+	a {
+		color: $brand;
+	}
 }
 
 
