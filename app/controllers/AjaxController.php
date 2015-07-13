@@ -1266,7 +1266,7 @@ def sslify_instagram_cdn_url(url):
 						array_push($posts, $post);
 						$count++;
 						$vineCount++;
-						if($vineCount == $postCount) {
+						if($vineCount == 5) {
 							break;
 						}
 						
