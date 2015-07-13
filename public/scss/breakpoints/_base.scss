@@ -1914,8 +1914,9 @@ FOOTER STYLES
 }
 
 .made-by {
-	outline: none;
-	float:right;
+	width:45px;
+	display:block;
+	margin: 0 auto;
 	svg {
 		width:45px;
 	} 

@@ -3947,8 +3947,9 @@ FOOTER STYLES
       text-decoration: none; }
 
 .made-by {
-  outline: none;
-  float: right; }
+  width: 45px;
+  display: block;
+  margin: 0 auto; }
   .made-by svg {
     width: 45px; }
 
@@ -4329,7 +4330,11 @@ FOOTER STYLES
   .intro-text {
     font-size: 18px;
     font-size: 1.125rem;
-    padding: 10px 120px 0; } }
+    padding: 10px 120px 0; }
+
+  .made-by {
+    float: right;
+    margin: 0; } }
 @media only screen and (min-width: 992px) {
   /******************************************************************
   Site Name:
