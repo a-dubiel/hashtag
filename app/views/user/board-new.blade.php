@@ -143,7 +143,7 @@
 				</div>
 				<hr />
 				<div class="board-setting">
-					<label class="setting-description">Filtr słów @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<label class="setting-description">Filtr słów </label>
 					<div class="input-wrapper">
 						<input type="text" value="{{ Input::old('filter') }}" class="input-default" @if($user->level == 1 ) disabled="disabled" @endif name="filter">
 						<p class="input-info">Niedozwolone słowa (oddziel przecinkiem)</p>
@@ -151,7 +151,7 @@
 				</div>
 
 				<div class="board-setting">
-					<label class="setting-description">Filtr użytkowników @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<label class="setting-description">Filtr użytkowników </label>
 					<div class="input-wrapper">
 						<input type="text" value="{{ Input::old('banned_users') }}" @if($user->level == 1 ) disabled="disabled" @endif class="input-default" name="banned_users">
 						<p class="input-info">Nazwy użytkowników zbanowanych (oddziel przecinkiem)</p>
@@ -159,7 +159,7 @@
 				</div>
 
 				<div class="board-setting">
-					<label class="setting-description">Live @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<label class="setting-description">Live </label>
 					<div class="input-wrapper">
 						<label class="label-inline"><input  @if($user->level == 1 ) disabled="disabled" @endif type="checkbox" name="live" @if(Input::old('live')) checked="checked" @endif value="1"> Włączone</label>
 						<p class="input-info">Automatycznie dodawanie nowych postów</p>
@@ -167,7 +167,7 @@
 				</div>
 
 				<div class="board-setting">
-					<label class="setting-description">Odświeżanie @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<label class="setting-description">Odświeżanie </label>
 					<div class="input-wrapper">
 						<input type="number" value="{{ Input::old('refresh_interval') }}" min="10" max="120" placeholder="10-120" class="input-default input-number @if ($errors->has('refresh_interval ')) has-error @endif" @if($user->level == 1 ) disabled="disabled" @endif name="refresh_interval">
 						<p class="input-info">Automatyczne sprawdzanie nowych postów (w sekundach, domyślnie: 30)</p>
@@ -176,7 +176,7 @@
 				</div>
 
 				<div class="board-setting">
-					<label class="setting-description">Ilość odświeżeń @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<label class="setting-description">Ilość odświeżeń </label>
 					<div class="input-wrapper">
 						<input type="number" value="{{ Input::old('refresh_count') }}" min="1" max="100" placeholder="1-100" class="input-default input-number @if ($errors->has('refresh_count ')) has-error @endif" @if($user->level == 1 ) disabled="disabled" @endif name="refresh_count">
 						<p class="input-info">Ilość odświeżeń tablicy (domyślnie: 2)</p>
@@ -185,7 +185,7 @@
 				</div>
 				<hr />
 				<div class="board-setting">
-					<label class="setting-description">Prezentacja @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<label class="setting-description">Prezentacja </label>
 					<div class="input-wrapper">
 						<label class="label-inline"><input  @if($user->level == 1 ) disabled="disabled" @endif type="checkbox" name="presentation" @if(Input::old('presentation')) checked="checked" @endif value="1"> Włączone</label>
 						<p class="input-info">Opis prezentacji</p>
@@ -202,7 +202,7 @@
 				</div>
 
 				<div class="board-setting">
-					<label class="setting-description">Kolor @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<label class="setting-description">Kolor </label>
 					<div class="input-wrapper">
 						<label class="label-inline"><input  @if($user->level == 1 ) disabled="disabled" @endif type="text" class="input-default input-number" id="picker" name="color" value="{{ Input::old('color') }}"></label>
 						<p class="input-info">Kolor linków i przycisków. Kliknij aby wybrać.</p>

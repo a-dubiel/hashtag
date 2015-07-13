@@ -70,7 +70,7 @@ class UserController extends \BaseController {
 				$user->first_name = Input::get('first_name');
 				$user->last_name = Input::get('last_name');
 				$user->default_provider = Input::get('provider');
-				$user->level = 1;
+				$user->level = 2;
 				$user->save();
 			}
 			else {
@@ -211,7 +211,7 @@ class UserController extends \BaseController {
 			$subscription = Subscription::where('user_id', '=', $user->id);
 			$subscription->delete();
 
-			$user->level = 1;
+			$user->level = 2;
 			$user->save();
 
 			return Redirect::to('/')->with('alert', array('type' => 'success', 'content' => 'Subskrypcja usunięta. Dziękujemy!'));
@@ -1074,7 +1074,7 @@ class UserController extends \BaseController {
 			$user->email    = Input::get('email');
 			$user->password = Hash::make(Input::get('password'));
 			$user->default_provider = 'email';
-			$user->level = 1;
+			$user->level = 2;
 
 			$user->save();
 

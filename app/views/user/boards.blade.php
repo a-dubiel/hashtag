@@ -8,11 +8,13 @@
 		<ul>
 			<li><a href="{{ URL::to('/konto') }}">Ustawienia</a></li>
 			<li><a class="active" href="{{ URL::to('/konto/tablice') }}">Tablice</a></li>
+			<!--
 			@if($user->level == 1 )
 			<li><a href="{{ URL::to('/konto/pro') }}" class="btn-get-pro">Konto Pro</a></li>
 			@else
 			<li><a href="{{ URL::to('/konto/pro/subskrypcja') }}">Konto Pro</a></li>
 			@endif
+			-->
 		</ul>
 	</nav>
 	<div class="account-content clearfix">

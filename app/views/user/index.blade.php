@@ -8,11 +8,13 @@
 		<ul>
 			<li><a class="active" href="{{ URL::to('/konto') }}">Ustawienia</a></li>
 			<li><a href="{{ URL::to('/konto/tablice') }}">Tablice</a></li>
+			<!--
 			@if($user->level == 1 )
 			<li><a href="{{ URL::to('/konto/pro') }}" class="btn-get-pro">Konto Pro</a></li>
 			@else
 			<li><a href="{{ URL::to('/konto/pro/subskrypcja') }}">Konto Pro</a></li>
 			@endif
+			-->
 		</ul>
 	</nav>
 	<div class="account-content clearfix">
@@ -42,16 +44,17 @@
                 
 
 			<h3>{{ $username }}</h3>
-			<p>
+			
 			<?php 
+			/**
 				if($user->level == 1) {
 					echo '<span class="account-type account-basic">Konto Podstawowe</span>';
 				}
 				else if($user->level == 2) {
 					echo '<span class="account-type account-pro">Konto Pro</span>';
 				}
-
-			?></p>
+*/
+			?>
 			<hr />
 		</div>
 		@if(!is_null($user->subscription()->first()) && $user->subscription()->first()->is_active == 0)

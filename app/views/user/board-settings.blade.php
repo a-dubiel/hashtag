@@ -8,11 +8,13 @@
 		<ul>
 			<li><a href="{{ URL::to('/konto') }}">Ustawienia</a></li>
 			<li><a class="active" href="{{ URL::to('/konto/tablice') }}">Tablice</a></li>
+			<!--
 			@if($user->level == 1 )
 			<li><a href="{{ URL::to('/konto/pro') }}" class="btn-get-pro">Konto Pro</a></li>
 			@else
 			<li><a href="{{ URL::to('/konto/pro/subskrypcja') }}">Konto Pro</a></li>
 			@endif
+			-->
 		</ul>
 	</nav>
 	<div class="account-content clearfix">
@@ -170,7 +172,7 @@
 				</div>
 				<hr />
 				<div class="board-setting">
-					<label class="setting-description">Filtr słów @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<label class="setting-description">Filtr słów </label>
 					<div class="input-wrapper">
 						<input type="text" value="{{ $config->filter }}" class="input-default" @if($user->level == 1 ) disabled="disabled" @endif name="filter">
 						<p class="input-info">Niedozwolone słowa (oddziel przecinkiem)</p>
@@ -178,7 +180,7 @@
 				</div>
 
 				<div class="board-setting">
-					<label class="setting-description">Filtr użytkowników @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<label class="setting-description">Filtr użytkowników </label>
 					<div class="input-wrapper">
 						<input type="text" value="{{ $config->banned_users }}" @if($user->level == 1 ) disabled="disabled" @endif class="input-default" name="banned_users">
 						<p class="input-info">Nazwy użytkowników zbanowanych (oddziel przecinkiem)</p>
@@ -186,7 +188,7 @@
 				</div>
 
 				<div class="board-setting">
-					<label class="setting-description">Live @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<label class="setting-description">Live </label>
 					<div class="input-wrapper">
 						<label class="label-inline"><input  @if($user->level == 1 ) disabled="disabled" @endif type="checkbox" name="live" @if($config->live == 1) checked="checked" @endif value="1"> Włączone</label>
 						<p class="input-info">Automatycznie dodawanie nowych postów</p>
@@ -194,7 +196,7 @@
 				</div>
 
 				<div class="board-setting">
-					<label class="setting-description">Odświeżanie @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<label class="setting-description">Odświeżanie </label>
 					<div class="input-wrapper">
 						<input type="number" @if($config->refresh_interval != 30 ) value="{{ $config->refresh_interval }}" @endif min="10" max="120" placeholder="10-120" class="input-default input-number @if ($errors->has('refresh_interval ')) has-error @endif" @if($user->level == 1 ) disabled="disabled" @endif name="refresh_interval">
 						<p class="input-info">Automatyczne sprawdzanie nowych postów (w sekundach, domyślnie: 30)</p>
@@ -203,7 +205,7 @@
 				</div>
 
 				<div class="board-setting">
-					<label class="setting-description">Ilość odświeżeń @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<label class="setting-description">Ilość odświeżeń </label>
 					<div class="input-wrapper">
 						<input type="number" @if($config->refresh_count != 2 ) value="{{ $config->refresh_count }}"  @endif min="1" max="100" placeholder="1-100" class="input-default input-number @if ($errors->has('refresh_count ')) has-error @endif" @if($user->level == 1 ) disabled="disabled" @endif name="refresh_count">
 						<p class="input-info">Ilość odświeżeń tablicy (domyślnie: 2)</p>
@@ -212,7 +214,7 @@
 				</div>
 				<hr />
 				<div class="board-setting">
-					<label class="setting-description">Prezentacja @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<label class="setting-description">Prezentacja </label>
 					<div class="input-wrapper">
 						<label class="label-inline"><input  @if($user->level == 1 ) disabled="disabled" @endif type="checkbox" name="presentation" @if($config->presentation == 1) checked="checked" @endif value="1"> Włączone</label>
 						<p class="input-info">Opis prezentacji</p>
@@ -237,7 +239,7 @@
 				</div>
 
 				<div class="board-setting">
-					<label class="setting-description">Kolor @if($user->level == 1 ) <span class="pro">Pro</span> @endif</label>
+					<label class="setting-description">Kolor </label>
 					<div class="input-wrapper">
 						<label class="label-inline"><input  @if($user->level == 1 ) disabled="disabled" @endif type="text" class="input-default input-number @if ($errors->has('color')) has-error @endif" id="picker" name="color" value="{{ $config->color }}"></label>
 						<p class="input-info">Kolor linków i przycisków. Kliknij aby wybrać.</p>
