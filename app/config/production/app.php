@@ -15,4 +15,15 @@ return array(
 
 	'debug' => false,
 
+	'mysql' => array(
+			'driver'    => 'mysql',
+			'host'      => 'localhost',
+			'database'  => 'hasztag_dev',
+			'username'  => 'hasztag_dev_user',
+			'password'  => '~h16xUt7',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
+
 );
