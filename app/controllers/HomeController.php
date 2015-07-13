@@ -139,7 +139,7 @@ class HomeController extends BaseController {
 	public function generateSitemap() {
 		
 		$lastMonth = Carbon::now()->subMonth();
-		$popular = Stat::where('created_at','>=', $lastMonth)->orderBy('hits', 'desc')->take(100)->get();
+		$popular = Stat::where('created_at','>=', $lastMonth)->orderBy('hits', 'desc')->take(50)->get();
 		$data['popularHashtags'] = [];
 		
 		foreach($popular as $post) {
