@@ -108,9 +108,6 @@ LAYOUT & GRID STYLES
   margin: 0 10px 0px 10px; }
   .board-avatar img {
     border: 5px solid #fff;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
     border-radius: 3px;
     width: 120px;
     height: 120px; }
@@ -131,11 +128,8 @@ LAYOUT & GRID STYLES
     height: 250px;
     background: rgba(255, 255, 255, 0);
     background: rgba(255, 255, 255, 0);
-    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(246, 246, 246, 0.26) 32%, rgba(0, 0, 0, 0.81) 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(32%, rgba(246, 246, 246, 0.26)), color-stop(100%, rgba(0, 0, 0, 0.81)));
     background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(246, 246, 246, 0.26) 32%, rgba(0, 0, 0, 0.81) 100%);
-    background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(246, 246, 246, 0.26) 32%, rgba(0, 0, 0, 0.81) 100%);
-    background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(246, 246, 246, 0.26) 32%, rgba(0, 0, 0, 0.81) 100%);
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(246, 246, 246, 0.26) 32%, rgba(0, 0, 0, 0.81) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 ); }
 
@@ -195,9 +189,6 @@ LAYOUT & GRID STYLES
   .nav-account a {
     text-align: left;
     padding-left: 10px;
-    -webkit-border-radius: 3px 0px 0px 3px;
-    -moz-border-radius: 3px 0px 0px 3px;
-    -ms-border-radius: 3px 0px 0px 3px;
     border-radius: 3px 0px 0px 3px; }
 
 .account-content {
@@ -212,9 +203,6 @@ LAYOUT & GRID STYLES
   width: 100%; }
 
 .alert-ssl {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
   border-radius: 3px;
   margin-bottom: 10px;
   margin-top: 10px; }
@@ -307,15 +295,12 @@ LAYOUT & GRID STYLES
   left: 0;
   height: 150px;
   width: 100%;
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, transparent));
   /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
   /* IE10+ */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
   /* W3C */
