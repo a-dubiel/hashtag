@@ -3,7 +3,7 @@
         <?php $user = Auth::user() ?>
         @if($user->provider->count() > 0)
             @if($user->default_provider == 'facebook')
-                <li><a href="#" data-dropdown="#dropdown-1" class="user-dropdown"><div class="user-avatar"><img src="http://graph.facebook.com/{{$user->provider()->first()->provider_id}}/picture?type=small" alt="avatar" /></div><div class="username hidden-xs">{{ preg_replace('/@.*?$/', '', $user->email) }}</div> <i class="fa fa-caret-down"></i></a></li>
+                <li><a href="#" data-dropdown="#dropdown-1" class="user-dropdown"><div class="user-avatar"><img src="https://graph.facebook.com/{{$user->provider()->first()->provider_id}}/picture?type=small" alt="avatar" /></div><div class="username hidden-xs">{{ preg_replace('/@.*?$/', '', $user->email) }}</div> <i class="fa fa-caret-down"></i></a></li>
             @elseif($user->default_provider == 'instagram')
                 @foreach($user->provider()->get() as $provider)
                     @if($provider->provider == 'instagram')

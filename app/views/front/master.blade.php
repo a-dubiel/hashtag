@@ -10,11 +10,12 @@
 	<title><?php echo (isset($title) ? $title . ' | hasztag.info ' : 'hasztag.info')?></title>
     <meta name="description" content="Social media w jednym miejscu." />
     <meta property="og:title" content="<?php echo (isset($title) ? $title . ' | hasztag.info ' : 'hasztag.info')?> "/>
-    <meta property="og:image" content="{{ URL::to('/images/assets/logo.jpg') }}"/>
+    <meta property="og:image" content="{{ URL::to('/images/assets/logo.png') }}"/>
     <meta property="og:site_name" content="hasztag.info"/>
     <meta property="og:description" content="Social media w jednym miejscu."/>
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ Request::url() }}">
+    <meta name="google-site-verification" content="BmZwJaxOdzcMK3nzHcmAitIa-pqHJS-mhpgcna4iK9w" />
     <!-- icons -->
     <link rel="shortcut icon" href="/images/assets/ico/favicon.ico">
     <link rel="apple-touch-icon" sizes="57x57" href="/images/assets/ico/apple-touch-icon-57x57.png">

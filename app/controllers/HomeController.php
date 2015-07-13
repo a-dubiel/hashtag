@@ -57,7 +57,7 @@ class HomeController extends BaseController {
 		
 		$data['introImg'] = $items[array_rand($items)];
 		$lastMonth = Carbon::now()->subMonth();
-		$popular = Stat::where('created_at','>=', $lastMonth)->orderBy('hits', 'desc')->take(5)->get();
+		$popular = Stat::where('created_at','>=', $lastMonth)->orderBy('hits', 'desc')->take(3)->get();
 		$data['popularHashtags'] = [];
 		
 		foreach($popular as $post) {
@@ -136,6 +136,26 @@ class HomeController extends BaseController {
 	}
 
 	public function generateSitemap() {
+		
+		$lastMonth = Carbon::now()->subMonth();
+		$popular = Stat::where('created_at','>=', $lastMonth)->orderBy('hits', 'desc')->take(3)->get();
+		$data['popularHashtags'] = [];
+		
+		foreach($popular as $post) {
+
+			$hashtag = $post->board()->first()->hashtag;
+
+			if($post->board()->first()->config()->first()->user_id == 0) {
+				$url = $hashtag .'/szukaj';
+			}
+			else {
+				$url = $hashtag .'/'.$post->board()->first()->id;
+			}
+
+			$href = '<a class="hashtag" href="'.URL::to('/').'/'.$url.'">#'.$hashtag.'</a>';
+			array_push($data['popularHashtags'], $url);
+		}
+
 
 	    $sitemap = App::make("sitemap");
 
@@ -143,10 +163,11 @@ class HomeController extends BaseController {
 	    {
 	         $sitemap->add(URL::to('/'), date('c',time()), '1.0', 'daily');
 		     $sitemap->add(URL::to('/informacje'), date('c',time()), '0.6', 'monthly');
-		     $sitemap->add(URL::to('/faq'), date('c',time()), '0.6', 'monthly');
-		     $sitemap->add(URL::to('/oferta'), date('c',time()), '0.8', 'monthly');
 		     $sitemap->add(URL::to('/kontakt'), date('c',time()), '0.5', 'monthly');
-		     $sitemap->add(URL::to('/regulamin'), date('c',time()), '0.3', 'monthly');	       
+		     $sitemap->add(URL::to('/regulamin'), date('c',time()), '0.3', 'monthly');
+		     foreach($data['popularHashtags'] as $link) {
+			      $sitemap->add(URL::to($link), date('c',time()), '0.3', 'weekly');
+		     }	       
 	    }
 
 	    return $sitemap->render('xml');

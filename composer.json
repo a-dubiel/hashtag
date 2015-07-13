@@ -10,7 +10,7 @@
 		"roumen/asset": "2.5.1",
 		"webpatser/laravel-sanitize": "dev-master",
 		"way/generators": "2.*",
-    "thujohn/twitter": "dev-master",
+		"thujohn/twitter": "1.2.0",
 		"guzzlehttp/guzzle": "~4",
 		"boparaiamrit/facebook": "dev-master",
 		"mmanos/laravel-social": "dev-master",
@@ -18,7 +18,7 @@
 		"cviebrock/image-validator": "1.0.*",
 		"barryvdh/laravel-dompdf": "0.4.*",
 		"healey/robots": "dev-master",
-		"roumen/sitemap": "~2.4" 
+		"roumen/sitemap": "2.4.*" 
   
 	},
 	"autoload": {

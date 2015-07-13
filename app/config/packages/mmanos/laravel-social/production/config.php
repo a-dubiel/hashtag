@@ -55,7 +55,7 @@ return array(
 
 		'instagram' => array(
 			'client_id'       => 'ab8c8c14805d4836ab4c9ad7cd341386',
-			'client_secret'   => 'fa5bde551b1c4570a6076b9e7fb071cb',
+			'client_secret'   => '3f9d7bcd414447f9b8f95ed8bb878b37',
 			'scope'           => array('basic'),
 			'fetch_user_info' => function ($service) {
 
@@ -124,7 +124,7 @@ return array(
 			$user->password = Hash::make(Str::random());
 			$user->first_name = array_get($data, 'first_name');
 			$user->last_name = array_get($data, 'last_name');
-			$user->level = 1;
+			$user->level = 2;
 			$user->default_provider = array_get($data, 'default_provider');
 			$user->save();
 		}
