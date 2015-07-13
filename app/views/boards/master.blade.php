@@ -10,6 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="Social media w jednym miejscu" />	
     <meta name="_token" content="{{ csrf_token() }}" />	
+    <meta name="theme-color" content="#42a80b">
     <meta name="google-site-verification" content="BmZwJaxOdzcMK3nzHcmAitIa-pqHJS-mhpgcna4iK9w" />
     <?php if (App::environment() !== 'production'): ?>
         <meta name="robots" content="noindex">

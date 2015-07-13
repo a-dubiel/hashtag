@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<title><?php echo (isset($title) ? $title . ' | hasztag.info ' : 'hasztag.info')?></title>
+    <meta name="theme-color" content="#42a80b">
     <meta name="description" content="Social media w jednym miejscu." />
     <meta property="og:title" content="<?php echo (isset($title) ? $title . ' | hasztag.info ' : 'hasztag.info')?> "/>
     <meta property="og:image" content="{{ URL::to('/images/assets/logo.png') }}"/>
