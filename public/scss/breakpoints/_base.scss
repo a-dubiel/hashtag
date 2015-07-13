@@ -1085,6 +1085,11 @@ animation: AnimationName 30s ease infinite;
 	.trending {
 		color: $white;
 		margin:15px 0 0 0;
+		text-align: center;
+
+		.hashtag {
+			color: $white;
+		}
 	}
 
 	.logos {
