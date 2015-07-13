@@ -23,9 +23,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'hashtag',
-			'username'  => 'root',
-			'password'  => 'root',
+			'database'  => 'hasztag_dev',
+			'username'  => 'hasztag_dev_user',
+			'password'  => '~h16xUt7',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
