@@ -51,13 +51,13 @@
 					</p>
 					<p><b>Zawartość Serwisu</b></p>
 					<p>1. Serwis Hasztag.info, daje nieograniczony dostęp do niemoderowanych treści w postaci zdjęć, video, linków, postów, opinii i tym podobnych zamieszczonych na portalach społecznościowych.
-					<p>2. Zawartości portalów społecznościowych (social media) nazywamy Treścią Tablicy. Treści Tablicy zawierają materiały z innych stron i serwisów social media, których właścicielem nie jest Serwis. Serwis nie ma kontroli oraz nie odpowiada za Treści Tablicy.</p>
+					<p>2. Zawartość social media dostępna w Serwisie zwana dalej Treścią Tablicy zawiera materiały z innych stron i serwisów social media, których właścicielem nie jest Serwis. Serwis nie ma kontroli oraz nie odpowiada za Treści Tablicy.</p>
 					<p>3. Dodatkowo, Serwis nie ponosi odpowiedzialności za ewentualny brak moderacji oraz cenzury Treści Tablicy.</p>
-					<p>4. Używając Serwisu, użytkownik zrzesza się roszczeń prawnych wobec Serwisu, Treści Tablicy, operatorów oraz twórców Serwisu.</p>
+					<p>4. Używając Serwisu, użytkownik zrzesza się roszczeń prawnych wobec Serwisu, Treści Tablicy, operatorów oraz twórców Serwisu.</p> 
 					<p>5. Używając Serwisu, użytkownik może zobaczyć Treści Tablicy pochodzące z różnych źródeł, za które Serwis nie jest odpowiedzialny oraz nie ma nad nimi kontroli. Serwis nie jest odpowiedzialny za zgodność treści, wartość mertytoryczną, bezpieczeństwo informacji.</p>
 					<p>6. Serwis nie ponosi odpowiedzialności za ewentualne naruszenie praw autorskich, praw intelektualnych, praw własnościowych, lub innych praw związanych z Treścią Tablicy</p>
 					<p>7. Używając serwisu, użytkownik jest narażony na treści często fałszywe, obraźliwe, szokujące i niecenzuralne. Serwis nie ma kontroli nad tego typu Zawartościami Tablicy i nie ponosi za nie odpowiedzialności.</p>
-					
+
 					 <h2>Polityka prywatności Serwisu Hasztag.info</h2>
 					<p><b>Informacje w formularzach</b></p>
 					
