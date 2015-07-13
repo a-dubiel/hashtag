@@ -844,6 +844,7 @@ def sslify_instagram_cdn_url(url):
 					$post['username'] = $item['actor']['displayName'];
 					$post['date_created'] = $item['published'];
 					$post['user_img_url'] = $item['actor']['image']['url'];
+					$post['post_type'] = 'text';
 
 					if(isset($item['object']['attachments'][0]['objectType'])) {
 
@@ -1190,6 +1191,7 @@ def sslify_instagram_cdn_url(url):
 					$post['username'] = $item['actor']['displayName'];
 					$post['date_created'] = $item['published'];
 					$post['user_img_url'] = $item['actor']['image']['url'];
+					$post['post_type'] = 'text';
 
 					if(isset($item['object']['attachments'][0]['objectType'])) {
 
