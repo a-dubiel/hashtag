@@ -16,6 +16,9 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ Request::url() }}">
     <meta name="google-site-verification" content="BmZwJaxOdzcMK3nzHcmAitIa-pqHJS-mhpgcna4iK9w" />
+    <?php if (App::environment() !== 'production'): ?>
+        <meta name="robots" content="noindex">
+    <?php endif; ?>
     <!-- icons -->
     <link rel="shortcut icon" href="/images/assets/ico/favicon.ico">
     <link rel="apple-touch-icon" sizes="57x57" href="/images/assets/ico/apple-touch-icon-57x57.png">

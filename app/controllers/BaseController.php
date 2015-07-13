@@ -19,7 +19,9 @@ class BaseController extends Controller {
 	 	Asset::add('//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css', 'header');
 	 	Asset::add('css/style.css', 'header');
 	 	
-	 	Asset::$secure = true;
+	 	if( App::environment() == 'production') {
+	 		Asset::$secure = true;
+	 	}
 
 	 }
 

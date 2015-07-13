@@ -41,15 +41,15 @@ Route::get('/konto/login/ustaw/{provider}', array('before' => 'auth', 'uses' =>'
 Route::get('/konto/login/usun/{provider}', array('before' => 'auth', 'uses' =>'UserController@getDeleteProvider')); 
 Route::post('/auth/login/complete', array('uses' =>'UserController@postCompleteForm')); 
 Route::get('/zarejestruj/dokoncz', array('as' => 'auth.complete', 'uses' =>'UserController@getCompleteForm')); 
-Route::get('/pro/payment/update', array('before' => 'auth', 'uses' =>'UserController@postPaymentUpdateCard')); 
-Route::post('/pro/subscription/delete', array('before' => 'auth', 'uses' =>'UserController@postSubscriptionDelete')); 
-Route::post('/pro/subscription/downgrade', array('before' => 'auth', 'uses' =>'UserController@postSubscriptionDowngrade')); 
-Route::get('/konto/pro/subskrypcja/rezygnuj', array('before' => 'auth', 'uses' =>'UserController@showSubscriptionDelete')); 
-Route::post('/pro/subscription/update', array('before' => 'auth', 'uses' =>'UserController@postSubscriptionUpdate')); 
-Route::get('/konto/pro/subskrypcja/edytuj', array('before' => 'auth', 'uses' =>'UserController@showSubscriptionUpdate')); 
-Route::get('/konto/pro/subskrypcja', array('before' => 'auth', 'uses' =>'UserController@showSubscription')); 
-Route::get('/pro/payment', array('before' => 'auth', 'uses' =>'UserController@postPayment')); 
-Route::get('/konto/pro/platnosci', array('before' => 'auth', 'uses' =>'UserController@showProPayment')); 
+//Route::get('/pro/payment/update', array('before' => 'auth', 'uses' =>'UserController@postPaymentUpdateCard')); 
+//Route::post('/pro/subscription/delete', array('before' => 'auth', 'uses' =>'UserController@postSubscriptionDelete')); 
+//Route::post('/pro/subscription/downgrade', array('before' => 'auth', 'uses' =>'UserController@postSubscriptionDowngrade')); 
+//Route::get('/konto/pro/subskrypcja/rezygnuj', array('before' => 'auth', 'uses' =>'UserController@showSubscriptionDelete')); 
+//Route::post('/pro/subscription/update', array('before' => 'auth', 'uses' =>'UserController@postSubscriptionUpdate')); 
+//Route::get('/konto/pro/subskrypcja/edytuj', array('before' => 'auth', 'uses' =>'UserController@showSubscriptionUpdate')); 
+//Route::get('/konto/pro/subskrypcja', array('before' => 'auth', 'uses' =>'UserController@showSubscription')); 
+//Route::get('/pro/payment', array('before' => 'auth', 'uses' =>'UserController@postPayment')); 
+//Route::get('/konto/pro/platnosci', array('before' => 'auth', 'uses' =>'UserController@showProPayment')); 
 Route::get('/konto/pro', array('before' => 'auth', 'uses' =>'UserController@showPro')); 
 Route::get('/konto/tablica/{hashtag}/{id}/promowane', array('before' => 'auth', 'uses' =>'UserController@showBoardFeatured'));
 Route::post('/password/reset/', array('before' => 'guest','uses' => 'RemindersController@postReset' ));
@@ -104,52 +104,3 @@ Route::post('/szukaj', function() {
 	}
 	
 }); 
-
-
-Route::get('/chuj', function(){
-
-	$facebook = Facebook::api('/search?type=post&limit=10&q=%23nature');
-	$posts = array();
-	$count = 0;
-
-	if($facebook) {
-				
-				foreach($facebook['data'] as $post) {
-
-					$post['vendor'] = 'facebook';
-			    	$post['post_id'] = $post['id'];
-			    	//$post['url'] = $post['link'];
-			    	$post['user_id'] = $post['from']['id'];
-					$post['username'] = $post['from']['name'];
-					$post['user_img_url'] = 'https://graph.facebook.com/'.$post['from']['id'].'/picture?type=small';
-					if($post['type'] == 'photo') {		
-						$post['img_url'] = $post['picture'];
-						$post['post_type'] = 'image';
-					}
-					else if($post['type'] == 'video' && isset($post['picture'])) {
-						$post['post_type'] = 'video';
-						$post['img_url'] = $post['picture'];
-						$post['embed'] = $post['link'];
-					}
-					else {
-						$post['post_type'] = 'text';
-					}
-					if(isset($post['message'])) {		
-						$post['caption'] = $post['message'];
-					}
-				
-					$post['date_created'] = $post['created_time'];
-					array_push($posts, $post);
-					$count++;
-
-				}
-
-				
-
-
-			}
-
-			dd($posts);
-
-
-});

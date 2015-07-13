@@ -127,8 +127,9 @@ class HomeController extends BaseController {
     	{
 	        Robots::addUserAgent('*');
 	        Robots::addDisallow('/konto');
-	        Robots::addSitemap('sitemap.xml');
+	        Robots::addSitemap('/sitemap.xml');
 	    } else {
+	    		Robots::addUserAgent('*');
 	        Robots::addDisallow('*');
 	    }
 
@@ -161,7 +162,7 @@ class HomeController extends BaseController {
 
 	    if (!$sitemap->isCached())
 	    {
-	         $sitemap->add(URL::to('/'), date('c',time()), '1.0', 'daily');
+	       $sitemap->add(URL::to('/'), date('c',time()), '1.0', 'daily');
 		     $sitemap->add(URL::to('/informacje'), date('c',time()), '0.6', 'monthly');
 		     $sitemap->add(URL::to('/kontakt'), date('c',time()), '0.5', 'monthly');
 		     $sitemap->add(URL::to('/regulamin'), date('c',time()), '0.3', 'monthly');

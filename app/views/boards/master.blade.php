@@ -10,13 +10,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="Social media w jednym miejscu" />	
     <meta name="_token" content="{{ csrf_token() }}" />	
+    <meta name="google-site-verification" content="BmZwJaxOdzcMK3nzHcmAitIa-pqHJS-mhpgcna4iK9w" />
+    <?php if (App::environment() !== 'production'): ?>
+        <meta name="robots" content="noindex">
+    <?php endif; ?>
+
 
     @if(isset($boardData))
         <meta property="og:title" content="#{{ $title }}"/>
         @if($boardData->avatar_file_name != '')
             <meta property="og:image" content="{{ URL::to('/').$boardData->avatar->url('medium') }}"/>
         @else
-            <meta property="og:image" content="{{ URL::to('/images/assets/logo.jpg') }}"/>
+            <meta property="og:image" content="{{ URL::to('/images/assets/logo.png') }}"/>
         @endif
         <meta property="og:site_name" content="hashtag.info"/>
         <meta property="og:description" content="{{ $boardData->description }}"/>

@@ -3946,6 +3946,12 @@ FOOTER STYLES
       font-weight: 700;
       text-decoration: none; }
 
+.made-by {
+  outline: none;
+  float: right; }
+  .made-by svg {
+    width: 45px; }
+
 @media only screen and (min-width: 480px) {
   /******************************************************************
   Site Name:
