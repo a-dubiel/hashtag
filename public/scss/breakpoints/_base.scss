@@ -1044,15 +1044,59 @@ abbr[title] {
 
 
 .home-intro {
-	height:200px;
+	height:100vh;
 	width:100%;
 	background-position: center;
 	background-size: cover;
-	padding-top:40px;
 	position:relative;
-	margin-bottom:30px;
+	margin-bottom:40px;
+	
+background: linear-gradient(270deg, #42a80b, darken(#0b7a57,15%)); 
+background-size: 300% 300%;
 
+-webkit-animation: AnimationName 30s ease infinite;
+-moz-animation: AnimationName 30s ease infinite;
+animation: AnimationName 30s ease infinite;
 
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.home-search-box {
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	
+	.trending {
+		color: $white;
+		margin:15px 0 0 0;
+	}
+
+	.logos {
+		color: rgba(255,255,255,0.5);
+		text-align: center;
+		margin:0 0 10px 0;
+		font-size:24px;
+
+		.fa {
+			margin:0 4px;
+		}
+	}
 }
 
 .home-search-wrapper {
@@ -1263,7 +1307,7 @@ abbr[title] {
 }
 
 .block-trending {
-	background: $brand;
+	background: lighten(#a0a0a0,40%);
 	padding:10px 0;
 	margin-bottom:40px;
 	text-align:center;
@@ -1271,7 +1315,7 @@ abbr[title] {
 	p {
 		margin:0;
 		padding:0;
-		color: $white;
+		color: $brand;
 	}
 
 	.hashtag {

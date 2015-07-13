@@ -3253,13 +3253,54 @@ abbr[title] {
   margin: 40px 0; }
 
 .home-intro {
-  height: 200px;
+  height: 100vh;
   width: 100%;
   background-position: center;
   background-size: cover;
-  padding-top: 40px;
   position: relative;
-  margin-bottom: 30px; }
+  margin-bottom: 40px;
+  background: linear-gradient(270deg, #42a80b, #053425);
+  background-size: 300% 300%;
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite; }
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+.home-search-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .home-search-box .trending {
+    color: #fff;
+    margin: 15px 0 0 0; }
+  .home-search-box .logos {
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin: 0 0 10px 0;
+    font-size: 24px; }
+    .home-search-box .logos .fa {
+      margin: 0 4px; }
 
 .home-search-wrapper {
   width: 300px;
@@ -3440,14 +3481,14 @@ abbr[title] {
       color: #666; }
 
 .block-trending {
-  background: #42a80b;
+  background: white;
   padding: 10px 0;
   margin-bottom: 40px;
   text-align: center; }
   .block-trending p {
     margin: 0;
     padding: 0;
-    color: #fff; }
+    color: #42a80b; }
   .block-trending .hashtag {
     margin: 0 5px;
     color: #fff; }
@@ -4104,30 +4145,9 @@ FOOTER STYLES
       line-height: 50px; }
 
   .home-intro {
-    height: 400px;
+    height: 100vh;
     padding-top: 120px;
-    margin-bottom: 0px; }
-    .home-intro:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 150px;
-      width: 100%;
-      background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
-      /* FF3.6+ */
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.55)), color-stop(100%, transparent));
-      /* Chrome,Safari4+ */
-      background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
-      /* Chrome10+,Safari5.1+ */
-      background: -o-linear-gradient(top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
-      /* Opera 11.10+ */
-      background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
-      /* IE10+ */
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, transparent 100%);
-      /* W3C */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
-      /* IE6-9 */ }
+    margin-bottom: 30px; }
 
   .home-search-wrapper {
     width: 480px;

@@ -4,15 +4,17 @@
 
 <header class="board-top home-top">
 	<div class="container">
+
 		<nav class="nav-user">
 			 @include('user.user-nav')
 		</nav>
 	</div>
 </header>
 
-<div class="home-intro" style="background-image: url({{ URL::to('/images/home-bg/'.$introImg) }})">
+<div class="home-intro">
+<div class="home-search-box">
 	<h1 class="home-logo">Hasztag.info</h1>
-
+	<p class="logos"><i class="fa fa-instagram"></i><i class="fa fa-twitter"></i><i class="fa fa-facebook"></i><i class="fa fa-google-plus"></i><i class="fa fa-vine"></i></p>
 	<div class="home-search-wrapper">
 		<div class="home-search">
 			{{ Form::open(array('url' => 'szukaj')) }}			
@@ -20,20 +22,15 @@
 					<i class="fa fa-search"></i>
 				</div>
 				<div class="search-bar">
-					<input type="text" name="query" placeholder="wpisz dowolny hasztag">
+					<input type="text" name="query" placeholder="wpisz dowolny #hasztag">
 				</div>
 				<input type="submit" value="Szukaj">
 			{{ Form::close() }}
-		</div>	
+		</div>
+		<p class="trending">popularne @foreach($popularHashtags as $hashtag) {{ $hashtag }} @endforeach</p>
+	</div>
 	</div>
 </div>
-
-<div class="block-trending hidden-xs">
-	<div class="container">
-		<p>popularne @foreach($popularHashtags as $hashtag) {{ $hashtag }} @endforeach</p>
-	</div>
-</div>
-
 
 <div class="container add-bottom">
 	<div class="text-center add-bottom">
@@ -109,7 +106,7 @@
 <div class="container">
 
 	<div class="home-section-intro">
-		<h2>Plan Pro</h2>
+		<h2>Dodatkowe funkcje</h2>
 		<p>Dla bardziej wymagających hasztagowców mamy coś specjalnego.</p>
 	</div>
 	<div class="row">
@@ -168,10 +165,11 @@
 
 
 <div class="block-cta">
-	<p>Załóż swoją pierwszą tablicę za darmo lub zapoznaj się z naszą ofertą.</p>
+	<p>Zarejestruj się i dodaj swoją pierwszą tablicę za darmo.</p>
 	@if(Auth::check())
 		<a href="{{ URL::to('/konto/tablice') }}" class="btn-default btn-lg btn-white-inverted">Dodaj tablicę</a>
-		<a href="{{ URL::to('/oferta') }}" class="btn-default btn-lg btn-white-inverted">Nasza oferta</a>
+		<a href="{{ URL::to('/informacje') }}" class="btn-default btn-lg btn-white-inverted">Dowiedz się więcej
+		</a>
 	@else
 		<a href="{{ URL::to('/zarejestruj') }}" class="btn-default btn-lg btn-white-inverted">Zarejestruj się</a>
 		<a href="{{ URL::to('/oferta') }}" class="btn-default btn-lg btn-white-inverted">Nasza oferta</a>

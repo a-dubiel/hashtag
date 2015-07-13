@@ -47,6 +47,7 @@
 				</div>
 
 				<div class="col-lg-8 col-lg-offset-2 col-md-8 cold-md-offset-2 col-sm-8 col-sm-offset-2 about-section">
+					<img src="{{ URL::to('/images/macs.svg') }}" class="" />
 					<h3>Jak to robimy?</h3>
 
 					
@@ -57,27 +58,71 @@
 
 				</div>
 
-				<div class="col-lg-8 col-lg-offset-2 col-md-8 cold-md-offset-2 col-sm-8 col-sm-offset-2 about-section">
-					<img src="{{ URL::to('/images/macs.svg') }}" class="" />
-					
 
-					<h3>Dla wszystkich</h3>
+			<div class="row">
+						<div class="col-lg-8 col-lg-offset-2 col-md-8 cold-md-offset-2 col-sm-8 col-sm-offset-2 about-section">
+		
+					<h3>Dodatkowe funkcje tablic</h3>
+					</div>
+		
+						<div class="col-lg-4 col-lg-offset-2 col-md-4 cold-md-offset-2 col-sm-8 col-sm-offset-2 home-section home-section-pro">
+							<div class="home-section-icon"><img src="{{ URL::to('/images/filter.svg') }}" class="svg svg-filter" /></div>
+							<h4>Administracja</h4>
+							<p>Pełna kontrola nad Twoją tablicą. Filtruj treść postów oraz banuj niegrzecznych użytkowników.</p>
+						</div>
 
-					
-					<p>Laptop, tablet czy komórka - nie ma różnicy. Nie ważne z jakiego urządzenia korzystasz, nasz serwis dostoswany jest do najpopularniejszych urządzeń i przeglądarek (oprócz IE8 i poniżej). Lubimy optymalizację i wydajność, więc dołożyliśmy wielkich starań, żeby oddać Ci najwyższej jakości produkt.</p>
-					
-				</div>
+						<div class="col-lg-4 col-md-4 col-sm-6 home-section home-section-pro">
+							<div class="home-section-icon"><img src="{{ URL::to('/images/live.svg') }}" class="svg svg-live" /></div>
+							<h4>Live</h4>
+							<p>Automatycznie, w ciągu kilku sekund najnowsze posty pojawią się na Twojej tablicy. Lubię to!</p>
+						</div>
 
-			</div>
+						<div class="col-lg-4 col-lg-offset-2 col-md-4 cold-md-offset-2 col-sm-8 col-sm-offset-2 home-section home-section-pro">
+							<div class="home-section-icon"><img src="{{ URL::to('/images/board.svg') }}" class="svg svg-board" /></div>
+							<h4>Więcej Tablic</h4>
+							<p>Lepiej jak jest więcej. Zakładając konto masz pięć tablic.</p>
+						</div>
+
+						<div class="col-lg-4 col-md-4 col-sm-4 home-section home-section-pro">
+							<div class="home-section-icon"><img src="{{ URL::to('/images/star.svg') }}" class="svg svg-star" /></div>
+							<h4>Promowane Posty</h4>
+							<p>Promowane posty to świetny sposób aby wyróżnić swoich ulubionych użytkowników.</p>
+						</div>
+
+						<div class="clearfix"></div>
+
+						<div class="col-lg-4 col-lg-offset-2 col-md-4 cold-md-offset-2 col-sm-8 col-sm-offset-2 home-section home-section-pro">
+							<div class="home-section-icon"><img src="{{ URL::to('/images/brand.svg') }}" class="svg svg-brand" /></div>
+							<h4>Własny Branding</h4>
+							<p>Wyróżnij się. Każda tablica posiada swój avatar, tło oraz kolory które możesz zmienić wedle życzenia.</p>
+						</div>
+
+						<div class="col-lg-4 col-md-4 col-sm-6 home-section home-section-pro">
+							<div class="home-section-icon"><img src="{{ URL::to('/images/presentation.svg') }}" class="svg svg-presentation" /></div>
+							<h4>Prezentacja</h4>
+							<p>Konferencja, impreza czy koncert. Wrzuć tablicę na duży ekran i pozwól uczestnikom na niej zainstnieć.</p>
+						</div>
+
+						<div class="col-lg-4 col-lg-offset-2 col-md-4 cold-md-offset-2 col-sm-8 col-sm-offset-2 home-section home-section-pro">
+							<div class="home-section-icon"><img src="{{ URL::to('/images/network.svg') }}" class="svg svg-network" /></div>
+							<h4>Wybór Sieci</h4>
+							<p>Ustaw z jakich sieci Twoja tablica ma pobierać posty. Facebook, Instagram, Twitter, Vine czy Google.</p>
+						</div>
+
+						<div class="col-lg-4 col-md-4 col-sm-6 home-section home-section-pro">
+							<div class="home-section-icon"><img src="{{ URL::to('/images/link.svg') }}" class="svg svg-link" /></div>
+							<h4>Twoje Linki</h4>
+							<p>Umieść na tablicy odnośniki do profili społecznościowych oraz strony internetowej.</p>
+						</div>
+						
+					</div>
 
 			<div class="block-cta block-cta-white">
-				<p>Załóż swoją pierwszą tablicę za darmo lub zapoznaj się z naszą ofertą.</p>
+				<p>Załóż swoją pierwszą tablicę!</p>
 				@if(Auth::check())
 				<a href="{{ URL::to('/konto/tablice') }}" class="btn-default btn-lg btn-green-inverted">Dodaj tablicę</a>
-				<a href="{{ URL::to('/oferta') }}" class="btn-default btn-lg btn-green-inverted">Nasza oferta</a>
 				@else
 				<a href="{{ URL::to('/zarejestruj') }}" class="btn-default btn-lg btn-green-inverted">Zarejestruj się</a>
-				<a href="{{ URL::to('/oferta') }}" class="btn-default btn-lg btn-green-inverted">Nasza oferta</a>
 				@endif
 			</div>
 
