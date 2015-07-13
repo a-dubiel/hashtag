@@ -70,8 +70,9 @@ jQuery(document).ready(function($) {
     e.preventDefault();
   });
 
-  $('.js-close-cookies').click(function(e) {
+  $('.js-close-cookies, .cookie-info').click(function(e) {
     $('.cookie-info').addClass('fadeOutDown');
+    $.get(base + '/ajax/cookies', function(){});
     e.preventDefault();
   });
 

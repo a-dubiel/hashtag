@@ -1077,11 +1077,12 @@ animation: introAnimation 20s ease infinite;
     100%{background-position:0% 50%}
 }
 
+
 .home-search-box {
 	position: absolute;
 	top:50%;
 	left:50%;
-	transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%); 
 	
 	.trending {
 		color: $white;

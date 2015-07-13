@@ -78,6 +78,10 @@ Route::get('/wyloguj', function(){
 	return Redirect::to('/');
 });
 
+Route::get('/ajax/cookies', function(){
+	Cookie::queue('cookie_accept', 'yes', 2628000);
+});
+
 
 // boards
 Route::post('/board/post/featured/remove', array('before' => 'auth', 'uses' => 'AjaxController@removeFeatured'));
