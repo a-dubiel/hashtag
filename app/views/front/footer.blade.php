@@ -26,6 +26,11 @@
 
 </div>
 </footer>
+<?php if(Cookie::get('cookie_accept') === NULL ):?>
+ <div class="cookie-info animated fadeInUp">
+    <p>Wcinamy ciastka. Tutaj możesz poczytać <a href="{{ URL::to('/regulamin') }}">dlaczego</a>. Korzystając z serwisu akceptujesz regulamin. <a href="#" class="js-close-cookies"><i class="fa fa-times"></i></a></p>
+  </div>
+<?php endif;?>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

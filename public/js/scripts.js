@@ -66,7 +66,12 @@ jQuery(document).ready(function($) {
   }
 
   $('.js-close-alert').click(function(e){
-    $('.alert-top, .alert-cookies').addClass('fadeOutUpBig');
+    $('.alert-top').addClass('fadeOutUpBig');
+    e.preventDefault();
+  });
+
+  $('.js-close-cookies').click(function(e) {
+    $('.cookie-info').addClass('fadeOutDown');
     e.preventDefault();
   });
 

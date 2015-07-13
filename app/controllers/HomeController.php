@@ -76,6 +76,7 @@ class HomeController extends BaseController {
 		}
 
 		$data['title'] = $this->layout->title = null;
+		$cookie = Cookie::queue('cookie_accept', 'yes', 2628000);
 		$this->layout->content = View::make('front.home', $data);
 	}
 

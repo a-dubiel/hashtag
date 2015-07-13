@@ -217,7 +217,8 @@ def sslify_instagram_cdn_url(url):
 		}
 
 
-
+		shuffle($posts);
+		
 		foreach($posts as $post) {
 			
 			if(strlen($post['username']) > 0 ) {
