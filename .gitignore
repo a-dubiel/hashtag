@@ -3,6 +3,8 @@
 /bootstrap/compiled.php
 /bootstrap/environment.php
 /vendor
+/config/dev
+/config/production
 /public/cgi-bin
 composer.phar
 composer.lock
