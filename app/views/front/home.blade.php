@@ -172,7 +172,8 @@
 		</a>
 	@else
 		<a href="{{ URL::to('/zarejestruj') }}" class="btn-default btn-lg btn-white-inverted">Zarejestruj się</a>
-		<a href="{{ URL::to('/oferta') }}" class="btn-default btn-lg btn-white-inverted">Nasza oferta</a>
+		a href="{{ URL::to('/informacje') }}" class="btn-default btn-lg btn-white-inverted">Dowiedz się więcej
+		</a>
 	@endif
 </div>
 

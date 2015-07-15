@@ -28,7 +28,7 @@
 </footer>
 <?php if(Cookie::get('cookie_accept') === NULL ):?>
  <div class="cookie-info animated fadeInUp">
-    <p>Wcinamy ciastka. Tutaj możesz poczytać <a href="{{ URL::to('/regulamin') }}">dlaczego</a>. Korzystając z serwisu akceptujesz regulamin. <a href="#" class="js-close-cookies"><i class="fa fa-times"></i></a></p>
+    <p>Wcinamy ciastka. Możesz poczytać <a href="{{ URL::to('/regulamin') }}">dlaczego</a> tak robimy. Korzystając z serwisu akceptujesz regulamin. <a href="#" class="js-close-cookies"><i class="fa fa-times"></i></a></p>
   </div>
 <?php endif;?>
 <script>
