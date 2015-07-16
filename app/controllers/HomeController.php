@@ -128,7 +128,7 @@ class HomeController extends BaseController {
     	{
 	        Robots::addUserAgent('*');
 	        Robots::addDisallow('/konto');
-	        Robots::addSitemap('/sitemap.xml');
+	        Robots::addSitemap('/sitemapindex.xml');
 	    } else {
 	    		Robots::addUserAgent('*');
 	        Robots::addDisallow('*');
