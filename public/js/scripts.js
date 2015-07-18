@@ -158,7 +158,6 @@ jQuery(document).ready(function($) {
    $(document).on('submit', '.home-search form, .board-top-search form', function(){
     var query = $(this).find('input[name="query"]').val();
     ga('send', 'event', 'form', 'search', query);  
-    alert(); 
   });
 
     $(document).on('submit', '#change-desc',function(){
