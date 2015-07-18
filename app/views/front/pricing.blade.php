@@ -13,8 +13,15 @@
 					</div>
 					<div class="input-with-icon">
 						<input type="text" class="input-default" name="query" placeholder="Wpisz dowolny hasztag">
+					</div><div class="fill-me">
+					  <label for="fill">Your name</label>
+					  <input type="text" name="fill" id="fill" value="" />
 					</div>
 				</div>
+				<div class="fill-me">
+					  <label for="fill">Your name</label>
+					  <input type="text" name="fill" id="fill" value="" />
+					</div>
 				<input type="submit" value="Szukaj">
 			{{ Form::close() }}
 		</div>

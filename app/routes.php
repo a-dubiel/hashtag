@@ -98,6 +98,9 @@ Route::get('{hashtag}/{id}', array('uses' =>'BoardsController@showBoard') );
 Route::post('/szukaj', function() {
 	$data = Input::get('query');
 	if(strlen($data) > 2) {
+		if(Input::has('fill')) {
+			App::abort(404);
+		}
 		$data = explode(' ', trim($data) );
 		$result = preg_replace('/#([\w-]+)/i', '$1', $data[0]);
 		$query = Sanitize::string($result);

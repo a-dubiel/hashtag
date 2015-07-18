@@ -22,6 +22,8 @@
 		type: 'GET',	
 		success: function(data, status, xhr) {
 			
+      
+
 			if(data.message == 'No posts') {
 				$loading.html('<div class="no-posts"><i class="fa fa-meh-o"></i><span>Brak wyników</span></div>');
 			}

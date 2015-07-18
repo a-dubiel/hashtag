@@ -23,6 +23,10 @@
 				</div>
 				<div class="search-bar">
 					<input type="text" name="query" placeholder="wpisz dowolny #hasztag">
+					<div class="fill-me">
+					  <label for="fill">Your name</label>
+					  <input type="text" name="fill" id="fill" value="" />
+					</div>
 				</div>
 				<input type="submit" value="Szukaj">
 			{{ Form::close() }}

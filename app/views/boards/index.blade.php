@@ -10,6 +10,8 @@
 	var is_logged_in = <?php echo ( Auth::check() ? 'true' : 'false' ); ?>;
 	var is_live = <?php echo ( ($board->config()->first()->live == 1) ? 'true' : 'false' ); ?>;
 
+	ga('send', 'event', 'form', 'search', 'board', hashtag);
+
 </script>
 
 <header class="board-top">
@@ -22,7 +24,11 @@
 						<i class="fa fa-search"></i>
 					</div>
 					<div class="input-with-icon">
-						<input type="text" class="input-default" name="query" placeholder="Wpisz dowolny hasztag">
+						<input type="text" class="input-default" name="query" placeholder="Wpisz dowolny #hasztag">
+					</div>
+					<div class="fill-me">
+					  <label for="fill">Your name</label>
+					  <input type="text" name="fill" id="fill" value="" />
 					</div>
 				</div>
 				<input type="submit" value="Szukaj">
