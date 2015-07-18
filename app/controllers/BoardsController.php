@@ -39,6 +39,7 @@ class BoardsController extends \BaseController {
 
 			if(is_null($board)) {
 				$board = Board::create(array('hashtag' => $query ));
+				$visit = Visit::create(array('ip' => Request::ip()));
 				$config = BoardConfig::create(array('board_id' => $board->id ));
 			}
 		}
