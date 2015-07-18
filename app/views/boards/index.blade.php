@@ -10,8 +10,6 @@
 	var is_logged_in = <?php echo ( Auth::check() ? 'true' : 'false' ); ?>;
 	var is_live = <?php echo ( ($board->config()->first()->live == 1) ? 'true' : 'false' ); ?>;
 
-	ga('send', 'event', 'form', 'search', 'board', hashtag);
-
 </script>
 
 <header class="board-top">

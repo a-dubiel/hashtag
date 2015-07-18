@@ -155,6 +155,11 @@ jQuery(document).ready(function($) {
       e.preventDefault();
     });
 
+   $(document).on('submit', '.home-search form, .board-top-search form', function(){
+    var query = $(this).find('input[name="query"]').val();
+    ga('send', 'event', 'form', 'search', 'board', query);   
+  });
+
     $(document).on('submit', '#change-desc',function(){
 
       $wrap = $('.board-description');
