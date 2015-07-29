@@ -18,6 +18,16 @@ class BoardsController extends \BaseController {
 		Asset::add('/js/posts-new.js', 'footer');
 		//check if board exists
 
+		
+		if(strlen($query) > 2) {
+			$query = explode(' ', trim($query) );
+			$result = preg_replace('/#([\w-]+)/i', '$1', $query[0]);
+			$query = Sanitize::string($result);
+		}
+		else {
+			App::abort(404);
+		}
+
 		if(isset($id)) {
 			$board = Board::find($id);
 
